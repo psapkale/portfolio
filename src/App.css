@@ -1,0 +1,34 @@
+* {
+   font-family: "Mulish", "Courier New", monospace;
+}
+
+body {
+   /* background: #151515; */
+   background: #0f0f0f;
+   /* font-family: "Mulish", "Courier New", monospace; */
+}
+
+img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.info p:nth-child(2),
+.name p:nth-child(2),
+.tag p:nth-child(2) {
+   top: 100%;
+   color: #fff;
+}
+
+.menu:hover .info p:nth-child(1),
+.menu:hover .name p:nth-child(1),
+.menu:hover .tag p:nth-child(1) {
+   color: rgb(165, 165, 165);
+}
+
+.preview-img img {
+   position: absolute;
+   top: 0;
+   left: 0;
+}
