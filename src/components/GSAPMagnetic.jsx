@@ -11,7 +11,6 @@ export const GsapMagnetic = ({ children }) => {
          const { clientX, clientY } = e;
          const { width, height, left, top } =
             ref.current.getBoundingClientRect();
-         console.log(width, height);
          const x = clientX - (left + width / 2);
          const y = clientY - (top + height / 2);
          gsap.to(ref.current, { x: x });
