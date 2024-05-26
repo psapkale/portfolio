@@ -3,7 +3,7 @@ import "./App.css";
 import { Appbar } from "./components/Appbar";
 import { Cursor } from "./components/Cursor";
 import { Projects } from "./components/Projects";
-import { NameZoom } from "./components/NameZoom";
+import { NameElement } from "./components/NameElement";
 
 function App() {
    const appbarRef = useRef(null);
@@ -36,7 +36,7 @@ function App() {
       <div>
          <Appbar ref={appbarRef} />
          <Cursor showCursor={showCursor} appbarRef={appbarRef} />
-         <NameZoom />
+         <NameElement />
          <Projects id="projects" />
          <div className=" h-[200vh]" />
       </div>

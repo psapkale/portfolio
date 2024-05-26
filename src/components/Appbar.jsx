@@ -42,7 +42,7 @@ export const Appbar = forwardRef((props, ref) => {
 
    return (
       <nav
-         className="appbar flex items-center justify-between p-6 z-[999] fixed top-0 left-0 w-full transition-colors duration-300"
+         className="appbar flex items-center font-['Mulish'] justify-between p-6 z-[999] fixed top-0 left-0 w-full transition-colors duration-300"
          ref={appbarRef}
       >
          <div className="text-slate-300 text-lg font-[600] py-3 px-6 rounded-full group  hover:z-50">
