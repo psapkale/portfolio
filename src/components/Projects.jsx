@@ -34,6 +34,7 @@ export const Projects = ({ id }) => {
       });
    };
 
+   // TODO implement image optimization
    function removeImages() {
       const preview1 = document.querySelector(".preview-img-1");
       const preview2 = document.querySelector(".preview-img-2");
@@ -109,7 +110,9 @@ export const Projects = ({ id }) => {
 
          <div className="menu" onMouseOut={handlePreviewMouseOut} id={id}>
             {menuItems.map((item, idx) => (
-               <div
+               <a
+                  href={item.link}
+                  target="blank"
                   className="menu-item"
                   key={idx}
                   ref={(el) => (menuItemRef.current[idx] = el)}
@@ -130,7 +133,7 @@ export const Projects = ({ id }) => {
                      <p>{item.tag}</p>
                      <p>{item.tag}</p>
                   </div>
-               </div>
+               </a>
             ))}
          </div>
       </div>
@@ -142,16 +145,19 @@ const menuItems = [
       info: "Homely",
       name: "Immersive Booking Experience",
       tag: "Elegance",
+      link: "https://homely-jet.vercel.app/",
    },
    {
       info: "Intercord",
       name: "MCQ Examination System",
       tag: "Power",
+      link: "https://intercord.vercel.app/",
    },
    {
       info: "Hunger Bites",
       name: "Food Point",
       tag: "Lightening Fast",
+      link: "https://hunger-bites.vercel.app/",
    },
    // {
    //    info: "Grid",

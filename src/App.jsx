@@ -4,6 +4,8 @@ import { Appbar } from "./components/Appbar";
 import { Cursor } from "./components/Cursor";
 import { Projects } from "./components/Projects";
 import { NameElement } from "./components/NameElement";
+import { AboutSection } from "./components/AboutSection";
+import { MarqueeElement } from "./components/MarqueeElement";
 
 function App() {
    const appbarRef = useRef(null);
@@ -37,6 +39,8 @@ function App() {
          <Appbar ref={appbarRef} />
          <Cursor showCursor={showCursor} appbarRef={appbarRef} />
          <NameElement />
+         <MarqueeElement />
+         <AboutSection />
          <Projects id="projects" />
          <div className=" h-[200vh]" />
       </div>
