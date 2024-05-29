@@ -46,9 +46,9 @@ export const Cursor = ({ showCursor, appbarRef }) => {
          <motion.div
             className={`w-[20px] h-[20px] fixed top-0 left-0 rounded-full ${
                isHovered
-                  ? "z-0 bg-[#727171] opacity-[10%]"
-                  : "z-10 bg-[#b5b5b5] opacity-[30%]"
-            }`}
+                  ? "bg-[#727171] opacity-[10%]"
+                  : "bg-[#b5b5b5] bg-[] opacity-[30%]"
+            } z-10`}
             style={{
                left: smoothMouse.x,
                top: smoothMouse.y,

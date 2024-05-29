@@ -1,24 +1,10 @@
 import { useEffect } from "react";
 
 export const NameElement = () => {
-   // useEffect(() => {
-   // const text = document.querySelector(".text");
-   // text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
-   // const span = document.querySelectorAll("span");
-   // span.forEach((element) => {
-   //    element.style.position = "absolute";
-   //    element.style.transformOrigin = "0 80px";
-   // });
-
-   // for (var i = 0; i < span.length; i++) {
-   //    span[i].style.transform = "rotate(" + i * 16.5 + "deg)";
-   // }
-   // }, []);
-
    return (
       <div>
          <div className="header h-screen flex items-center justify-center pointer-events-none select-none relative">
-            <div className="letters flex text-[150px] scale-y-[3] absolute top-[32%] left-[13%] uppercase">
+            <div className="letters text-[#0E100F] flex text-[150px] scale-y-[3] absolute top-[32%] left-[13%] uppercase">
                <div>p</div>
                <div>r</div>
                <div>e</div>

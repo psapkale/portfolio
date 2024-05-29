@@ -16,8 +16,8 @@ export const Appbar = forwardRef((props, ref) => {
             ease: "power3.out",
          });
       } else if (newScroll <= scroll) {
-         appbarRef.current.style.borderBottom =
-            "2px solid rgba(226,232,240,0.5)";
+         // appbarRef.current.style.boxShadow =
+         //    "rgba(17,_17,_26,_0.1)_0px_0px_16px";
 
          gsap.to(".appbar", {
             y: "0%",
@@ -25,11 +25,12 @@ export const Appbar = forwardRef((props, ref) => {
             ease: "power3.out",
          });
       }
-      scroll = newScroll;
 
-      if (scroll === 0) {
-         appbarRef.current.style.borderBottom = "none";
-      }
+      // if (scroll === 0) {
+      //    appbarRef.current.style.boxShadow = "none";
+      // }
+
+      scroll = newScroll;
    };
 
    useEffect(() => {
@@ -42,41 +43,34 @@ export const Appbar = forwardRef((props, ref) => {
 
    return (
       <nav
-         className="appbar flex items-center font-['Mulish'] justify-between p-6 z-[999] fixed top-0 left-0 w-full transition-colors duration-300"
+         className="appbar text-[#0E100F] flex items-center font-['Mulish'] justify-between p-6 z-[999] fixed top-0 left-0 w-full transition-colors duration-300"
          ref={appbarRef}
       >
-         <div className="text-slate-300 text-lg font-[600] py-3 px-6 rounded-full group  hover:z-50">
-            <a href="#" className="uppercase">
+         <div className="text-lg font-[600] py-3 px-6 rounded-full flex hover:z-[9999]">
+            <a href="/" className="uppercase">
                FPKPXTF
             </a>
          </div>
 
-         <div className="flex items-center justify-between w-1/2" ref={ref}>
+         <div className="flex items-center justify-between w-1/3" ref={ref}>
             <GsapMagnetic>
-               <div className="text-slate-300 text-lg font-[600] py-3 px-6 rounded-full group hover:text-slate-100 hover:z-50">
-                  <a href="#" className="uppercase">
+               <div className="text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000] hover:z-[9999]">
+                  <a href="/projects" className="uppercase">
                      Projects
                   </a>
                </div>
             </GsapMagnetic>
             <GsapMagnetic>
-               <div className="text-slate-300 text-lg font-[600] py-3 px-6 rounded-full group hover:text-slate-100 hover:z-50">
-                  <a href="#" className="uppercase">
-                     About
-                  </a>
-               </div>
-            </GsapMagnetic>
-            <GsapMagnetic>
-               <div className="text-slate-300 text-lg font-[600] py-3 px-6 rounded-full group hover:text-slate-100 hover:z-50">
-                  <a href="#" className="uppercase">
-                     Playground
-                  </a>
-               </div>
-            </GsapMagnetic>
-            <GsapMagnetic>
-               <div className="text-slate-300 text-lg font-[600] py-3 px-6 rounded-full group hover:text-slate-100 hover:z-50">
-                  <a href="#" className="uppercase">
+               <div className="text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000] hover:z-[9999]">
+                  <a href="#contact" className="uppercase">
                      Contact
+                  </a>
+               </div>
+            </GsapMagnetic>
+            <GsapMagnetic>
+               <div className="text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000] hover:z-[9999]">
+                  <a href="#" className="uppercase">
+                     Resume
                   </a>
                </div>
             </GsapMagnetic>

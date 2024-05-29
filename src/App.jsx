@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HomeElement } from "./components/HomeElement";
+import { ProjectsElement } from "./components/ProjectsElement";
 import { Appbar } from "./components/Appbar";
 import { Cursor } from "./components/Cursor";
-import { Projects } from "./components/Projects";
-import { NameElement } from "./components/NameElement";
-import { AboutSection } from "./components/AboutSection";
-import { MarqueeElement } from "./components/MarqueeElement";
 
 function App() {
    const appbarRef = useRef(null);
@@ -35,15 +34,17 @@ function App() {
    }, []);
 
    return (
-      <div>
-         <Appbar ref={appbarRef} />
+      <>
          <Cursor showCursor={showCursor} appbarRef={appbarRef} />
-         <NameElement />
-         <MarqueeElement />
-         <AboutSection />
-         <Projects id="projects" />
-         <div className=" h-[200vh]" />
-      </div>
+         <Appbar ref={appbarRef} />
+
+         <Router>
+            <Routes>
+               <Route path="/" element={<HomeElement />} />
+               <Route path="/projects" element={<ProjectsElement />} />
+            </Routes>
+         </Router>
+      </>
    );
 }
 

@@ -1,7 +1,7 @@
 :root {
-   --bg-color: #0e100f;
-   --heading-color: #fffce1;
-   --text-color: #ddd;
+   --bg-color: #f0f0f0;
+   --heading-color: #000;
+   --text-color: #111;
 }
 
 * {
@@ -10,6 +10,11 @@
    font-family: "Mulish";
    box-sizing: border-box;
 }
+
+html {
+   overscroll-behavior: none;
+}
+
 /* 
 img {
    width: 100%;

@@ -102,18 +102,24 @@ export const Projects = ({ id }) => {
    }
 
    return (
-      <div className="container" onMouseMoveCapture={handlePreviewMouseMove}>
-         <div className="preview">
-            <div className="preview-img preview-img-1"></div>
-            <div className="preview-img preview-img-2"></div>
+      <div
+         className="container w-[100%] h-[100vh]"
+         onMouseMoveCapture={handlePreviewMouseMove}
+      >
+         <div className="preview absolute top-0 left-0 w-[500px] h-[250px] z-[2] pointer-events-none">
+            <div className="preview-img absolute w-[100%] h-[100%] preview-img-1"></div>
+            <div className="preview-img absolute w-[100%] h-[100%] preview-img-2 top-[20px] left-[20px]"></div>
          </div>
 
-         <div className="menu" onMouseOut={handlePreviewMouseOut} id={id}>
+         <div
+            className="menu w-[100%] my-[20em]"
+            onMouseOut={handlePreviewMouseOut}
+            id={id}
+         >
             {menuItems.map((item, idx) => (
                <a
                   href={item.link}
-                  target="blank"
-                  className="menu-item"
+                  className="menu-item w-[100%] px-[2em] flex items-center cursor-pointer"
                   key={idx}
                   ref={(el) => (menuItemRef.current[idx] = el)}
                   onMouseOver={() =>
@@ -121,17 +127,17 @@ export const Projects = ({ id }) => {
                   }
                   onMouseOut={() => handleMouseOut(menuItemRef.current[idx])}
                >
-                  <div className="info">
+                  <div className="info relative text-[#111] overflow-hidden flex-[1] h-[14px] text-[14px]">
                      <p>{item.info}</p>
-                     <p>{item.info}</p>
+                     <p className="text-[#111]">{item.info}</p>
                   </div>
-                  <div className="name">
+                  <div className="name relative text-[#111] overflow-hidden flex-[4] h-[70px] text-[60px] text-center">
                      <p>{item.name}</p>
-                     <p>{item.name}</p>
+                     <p className="text-[#111]">{item.name}</p>
                   </div>
-                  <div className="tag">
+                  <div className="tag relative text-[#111] overflow-hidden flex-[1] h-[14px] text-[14px] text-right">
                      <p>{item.tag}</p>
-                     <p>{item.tag}</p>
+                     <p className="text-[#111]">{item.tag}</p>
                   </div>
                </a>
             ))}
@@ -145,19 +151,19 @@ const menuItems = [
       info: "Homely",
       name: "Immersive Booking Experience",
       tag: "Elegance",
-      link: "https://homely-jet.vercel.app/",
+      link: "http://localhost:5173/projects#homely",
    },
    {
       info: "Intercord",
       name: "MCQ Examination System",
       tag: "Power",
-      link: "https://intercord.vercel.app/",
+      link: "http://localhost:5173/projects#intercord",
    },
    {
       info: "Hunger Bites",
       name: "Food Point",
       tag: "Lightening Fast",
-      link: "https://hunger-bites.vercel.app/",
+      link: "http://localhost:5173/projects#hunger-bites",
    },
    // {
    //    info: "Grid",

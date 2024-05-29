@@ -13,26 +13,42 @@ export const MarqueeElement = () => {
       setIsScrollingDown(scrollingDown);
 
       gsap.to(tween, {
-         timeScale: scrollingDown ? 1 : -1,
+         timeScale: scrollingDown ? 1 : 1,
       });
 
       setCurrentScroll(scrollY);
    };
 
-   useGSAP(() => {
+   function handleScroll2() {
       const marqueeParts =
          marqueeInnerRef.current.querySelectorAll(".marquee__part");
 
-      const tween = gsap
+      gsap
          .to(marqueeParts, {
-            xPercent: -100,
-            repeat: -1,
+            // xPercent: -100,
+            // repeat: -1,
+            rotate: 5,
+            scale: 2,
             duration: 4,
             ease: "linear",
          })
          .totalProgress(0);
+   }
 
-      window.addEventListener("scroll", () => handleScroll(tween));
+   useGSAP(() => {
+      const marqueeParts =
+         marqueeInnerRef.current.querySelectorAll(".marquee__part");
+
+      // const tween = gsap
+      //    .to(marqueeParts, {
+      //       xPercent: -100,
+      //       repeat: -1,
+      //       duration: 4,
+      //       ease: "linear",
+      //    })
+      //    .totalProgress(0);
+
+      window.addEventListener("scroll", () => handleScroll2());
    });
 
    return (
