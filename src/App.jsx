@@ -41,7 +41,10 @@ function App() {
          <Router>
             <Routes>
                <Route path="/" element={<HomeElement />} />
-               <Route path="/projects" element={<ProjectsElement />} />
+               <Route
+                  path="/projects"
+                  element={<ProjectsElement ref={appbarRef} />}
+               />
             </Routes>
          </Router>
       </>

@@ -4,7 +4,7 @@ export const NameElement = () => {
    return (
       <div>
          <div className="header h-screen flex items-center justify-center pointer-events-none select-none relative">
-            <div className="letters text-[#0E100F] flex text-[150px] scale-y-[3] absolute top-[32%] left-[13%] uppercase">
+            <div className="letters text-[#0E100F] flex text-[150px] scale-y-[3] absolute top-[32%] left-[12%] uppercase font-[880]">
                <div>p</div>
                <div>r</div>
                <div>e</div>

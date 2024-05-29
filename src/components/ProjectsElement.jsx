@@ -4,10 +4,24 @@ import { ProjectCard } from "./ProjectCard";
 export const ProjectsElement = () => {
    return (
       <div className="mt-[101px]">
-         <div className="flex flex-col gap-[]">
+         <div className="h-[90vh] grid place-content-center gap-10 text-center text-6xl">
+            <h1 className="font-[1000] scale-y-[2.2] scale-x-[0.8] uppercase">
+               Recent Projects
+            </h1>
+            <h2 className="text-xl text-slate-800 mt-10">
+               Check out some of the most recent projects I've had the <br />{" "}
+               pleasure of working on.
+            </h2>
+         </div>
+         <div className="flex flex-col">
             {projects.map((project, idx) => (
-               <a href={project.link} target="_blank" className="z-[999]">
-                  <ProjectCard projectData={project} serial={idx + 1} />
+               <a href={project.link} target="_blank" className="z-10">
+                  <ProjectCard
+                     key={project.title}
+                     projectData={project}
+                     serial={idx + 1}
+                     isInverted={idx % 2}
+                  />
                </a>
             ))}
          </div>

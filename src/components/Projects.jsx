@@ -106,7 +106,7 @@ export const Projects = ({ id }) => {
          className="container w-[100%] h-[100vh]"
          onMouseMoveCapture={handlePreviewMouseMove}
       >
-         <div className="preview absolute top-0 left-0 w-[500px] h-[250px] z-[2] pointer-events-none">
+         <div className="preview absolute top-0 left-0 w-[500px] h-[250px] z-10 pointer-events-none">
             <div className="preview-img absolute w-[100%] h-[100%] preview-img-1"></div>
             <div className="preview-img absolute w-[100%] h-[100%] preview-img-2 top-[20px] left-[20px]"></div>
          </div>

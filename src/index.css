@@ -3,3 +3,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+   .custom-text {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px;
+      transition: all 0.3s;
+   }
+
+   .custom-text-unset {
+      -webkit-text-fill-color: unset;
+   }
+}

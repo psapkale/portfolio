@@ -10,7 +10,6 @@ export const HomeElement = () => {
          {/* <MarqueeElement /> */}
          <Projects id="projects" />
          <AboutSection />
-         <div className=" h-[200vh]" />
          <ContactElement />
       </div>
    );

@@ -43,32 +43,32 @@ export const Appbar = forwardRef((props, ref) => {
 
    return (
       <nav
-         className="appbar text-[#0E100F] flex items-center font-['Mulish'] justify-between p-6 z-[999] fixed top-0 left-0 w-full transition-colors duration-300"
+         className="appbar text-[#0E100F] flex items-center font-['Mulish'] justify-between p-6 z-10 fixed top-0 left-0 w-full transition-colors duration-300"
          ref={appbarRef}
       >
-         <div className="text-lg font-[600] py-3 px-6 rounded-full flex hover:z-[9999]">
+         <div className="text-lg font-[600] py-3 px-6 rounded-full flex">
             <a href="/" className="uppercase">
-               FPKPXTF
+               Prem
             </a>
          </div>
 
          <div className="flex items-center justify-between w-1/3" ref={ref}>
             <GsapMagnetic>
-               <div className="text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000] hover:z-[9999]">
+               <div className="text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]">
                   <a href="/projects" className="uppercase">
                      Projects
                   </a>
                </div>
             </GsapMagnetic>
             <GsapMagnetic>
-               <div className="text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000] hover:z-[9999]">
+               <div className="text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]">
                   <a href="#contact" className="uppercase">
                      Contact
                   </a>
                </div>
             </GsapMagnetic>
             <GsapMagnetic>
-               <div className="text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000] hover:z-[9999]">
+               <div className="text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]">
                   <a href="#" className="uppercase">
                      Resume
                   </a>
