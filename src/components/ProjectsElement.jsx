@@ -1,7 +1,7 @@
 import { ContactElement } from "./ContactElement";
 import { ProjectCard } from "./ProjectCard";
 
-export const ProjectsElement = () => {
+export const ProjectsElement = ({ id }) => {
    return (
       <div className="mt-[101px]">
          <div className="h-[90vh] grid place-content-center gap-10 text-center text-6xl">
@@ -13,14 +13,20 @@ export const ProjectsElement = () => {
                pleasure of working on.
             </h2>
          </div>
+         {/* <div className="h-screen border border-red-500" /> */}
          <div className="flex flex-col">
             {projects.map((project, idx) => (
-               <a href={project.link} target="_blank" className="z-10">
+               <a
+                  key={project.title}
+                  href={project.link}
+                  target="_blank"
+                  className="z-10"
+               >
                   <ProjectCard
-                     key={project.title}
                      projectData={project}
                      serial={idx + 1}
                      isInverted={idx % 2}
+                     id={id}
                   />
                </a>
             ))}

@@ -11,24 +11,50 @@ function App() {
    const [showCursor, setShowCursor] = useState(true);
 
    useEffect(() => {
-      const projectsElement = document.getElementById("projects");
+      const projectsMiniElement = document.getElementById(
+         "projectsMiniElement"
+      );
+      const projectsElement = document.querySelectorAll("#projectsElement");
 
       const observer = new IntersectionObserver(
-         ([entry]) => {
-            setShowCursor(!entry.isIntersecting);
+         (entry) => {
+            entry.map((ent) => {
+               setShowCursor(!ent.isIntersecting);
+            });
          },
          {
             threshold: 0.5,
          }
       );
 
+      // const observer = new IntersectionObserver(
+      //    ([entry]) => {
+      //       setShowCursor(!entry.isIntersecting);
+      //    },
+      //    {
+      //       threshold: 0.5,
+      //    }
+      // );
+
+      if (projectsMiniElement) {
+         observer.observe(projectsMiniElement);
+      }
+
       if (projectsElement) {
-         observer.observe(projectsElement);
+         projectsElement.forEach((project) => {
+            observer.observe(project);
+         });
       }
 
       return () => {
+         if (projectsMiniElement) {
+            observer.unobserve(projectsMiniElement);
+         }
+
          if (projectsElement) {
-            observer.unobserve(projectsElement);
+            projectsElement.forEach((project) => {
+               observer.unobserve(project);
+            });
          }
       };
    }, []);
@@ -43,7 +69,7 @@ function App() {
                <Route path="/" element={<HomeElement />} />
                <Route
                   path="/projects"
-                  element={<ProjectsElement ref={appbarRef} />}
+                  element={<ProjectsElement id="projectsElement" />}
                />
             </Routes>
          </Router>

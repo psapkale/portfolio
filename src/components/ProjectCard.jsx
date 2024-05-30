@@ -1,4 +1,7 @@
-export const ProjectCard = ({ projectData, serial, isInverted }) => {
+import { useMotionValue, useSpring } from "framer-motion";
+import { useEffect } from "react";
+
+export const ProjectCard = ({ projectData, serial, isInverted, id }) => {
    if (serial < 10) {
       serial = "0" + serial;
    }
@@ -42,7 +45,10 @@ export const ProjectCard = ({ projectData, serial, isInverted }) => {
 
    return (
       <>
-         <div className="w-full h-[90vh] flex items-center justify-between p-[80px] group">
+         <div
+            id={id}
+            className="w-full h-[90vh] flex items-center justify-between p-[80px] group"
+         >
             {isInverted ? (
                <>
                   {rightContent}
@@ -57,5 +63,40 @@ export const ProjectCard = ({ projectData, serial, isInverted }) => {
          </div>
          <hr className="w-[80vw] mx-auto" />
       </>
+   );
+};
+
+const styledCursor = function () {
+   const cursorSize = isHovered ? 60 : 20;
+   const mouse = {
+      x: useMotionValue(0),
+      y: useMotionValue(0),
+   };
+
+   const smoothMouse = {
+      x: useSpring(mouse.x, { damping: 100, stiffness: 2000, mass: 0.5 }),
+      y: useSpring(mouse.y, { damping: 100, stiffness: 2000, mass: 0.5 }),
+   };
+
+   const manageMouseMove = (e) => {
+      const { clientX, clientY } = e;
+      mouse.x.set(clientX - cursorSize / 2);
+      mouse.y.set(clientY - cursorSize / 2);
+   };
+
+   useEffect(() => {});
+
+   return (
+      <motion.div
+         className={`w-[20px] h-[20px] fixed top-0 left-0 rounded-full bg-red-500`}
+         style={{
+            left: smoothMouse.x,
+            top: smoothMouse.y,
+         }}
+         animate={{
+            width: cursorSize,
+            height: cursorSize,
+         }}
+      ></motion.div>
    );
 };
