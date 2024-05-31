@@ -46,11 +46,16 @@ export const Cursor = ({ showCursor, appbarRef, socialRef, projectsRef }) => {
       socialRef.current.addEventListener("mouseover", manageMouseOver);
       socialRef.current.addEventListener("mouseleave", manageMouseLeave);
 
-      projectsRef.current.addEventListener("mouseover", manageProjectMouseOver);
-      projectsRef.current.addEventListener(
-         "mouseleave",
-         manageProjectMouseLeave
-      );
+      if (projectsRef.current) {
+         projectsRef.current.addEventListener(
+            "mouseover",
+            manageProjectMouseOver
+         );
+         projectsRef.current.addEventListener(
+            "mouseleave",
+            manageProjectMouseLeave
+         );
+      }
       return () => {
          // window.removeEventListener("mousemove", manageMouseMove);
          document.removeEventListener("mousemove", manageMouseMove);
@@ -60,14 +65,16 @@ export const Cursor = ({ showCursor, appbarRef, socialRef, projectsRef }) => {
          socialRef.current.removeEventListener("mouseover", manageMouseOver);
          socialRef.current.removeEventListener("mouseleave", manageMouseLeave);
 
-         projectsRef.current.removeEventListener(
-            "mouseover",
-            manageProjectMouseOver
-         );
-         projectsRef.current.removeEventListener(
-            "mouseleave",
-            manageProjectMouseLeave
-         );
+         if (projectsRef.current) {
+            projectsRef.current.removeEventListener(
+               "mouseover",
+               manageProjectMouseOver
+            );
+            projectsRef.current.removeEventListener(
+               "mouseleave",
+               manageProjectMouseLeave
+            );
+         }
       };
    }, [cursorSize]);
 
@@ -88,20 +95,21 @@ export const Cursor = ({ showCursor, appbarRef, socialRef, projectsRef }) => {
          }}
       ></motion.div>
    ) : (
-      <motion.div
-         className={`fixed top-0 left-0 rounded-full bg-[#111]`}
-         style={{
-            left: smoothMouse.x,
-            top: smoothMouse.y,
-         }}
-         animate={{
-            width: cursorSize,
-            height: cursorSize,
-         }}
-      >
-         <div className="w-full h-full rounded-full flex items-center justify-center shadow-lg uppercase">
-            <h1 className="text-[18px] text-[#f1f1f1] font-[400]">Live</h1>
-         </div>
-      </motion.div>
+      <></>
+      // <motion.div
+      //    className={`fixed top-0 left-0 rounded-full bg-[#111]`}
+      //    style={{
+      //       left: smoothMouse.x,
+      //       top: smoothMouse.y,
+      //    }}
+      //    animate={{
+      //       width: cursorSize,
+      //       height: cursorSize,
+      //    }}
+      // >
+      //    <div className="w-full h-full rounded-full flex items-center justify-center shadow-lg uppercase">
+      //       <h1 className="text-[18px] text-[#f1f1f1] font-[400]">Live</h1>
+      //    </div>
+      // </motion.div>
    );
 };

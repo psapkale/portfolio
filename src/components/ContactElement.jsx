@@ -29,6 +29,7 @@ export const ContactElement = forwardRef((props, ref) => {
             >
                <GsapMagnetic>
                   <a
+                     target="_blank"
                      href="https://www.instagram.com/prem.thxi"
                      className="hover:text-[#f1f1f1] flex gap-10 peer-hover:opacity-50"
                   >
@@ -38,6 +39,7 @@ export const ContactElement = forwardRef((props, ref) => {
                <span className="group-hover:opacity-60">/</span>
                <GsapMagnetic>
                   <a
+                     target="_blank"
                      href="https://twitter.com/premstw"
                      className="hover:text-[#f1f1f1] flex gap-10 peer-hover:opacity-50"
                   >
@@ -47,6 +49,7 @@ export const ContactElement = forwardRef((props, ref) => {
                <span className="group-hover:opacity-60">/</span>
                <GsapMagnetic>
                   <a
+                     target="_blank"
                      href="https://www.linkedin.com/in/premsapkale"
                      className="hover:text-[#f1f1f1] flex gap-10 peer peer-hover:opacity-50"
                   >

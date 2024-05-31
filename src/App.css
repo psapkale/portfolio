@@ -33,6 +33,11 @@ html {
    background: #6d6d6d;
 }
 
+::selection {
+   color: #f1f1f1;
+   background: #111;
+}
+
 /* 
 img {
    width: 100%;

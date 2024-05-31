@@ -8,7 +8,7 @@ export const AboutSection = () => {
                Namaste🙏
             </h1>
             <p className="text-2xl font-[600] mt-8 w-2/3">
-               Hellow I'm Prem Sapkale, an curious FullStack Developer who
+               Hellow, I'm Prem Sapkale, an curious FullStack Developer who
                enjoys creating immersive experience on the internet. I develop
                exceptional websites and web apps that provide intutive,
                pixel-perfect user interfaces.
