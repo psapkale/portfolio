@@ -1,10 +1,8 @@
-import { useEffect } from "react";
-
 export const NameElement = () => {
    return (
       <div>
-         <div className="header h-screen flex items-center justify-center pointer-events-none select-none relative">
-            <div className="letters text-[#0E100F] flex text-[150px] scale-y-[3] absolute top-[32%] left-[12%] uppercase font-[880] drop-shadow-lg">
+         <div className="header h-screen flex items-center justify-center pointer-events-none select-none">
+            <div className="letters text-[#0E100F] flex text-[150px] scale-y-[3] uppercase font-[880] drop-shadow-lg">
                <div>p</div>
                <div>r</div>
                <div>e</div>

@@ -95,7 +95,7 @@ export const ProjectsMini = ({ id }) => {
       const preview = document.querySelector(".preview");
       gsap.to(preview, {
          x: e.clientX + 200,
-         y: e.clientY + 2400,
+         y: e.clientY + 2888,
          duration: 1,
          ease: "power3.out",
       });

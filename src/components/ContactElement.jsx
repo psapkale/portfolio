@@ -12,10 +12,13 @@ export const ContactElement = forwardRef((props, ref) => {
    return (
       <div
          id="contact"
-         className="h-screen bg-sky-600 px-10 text-xl font-[600] text-[#f1f1f1]"
+         className="h-[160vh] bg-sky-600 px-10 text-xl font-[600] text-[#f1f1f1]"
       >
          <div className=" h-[85%] flex items-center justify-center pointer-events-none drop-shadow-md">
-            <h1 className="text-[100px] text-[#f1f1f1] font-[1000]">
+            <h1
+               id="contact-text"
+               className="text-[100px] text-[#f1f1f1] font-[1000]"
+            >
                Grab a Coffee
             </h1>
          </div>
@@ -34,6 +37,16 @@ export const ContactElement = forwardRef((props, ref) => {
                      className="hover:text-[#f1f1f1] flex gap-10 peer-hover:opacity-50"
                   >
                      Instagram
+                  </a>
+               </GsapMagnetic>
+               <span className="group-hover:opacity-60">/</span>
+               <GsapMagnetic>
+                  <a
+                     target="_blank"
+                     href="http://github.com/psapkale"
+                     className="hover:text-[#f1f1f1] flex gap-10 peer-hover:opacity-50"
+                  >
+                     Github
                   </a>
                </GsapMagnetic>
                <span className="group-hover:opacity-60">/</span>
