@@ -1,11 +1,12 @@
+import { forwardRef } from "react";
 import { ContactElement } from "./ContactElement";
 import { ProjectCard } from "./ProjectCard";
 
-export const ProjectsElement = ({ id }) => {
+export const ProjectsElement = ({ id, socialRef, projectsRef }, ref) => {
    return (
       <div className="mt-[101px]">
          <div className="h-[90vh] grid place-content-center gap-10 text-center text-6xl">
-            <h1 className="font-[1000] scale-y-[2.2] scale-x-[0.8] uppercase">
+            <h1 className="font-[1000] scale-y-[2.2] scale-x-[0.8] uppercase drop-shadow-lg">
                Recent Projects
             </h1>
             <h2 className="text-xl text-slate-800 mt-10">
@@ -14,7 +15,7 @@ export const ProjectsElement = ({ id }) => {
             </h2>
          </div>
          {/* <div className="h-screen border border-red-500" /> */}
-         <div className="flex flex-col">
+         <div className="flex flex-col" ref={projectsRef}>
             {projects.map((project, idx) => (
                <a
                   key={project.title}
@@ -23,6 +24,7 @@ export const ProjectsElement = ({ id }) => {
                   className="z-10"
                >
                   <ProjectCard
+                     // ref={(el) => (projectsRef.current[idx] = el)}
                      projectData={project}
                      serial={idx + 1}
                      isInverted={idx % 2}
@@ -31,7 +33,7 @@ export const ProjectsElement = ({ id }) => {
                </a>
             ))}
          </div>
-         <ContactElement />
+         <ContactElement ref={socialRef} />
       </div>
    );
 };
@@ -41,14 +43,14 @@ const projects = [
       title: "Homely",
       link: "https://homely-jet.vercel.app",
       description:
-         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quibusdam est deleniti, et accusantium suscipit deserunt non eos exercitationem vitae, rerum labore quaerat nulla dolore, quisquam provident sequi. Cumque magnam doloribus tempore temporibus architecto.",
+         "Homely is an innovative web application developed using Next.js that mirrors the core functionalities of Airbnb, a leading online marketplace for lodging and tourism experiences. This meticulously crafted platform offers a spectrum of features, empowering users to seamlessly create listings, reserve accommodations, mark favorites, and engage in robust user authentication.",
       imgSrc: "/img1-1.jpg",
    },
    {
       title: "Intercord",
       link: "https://intercord.vercel.app",
       description:
-         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quibusdam est deleniti, et accusantium suscipit deserunt non eos exercitationem vitae, rerum labore quaerat nulla dolore, quisquam provident sequi. Cumque magnam doloribus tempore temporibus architecto.",
+         "Intercord is seamless examination platform which offers students an authenticated and powerful experience of exams. This platform aims to bring the power of technology at the students' desk.",
       imgSrc: "/img2-2.jpg",
    },
    {

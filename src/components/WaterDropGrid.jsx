@@ -2,7 +2,7 @@ import anime from "animejs";
 
 export const WaterDropGrid = ({ gridWidth, gridHeight }) => {
    return (
-      <div className="grid place-content-center px-8">
+      <div id="water-drop-grid" className="grid place-content-center px-8">
          <DotGrid gridWidth={gridHeight} gridHeight={gridWidth} />
       </div>
    );

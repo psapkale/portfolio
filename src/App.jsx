@@ -5,16 +5,19 @@ import { HomeElement } from "./components/HomeElement";
 import { ProjectsElement } from "./components/ProjectsElement";
 import { Appbar } from "./components/Appbar";
 import { Cursor } from "./components/Cursor";
+import { PreLoader } from "./components/PreLoader";
 
 function App() {
    const appbarRef = useRef(null);
+   const socialRef = useRef(null);
+   const projectsRef = useRef(null);
    const [showCursor, setShowCursor] = useState(true);
 
    useEffect(() => {
       const projectsMiniElement = document.getElementById(
          "projectsMiniElement"
       );
-      const projectsElement = document.querySelectorAll("#projectsElement");
+      const waterDropGridElement = document.getElementById("water-drop-grid");
 
       const observer = new IntersectionObserver(
          (entry) => {
@@ -27,23 +30,12 @@ function App() {
          }
       );
 
-      // const observer = new IntersectionObserver(
-      //    ([entry]) => {
-      //       setShowCursor(!entry.isIntersecting);
-      //    },
-      //    {
-      //       threshold: 0.5,
-      //    }
-      // );
-
       if (projectsMiniElement) {
          observer.observe(projectsMiniElement);
       }
 
-      if (projectsElement) {
-         projectsElement.forEach((project) => {
-            observer.observe(project);
-         });
+      if (waterDropGridElement) {
+         observer.observe(waterDropGridElement);
       }
 
       return () => {
@@ -51,28 +43,42 @@ function App() {
             observer.unobserve(projectsMiniElement);
          }
 
-         if (projectsElement) {
-            projectsElement.forEach((project) => {
-               observer.unobserve(project);
-            });
+         if (waterDropGridElement) {
+            observer.unobserve(waterDropGridElement);
          }
       };
    }, []);
 
    return (
       <>
-         <Cursor showCursor={showCursor} appbarRef={appbarRef} />
-         <Appbar ref={appbarRef} />
+         {/* <PreLoader /> */}
 
-         <Router>
-            <Routes>
-               <Route path="/" element={<HomeElement />} />
-               <Route
-                  path="/projects"
-                  element={<ProjectsElement id="projectsElement" />}
-               />
-            </Routes>
-         </Router>
+         <>
+            <Cursor
+               showCursor={showCursor}
+               appbarRef={appbarRef}
+               socialRef={socialRef}
+               projectsRef={projectsRef}
+            />
+            <Appbar ref={appbarRef} />
+
+            <Router>
+               <Routes>
+                  <Route path="/" element={<HomeElement ref={socialRef} />} />
+                  <Route
+                     path="/projects"
+                     element={
+                        <ProjectsElement
+                           id="projectsElement"
+                           // ref={(socialRef, projectsRef)}
+                           socialRef={socialRef}
+                           projectsRef={projectsRef}
+                        />
+                     }
+                  />
+               </Routes>
+            </Router>
+         </>
       </>
    );
 }

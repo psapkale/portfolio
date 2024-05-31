@@ -33,6 +33,13 @@ export const Appbar = forwardRef((props, ref) => {
       scroll = newScroll;
    };
 
+   function handleContact() {
+      const contact = document.getElementById("contact");
+      contact.scrollIntoView({
+         behavior: "smooth",
+      });
+   }
+
    useEffect(() => {
       window.addEventListener("scroll", handleScroll);
 
@@ -62,9 +69,12 @@ export const Appbar = forwardRef((props, ref) => {
             </GsapMagnetic>
             <GsapMagnetic>
                <div className="text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]">
-                  <a href="#contact" className="uppercase">
+                  <div
+                     onClick={handleContact}
+                     className="uppercase cursor-pointer"
+                  >
                      Contact
-                  </a>
+                  </div>
                </div>
             </GsapMagnetic>
             <GsapMagnetic>
