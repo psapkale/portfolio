@@ -8,10 +8,11 @@ export const AboutSection = () => {
                Namaste🙏
             </h1>
             <p className="text-2xl font-[600] mt-8 w-2/3">
-               Hellow, I'm Prem Sapkale, an curious FullStack Developer who
-               enjoys creating immersive experience on the internet. I develop
-               exceptional websites and web apps that provide intutive,
-               pixel-perfect user interfaces.
+               Hellow, I'm Prem Sapkale, a{" "}
+               <span className="text-slate-700 line-through">notorious</span>{" "}
+               curious FullStack Developer who enjoys creating immersive
+               experience on the internet. I develop exceptional websites and
+               web apps that provide intutive, pixel-perfect user interfaces.
             </p>
          </div>
          <div className="absolute top-auto right-0">

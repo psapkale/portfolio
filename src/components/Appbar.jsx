@@ -50,7 +50,7 @@ export const Appbar = forwardRef((props, ref) => {
 
    return (
       <nav
-         className="appbar text-[#0E100F] flex items-center font-['Mulish'] justify-between p-6 z-10 fixed top-0 left-0 w-full transition-colors duration-300"
+         className="appbar text-[#0E100F] flex items-center font-['Mulish'] justify-between p-6 z-50 fixed top-0 left-0 w-full transition-colors duration-300"
          ref={appbarRef}
       >
          <div className="text-lg font-[600] py-3 px-6 rounded-full flex">
