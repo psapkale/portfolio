@@ -3,7 +3,6 @@ import { ContactElement } from "./ContactElement";
 import { ProjectCard } from "./ProjectCard";
 
 export const ProjectsElement = ({ id, socialRef, projectsRef }, ref) => {
-   const [isEntry, setIsEntry] = useState(false);
    const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
          if (entry.isIntersecting) {

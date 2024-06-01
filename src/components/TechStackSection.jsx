@@ -1,4 +1,21 @@
+import { useEffect } from "react";
+
 export const TechStackSection = () => {
+   const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+         if (entry.isIntersecting) {
+            entry.target.classList.add("tech-show");
+         } else {
+            entry.target.classList.remove("tech-show");
+         }
+      });
+   });
+
+   useEffect(() => {
+      const techElement = document.querySelectorAll(`#techElement`);
+      techElement.forEach((el) => observer.observe(el));
+   }, []);
+
    return (
       <div className="h-[120vh] grid place-content-center gap-10 px-20 bg-black">
          <h1 className="text-center text-[#f1f1f1] text-6xl font-[1000] drop-shadow-md mb-20">
@@ -7,8 +24,9 @@ export const TechStackSection = () => {
          <div className="w-[80%] mx-auto flex gap-10 flex-wrap items-center justify-around">
             {techStack.map((stack, idx) => (
                <div
+                  id={`techElement`}
                   key={stack.title}
-                  className="px-10 py-6 rounded-xl text-lg font-bold text-[#f1f1f1] bg-[#111] z-10 transition-all duration-300 flex gap-4 items-center hover:bg-[#f1f1f1] hover:text-[#111]"
+                  className="px-10 py-6 rounded-xl text-lg font-bold text-[#f1f1f1] bg-[#111] z-10 transition-all duration-300 flex gap-4 items-center hover:bg-[#f1f1f1] hover:text-[#111] tech-hidden"
                >
                   <h1 className="pointer-events-none">{stack.title}</h1>
                   <img

@@ -85,7 +85,7 @@ const ContactText = ({ progress }) => {
 
    return (
       <motion.div
-         className="h-[85%] flex items-center justify-center pointer-events-none drop-shadow-md"
+         className="h-[85%] flex gap-6 items-center justify-center pointer-events-none drop-shadow-md"
          style={{ y }}
       >
          <h1
@@ -94,6 +94,12 @@ const ContactText = ({ progress }) => {
          >
             Let's have a Coffee
          </h1>
+         <img
+            src="/coffee-emoji.gif"
+            alt="coffee-emoji"
+            width={120}
+            height={120}
+         />
       </motion.div>
    );
 };
