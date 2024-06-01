@@ -79,7 +79,11 @@ export const Appbar = forwardRef((props, ref) => {
             </GsapMagnetic>
             <GsapMagnetic>
                <div className="text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]">
-                  <a href="#" className="uppercase">
+                  <a
+                     href="https://drive.google.com/file/d/1o7M34_D3PApT21mFHlWQ_Uw7eKlrw5lI/view?usp=sharing"
+                     target="_blank"
+                     className="uppercase"
+                  >
                      Resume
                   </a>
                </div>

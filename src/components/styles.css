@@ -40,8 +40,8 @@
 .strokeme {
    color: white;
    background-color: transparent;
-   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-      1px 1px 0 #000;
+   text-shadow: -1px -1px 0 rgb(0, 16, 74), 1px -1px 0 rgb(0, 16, 74),
+      -1px 1px 0 rgb(0, 16, 74), 1px 1px 0 rgb(0, 16, 74);
 }
 
 .custom-hidden {

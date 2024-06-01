@@ -5,14 +5,15 @@ import { ContactElement } from "./ContactElement";
 import { TechStackSection } from "./TechStackSection";
 import { forwardRef } from "react";
 import { ProjectsTag } from "./ProjectsTag";
+import ColorChangeOnScrollGsap from "./ColorChangeOnScroll";
 
 export const HomeElement = forwardRef((props, ref) => {
    return (
       <div>
          <NameElement />
-         {/* <MarqueeElement /> */}
          <AboutSection />
          <TechStackSection />
+         {/* <ColorChangeOnScrollGsap /> */}
          <ProjectsTag />
          <ProjectsMini id="projectsMiniElement" />
          <ProjectsTag invert />

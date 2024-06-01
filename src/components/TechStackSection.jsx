@@ -1,13 +1,22 @@
 export const TechStackSection = () => {
    return (
-      <div className="h-screen grid place-content-center px-20 bg-[#111]">
-         <div className="flex gap-10 flex-wrap items-center justify-around">
+      <div className="h-[120vh] grid place-content-center gap-10 px-20 bg-black">
+         <h1 className="text-center text-[#f1f1f1] text-6xl font-[1000] drop-shadow-md mb-20">
+            Skills
+         </h1>
+         <div className="w-[80%] mx-auto flex gap-10 flex-wrap items-center justify-around">
             {techStack.map((stack, idx) => (
                <div
                   key={stack.title}
-                  className="px-10 py-6 rounded-xl text-lg font-bold bg-sky-500 hover:bg-black hover:text-[#f0f0f0] z-10 transition-all duration-200"
+                  className="px-10 py-6 rounded-xl text-lg font-bold text-[#f1f1f1] bg-[#111] z-10 transition-all duration-300 flex gap-4 items-center hover:bg-[#f1f1f1] hover:text-[#111]"
                >
                   <h1 className="pointer-events-none">{stack.title}</h1>
+                  <img
+                     src={stack.img}
+                     alt={stack.title}
+                     width={40}
+                     height={40}
+                  />
                </div>
             ))}
          </div>
@@ -18,54 +27,54 @@ export const TechStackSection = () => {
 const techStack = [
    {
       title: "HTML",
-      img: "",
+      img: "/html.jpg",
    },
    {
       title: "CSS",
-      img: "",
+      img: "/css.jpg",
    },
    {
       title: "TailwindCSS",
-      img: "",
+      img: "/tailwind.svg",
    },
    {
       title: "JavaScript",
-      img: "",
+      img: "/javascript.jpg",
    },
    {
       title: "TypeScript",
-      img: "",
+      img: "/typescript.svg",
    },
    {
       title: "Java",
-      img: "",
+      img: "/java.svg",
    },
    {
       title: "React",
-      img: "",
+      img: "/react.svg",
    },
    {
       title: "Next",
-      img: "",
+      img: "/next.jpg",
    },
    {
       title: "Prisma",
-      img: "",
+      img: "/prisma.svg",
    },
    {
       title: "PostgreSQL",
-      img: "",
+      img: "/postgresql.jpg",
    },
    {
       title: "MongoDB",
-      img: "",
+      img: "/mongodb.svg",
    },
    {
       title: "NodeJs",
-      img: "",
+      img: "/nodejs.svg",
    },
    {
       title: "ExpressJs",
-      img: "",
+      img: "/expressjs.svg",
    },
 ];
