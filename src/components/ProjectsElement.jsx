@@ -1,8 +1,24 @@
-import { forwardRef } from "react";
+import { useEffect, useState } from "react";
 import { ContactElement } from "./ContactElement";
 import { ProjectCard } from "./ProjectCard";
 
 export const ProjectsElement = ({ id, socialRef, projectsRef }, ref) => {
+   const [isEntry, setIsEntry] = useState(false);
+   const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+         if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+         } else {
+            entry.target.classList.remove("show");
+         }
+      });
+   });
+
+   useEffect(() => {
+      const projectsElement = document.querySelectorAll(`#${id}`);
+      projectsElement.forEach((el) => observer.observe(el));
+   }, []);
+
    return (
       <div className="mt-[101px]">
          <div className="h-[90vh] grid place-content-center gap-10 text-center text-6xl">
@@ -14,7 +30,6 @@ export const ProjectsElement = ({ id, socialRef, projectsRef }, ref) => {
                pleasure of working on.
             </h2>
          </div>
-         {/* <div className="h-screen border border-red-500" /> */}
          <div className="flex flex-col" ref={projectsRef}>
             {projects.map((project, idx) => (
                <a

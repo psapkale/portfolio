@@ -1,7 +1,15 @@
 import { forwardRef } from "react";
 import { GsapMagnetic } from "./GSAPMagnetic";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export const ContactElement = forwardRef((props, ref) => {
+   const container = useRef();
+   const { scrollYProgress } = useScroll({
+      target: container,
+      offset: ["start end", "end start"],
+   });
+
    function handleClick() {
       window.scrollTo({
          top: 0,
@@ -11,17 +19,11 @@ export const ContactElement = forwardRef((props, ref) => {
 
    return (
       <div
+         ref={container}
          id="contact"
          className="h-[160vh] bg-sky-600 px-10 text-xl font-[600] text-[#f1f1f1]"
       >
-         <div className=" h-[85%] flex items-center justify-center pointer-events-none drop-shadow-md">
-            <h1
-               id="contact-text"
-               className="text-[100px] text-[#f1f1f1] font-[1000]"
-            >
-               Grab a Coffee
-            </h1>
-         </div>
+         <ContactText progress={scrollYProgress} />
          <div className="h-[15%] flex items-center justify-between">
             <a href="/" className="uppercase z-10">
                Prem
@@ -77,3 +79,21 @@ export const ContactElement = forwardRef((props, ref) => {
       </div>
    );
 });
+
+const ContactText = ({ progress }) => {
+   const y = useTransform(progress, [0, 1], [-200, 200]);
+
+   return (
+      <motion.div
+         className="h-[85%] flex items-center justify-center pointer-events-none drop-shadow-md"
+         style={{ y }}
+      >
+         <h1
+            id="contact-text"
+            className="text-[100px] text-[#f1f1f1] font-[1000]"
+         >
+            Let's have a Coffee
+         </h1>
+      </motion.div>
+   );
+};

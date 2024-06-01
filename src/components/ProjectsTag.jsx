@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
-export const ProjectsTag = () => {
+export const ProjectsTag = ({ invert }) => {
    const container = useRef();
    const { scrollYProgress } = useScroll({
       target: container,
@@ -13,13 +13,14 @@ export const ProjectsTag = () => {
          ref={container}
          className="h-[80vh] flex items-center justify-center"
       >
-         <Slider progress={scrollYProgress} />
+         <Slider progress={scrollYProgress} invert={invert} />
       </div>
    );
 };
 
-const Slider = ({ progress }) => {
-   const x = useTransform(progress, [0, 1], [-2500, 2500]);
+const Slider = ({ progress, invert }) => {
+   let dif = invert ? -1 : 1;
+   const x = useTransform(progress, [0, 1], [-2500 * dif, 2500 * dif]);
    const y = useTransform(progress, [0, 1], [-140, 140]);
 
    return (

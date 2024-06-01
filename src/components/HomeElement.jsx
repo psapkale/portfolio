@@ -15,6 +15,7 @@ export const HomeElement = forwardRef((props, ref) => {
          <TechStackSection />
          <ProjectsTag />
          <ProjectsMini id="projectsMiniElement" />
+         <ProjectsTag invert />
          <ContactElement ref={ref} />
       </div>
    );

@@ -49,7 +49,9 @@ export const ProjectCard = forwardRef(
             <div
                ref={ref}
                id={id}
-               className="w-full h-[90vh] flex items-center justify-between p-[80px] group"
+               className={`w-full h-[90vh] flex items-center justify-between p-[80px] group ${
+                  isInverted ? "custom-invert-hidden" : "custom-hidden"
+               }`}
             >
                {isInverted ? (
                   <>
