@@ -26,6 +26,12 @@ export const AboutSection = () => {
       observer.observe(aboutText);
       observer.observe(aboutHeading);
       observer.observe(aboutButton);
+
+      return () => {
+         observer.unobserve(aboutText);
+         observer.unobserve(aboutHeading);
+         observer.unobserve(aboutButton);
+      };
    }, []);
 
    return (

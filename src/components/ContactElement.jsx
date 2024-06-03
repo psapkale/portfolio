@@ -3,6 +3,7 @@ import { GsapMagnetic } from "./GSAPMagnetic";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ButtonComponent } from "./ButtonComponent";
+import { useEffect } from "react";
 
 export const ContactElement = forwardRef((props, ref) => {
    const container = useRef();
@@ -10,6 +11,24 @@ export const ContactElement = forwardRef((props, ref) => {
       target: container,
       offset: ["start end", "end start"],
    });
+   const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+         if (entry.isIntersecting) {
+            entry.target.classList.add("button-show");
+         } else {
+            entry.target.classList.remove("button-show");
+         }
+      });
+   });
+
+   useEffect(() => {
+      const ctaButton = document.getElementById("cta-button");
+      observer.observe(ctaButton);
+
+      return () => {
+         observer.unobserve(ctaButton);
+      };
+   }, []);
 
    function handleClick() {
       window.scrollTo({
@@ -22,10 +41,20 @@ export const ContactElement = forwardRef((props, ref) => {
       <div
          ref={container}
          id="contact"
-         className="h-[120vh] sm:h-[160vh] bg-sky-600 px-10 text-xl font-[600] text-[#f1f1f1] relative"
+         className="h-[120vh] sm:h-[160vh] bg-sky-600 px-10 text-xl font-[600] text-[#f1f1f1]"
       >
-         <ContactText progress={scrollYProgress} />
-         <div className="text-lg sm:text-xl h-[15%] flex items-center justify-between">
+         <div className="w-full h-[90%] relative">
+            <ContactText progress={scrollYProgress} />
+            <ButtonComponent
+               id="cta-button"
+               onClick={() => {}}
+               text="Drop me an Email!"
+               width={380}
+               height={78}
+               classname="absolute bottom-[28%] left-[36%]"
+            />
+         </div>
+         <div className="text-lg sm:text-xl h-[10%] flex items-center justify-between">
             <a
                href="/"
                style={{
@@ -35,9 +64,6 @@ export const ContactElement = forwardRef((props, ref) => {
             >
                Prem
             </a>
-            {/* {window.innerWidth < 600 ? (
-               <div></div>
-            ) : ( */}
             <div
                className="w-full sm:w-1/3 flex items-center justify-center group gap-6 sm:gap-10 z-10"
                ref={ref}
@@ -54,10 +80,6 @@ export const ContactElement = forwardRef((props, ref) => {
                         </a>
                      </GsapMagnetic>
                      <span className="group-hover:opacity-60">/</span>
-                     {/* </>
-               )}
-               {window.innerWidth > 600 && (
-                  <> */}
                      <GsapMagnetic>
                         <a
                            target="_blank"
@@ -68,10 +90,6 @@ export const ContactElement = forwardRef((props, ref) => {
                         </a>
                      </GsapMagnetic>
                      <span className="group-hover:opacity-60">/</span>
-                     {/* </>
-               )}
-               {window.innerWidth > 600 && (
-                  <> */}
                      <GsapMagnetic>
                         <a
                            target="_blank"
@@ -82,9 +100,6 @@ export const ContactElement = forwardRef((props, ref) => {
                         </a>
                      </GsapMagnetic>
                      <span className="group-hover:opacity-60">/</span>
-                     {/* </>
-               )}
-               {window.innerWidth > 600 && ( */}
                      <GsapMagnetic>
                         <a
                            target="_blank"
@@ -124,6 +139,9 @@ const ContactText = ({ progress }) => {
 
    return (
       <motion.div
+         whileHover={() => {
+            console.log("asd");
+         }}
          className="h-[85%] flex gap-10 flex-col items-center justify-center pointer-events-none drop-shadow-md z-10"
          style={{ y }}
       >
