@@ -78,38 +78,43 @@ export const Cursor = ({ showCursor, appbarRef, socialRef, projectsRef }) => {
       };
    }, [cursorSize]);
 
-   return showCursor && !isProjectHovered ? (
-      <motion.div
-         className={`w-[20px] h-[20px] fixed top-0 left-0 rounded-full ${
-            isHovered
-               ? "bg-[#b5b5b5] opacity-[20%]"
-               : "bg-[#b5b5b5] opacity-[30%]"
-         }`}
-         style={{
-            left: smoothMouse.x,
-            top: smoothMouse.y,
-         }}
-         animate={{
-            width: cursorSize,
-            height: cursorSize,
-         }}
-      ></motion.div>
+   return showCursor ? (
+      !isProjectHovered ? (
+         <motion.div
+            className={`w-[20px] h-[20px] fixed top-0 left-0 rounded-full bg-[#111] ${
+               isHovered ? "opacity-[10%]" : "opacity-[30%]"
+            }`}
+            style={{
+               left: smoothMouse.x,
+               top: smoothMouse.y,
+            }}
+            animate={{
+               width: cursorSize,
+               height: cursorSize,
+            }}
+         ></motion.div>
+      ) : (
+         <>
+            {/* <motion.div
+               className={`fixed top-0 left-0 rounded-full bg-[#111]`}
+               style={{
+                  left: smoothMouse.x,
+                  top: smoothMouse.y,
+               }}
+               animate={{
+                  width: cursorSize,
+                  height: cursorSize,
+               }}
+            >
+               <div className="w-full h-full rounded-full flex items-center justify-center shadow-lg uppercase">
+                  <h1 className="text-[18px] text-[#f1f1f1] font-[400]">
+                     Live
+                  </h1>
+               </div>
+            </motion.div> */}
+         </>
+      )
    ) : (
       <></>
-      // <motion.div
-      //    className={`fixed top-0 left-0 rounded-full bg-[#111]`}
-      //    style={{
-      //       left: smoothMouse.x,
-      //       top: smoothMouse.y,
-      //    }}
-      //    animate={{
-      //       width: cursorSize,
-      //       height: cursorSize,
-      //    }}
-      // >
-      //    <div className="w-full h-full rounded-full flex items-center justify-center shadow-lg uppercase">
-      //       <h1 className="text-[18px] text-[#f1f1f1] font-[400]">Live</h1>
-      //    </div>
-      // </motion.div>
    );
 };

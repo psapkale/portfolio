@@ -41,7 +41,7 @@ const Slider = ({ progress, invert }) => {
 
 const Tag = () => {
    return (
-      <h1 className="text-[120px] text-slate-900 drop-shadow-md font-[1000]">
+      <h1 className="text-[100px] sm:text-[120px] text-slate-900 drop-shadow-md font-[1000]">
          Projects
       </h1>
    );

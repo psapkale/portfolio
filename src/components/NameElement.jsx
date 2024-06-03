@@ -1,20 +1,56 @@
+import gsap from "gsap";
+import { useEffect } from "react";
+
 export const NameElement = () => {
+   const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+         if (entry.isIntersecting) {
+            entry.target.classList.add("name-show");
+         } else {
+            entry.target.classList.remove("name-show");
+         }
+      });
+   });
+
+   useEffect(() => {
+      const nameText = document.getElementById(`nameText`);
+      observer.observe(nameText);
+      // nameText.classList.add("name-show");
+      // const tl = gsap.timeline();
+      // tl.to(nameText, {
+      //    y: 0,
+      //    duration: 100,
+      //    ease: "power3.out",
+      // });
+
+      return () => {
+         // nameText.classList.remove("name-show");
+      };
+   }, []);
+
    return (
       <div>
          <div className="header h-screen flex items-center justify-center pointer-events-none select-none">
-            <div className="letters text-[#0E100F] flex text-[150px] scale-y-[3] uppercase font-[880] drop-shadow-lg">
-               <div>p</div>
-               <div>r</div>
-               <div>e</div>
-               <div>m</div>
-               <div className="mr-12" />
-               <div>s</div>
-               <div>a</div>
-               <div>p</div>
-               <div>k</div>
-               <div>a</div>
-               <div>l</div>
-               <div>e</div>
+            <div
+               id="nameText"
+               className="letters text-[#0E100F] flex flex-row text-[58px] sm:text-[150px] scale-y-[3] sm:scale-y-[2.4] uppercase font-[880] drop-shadow-lg name-hidden"
+            >
+               <div className="text-center flex">
+                  <h1>p</h1>
+                  <h1>r</h1>
+                  <h1>e</h1>
+                  <h1>m</h1>
+               </div>
+               <div className="mr-2 sm:mr-12" />
+               <div className="flex">
+                  <h1>s</h1>
+                  <h1>a</h1>
+                  <h1>p</h1>
+                  <h1>k</h1>
+                  <h1>a</h1>
+                  <h1>l</h1>
+                  <h1>e</h1>
+               </div>
             </div>
             {/* rotating text */}
             {/* <div className="text font-[20px] animation-animate">

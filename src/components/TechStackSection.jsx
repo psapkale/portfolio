@@ -18,22 +18,22 @@ export const TechStackSection = () => {
 
    return (
       <div className="h-[120vh] grid place-content-center gap-10 px-20 bg-black">
-         <h1 className="text-center text-[#f1f1f1] text-6xl font-[1000] drop-shadow-md mb-20">
+         <h1 className="text-center text-[#f1f1f1] text-6xl font-[1000] drop-shadow-md mb-2 sm:mb-20">
             Skills
          </h1>
-         <div className="w-[80%] mx-auto flex gap-10 flex-wrap items-center justify-around">
+         <div className="w-full sm:w-[80%] mx-auto flex gap-4 sm:gap-10 flex-wrap items-center justify-center">
             {techStack.map((stack, idx) => (
                <div
                   id={`techElement`}
                   key={stack.title}
-                  className="px-10 py-6 rounded-xl text-lg font-bold text-[#f1f1f1] bg-[#111] z-10 transition-all duration-300 flex gap-4 items-center hover:bg-[#f1f1f1] hover:text-[#111] tech-hidden"
+                  className="px-4 sm:px-10 py-[12px] sm:py-6 rounded-xl text-lg font-bold text-[#f1f1f1] bg-[#111] z-10 transition-all duration-300 flex gap-2 sm:gap-4 items-center hover:bg-[#f1f1f1] hover:text-[#111] tech-hidden"
                >
                   <h1 className="pointer-events-none">{stack.title}</h1>
                   <img
                      src={stack.img}
                      alt={stack.title}
-                     width={40}
-                     height={40}
+                     width={window.innerWidth < 600 ? 30 : 40}
+                     height={window.innerWidth < 600 ? 30 : 40}
                   />
                </div>
             ))}

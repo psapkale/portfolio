@@ -1,4 +1,4 @@
-import { useMotionValue, useSpring } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import { forwardRef, useEffect } from "react";
 
 export const ProjectCard = forwardRef(
@@ -8,11 +8,15 @@ export const ProjectCard = forwardRef(
       }
 
       const leftContent = (
-         <div className="w-[40%] h-full grid place-content-center relative">
+         <a
+            href={projectData.link}
+            target="_blank"
+            className="w-[40%] h-full grid place-content-center relative"
+         >
             <h1
                className={`text-6xl text-sky-500 font-bold absolute ${
                   isInverted ? "-right-6" : "-left-6"
-               } top-2 -z-10 group-hover:text-orange-500 transition-colors duration-300 drop-shadow-lg`}
+               } top-2 group-hover:text-orange-500 transition-colors duration-300 drop-shadow-lg`}
             >
                {serial}
             </h1>
@@ -31,7 +35,7 @@ export const ProjectCard = forwardRef(
             >
                {projectData.title}
             </div>
-         </div>
+         </a>
       );
 
       const rightContent = (
@@ -49,7 +53,7 @@ export const ProjectCard = forwardRef(
             <div
                ref={ref}
                id={id}
-               className={`w-full h-[90vh] flex items-center justify-between p-[80px] group ${
+               className={`w-full h-[90vh] flex items-center justify-between p-[10px] sm:p-[80px] group ${
                   isInverted ? "custom-invert-hidden" : "custom-hidden"
                }`}
             >

@@ -31,20 +31,14 @@ export const ProjectsElement = ({ id, socialRef, projectsRef }, ref) => {
          </div>
          <div className="flex flex-col" ref={projectsRef}>
             {projects.map((project, idx) => (
-               <a
+               <ProjectCard
                   key={project.title}
-                  href={project.link}
-                  target="_blank"
-                  className="z-10"
-               >
-                  <ProjectCard
-                     // ref={(el) => (projectsRef.current[idx] = el)}
-                     projectData={project}
-                     serial={idx + 1}
-                     isInverted={idx % 2}
-                     id={id}
-                  />
-               </a>
+                  // ref={(el) => (projectsRef.current[idx] = el)}
+                  projectData={project}
+                  serial={idx + 1}
+                  isInverted={idx % 2}
+                  id={id}
+               />
             ))}
          </div>
          <ContactElement ref={socialRef} />
@@ -52,7 +46,7 @@ export const ProjectsElement = ({ id, socialRef, projectsRef }, ref) => {
    );
 };
 
-const projects = [
+export const projects = [
    {
       title: "Homely",
       link: "https://homely-jet.vercel.app",

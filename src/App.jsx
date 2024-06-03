@@ -51,26 +51,34 @@ function App() {
 
    return (
       <>
-         {/* <PreLoader /> */}
-
          <>
-            <Cursor
-               showCursor={showCursor}
-               appbarRef={appbarRef}
-               socialRef={socialRef}
-               projectsRef={projectsRef}
-            />
+            {window.innerWidth > 600 && (
+               <Cursor
+                  showCursor={showCursor}
+                  appbarRef={appbarRef}
+                  socialRef={socialRef}
+                  projectsRef={projectsRef}
+               />
+            )}
             <Appbar ref={appbarRef} />
 
             <Router>
                <Routes>
-                  <Route path="/" element={<HomeElement ref={socialRef} />} />
+                  <Route
+                     path="/"
+                     element={
+                        <>
+                           {/* <PreLoader /> */}
+                           <HomeElement ref={socialRef} />
+                        </>
+                     }
+                  />
                   <Route
                      path="/projects"
                      element={
                         <ProjectsElement
                            id="projectsElement"
-                           // ref={(socialRef, projectsRef)}
+                           ref={(socialRef, projectsRef)}
                            socialRef={socialRef}
                            projectsRef={projectsRef}
                         />

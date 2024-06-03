@@ -95,7 +95,7 @@ export const ProjectsMini = ({ id }) => {
       const preview = document.querySelector(".preview");
       gsap.to(preview, {
          x: e.clientX + 200,
-         y: e.clientY + 2888,
+         y: e.clientY + 3121,
          duration: 1,
          ease: "power3.out",
       });
@@ -119,7 +119,7 @@ export const ProjectsMini = ({ id }) => {
             {menuItems.map((item, idx) => (
                <a
                   href={item.link}
-                  className="menu-item w-[100%] px-[2em] flex items-center cursor-pointer"
+                  className="menu-item w-[100%] px-[0.6em] sm:px-[2em] flex items-center cursor-pointer"
                   key={idx}
                   ref={(el) => (menuItemRef.current[idx] = el)}
                   onMouseOver={() =>
@@ -127,15 +127,15 @@ export const ProjectsMini = ({ id }) => {
                   }
                   onMouseOut={() => handleMouseOut(menuItemRef.current[idx])}
                >
-                  <div className="info relative text-[#111] overflow-hidden flex-[1] h-[14px] text-[14px]">
+                  <div className="info relative text-[#111] overflow-hidden flex-[1] h-[12px] sm:h-[14px] text-[12px] sm:text-[14px]">
                      <p>{item.info}</p>
                      <p className="text-[#111]">{item.info}</p>
                   </div>
-                  <div className="name relative text-[#111] overflow-hidden flex-[4] h-[70px] text-[60px] text-center">
+                  <div className="name relative text-[#111] overflow-hidden flex-[4] h-[30px] sm:h-[70px] text-[20px] text-nowrap sm:text-[60px] text-center">
                      <p>{item.name}</p>
                      <p className="text-[#111]">{item.name}</p>
                   </div>
-                  <div className="tag relative text-[#111] overflow-hidden flex-[1] h-[14px] text-[14px] text-right">
+                  <div className="tag relative text-[#111] overflow-hidden flex-[1] h-[12px] sm:h-[14px] text-[12px] sm:text-[14px] text-right">
                      <p>{item.tag}</p>
                      <p className="text-[#111]">{item.tag}</p>
                   </div>
