@@ -5,7 +5,7 @@ import { HomeElement } from "./components/HomeElement";
 import { ProjectsElement } from "./components/ProjectsElement";
 import { Appbar } from "./components/Appbar";
 import { Cursor } from "./components/Cursor";
-import { PreLoader } from "./components/PreLoader";
+import { Preloader } from "./components/PreLoader";
 
 function App() {
    const appbarRef = useRef(null);
@@ -68,7 +68,7 @@ function App() {
                      path="/"
                      element={
                         <>
-                           {/* <PreLoader /> */}
+                           <Preloader />
                            <HomeElement ref={socialRef} />
                         </>
                      }
