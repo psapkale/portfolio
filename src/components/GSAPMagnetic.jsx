@@ -1,10 +1,14 @@
 import gsap from "gsap";
 import React, { useRef } from "react";
 import { useEffect } from "react";
+import { useIsDesktop } from "../hooks/useIsDesktop";
 
 export const GsapMagnetic = ({ children }) => {
    const ref = useRef(null);
    const cursorRef = useRef(null);
+   const isDesktop = useIsDesktop(800);
+
+   if (!isDesktop) return children;
 
    useEffect(() => {
       const mouseMove = (e) => {

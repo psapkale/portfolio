@@ -11,7 +11,7 @@ export const ProjectsTag = ({ invert }) => {
    return (
       <div
          ref={container}
-         className="h-[80vh] flex items-center justify-center"
+         className="h-[50vh] md:h-[55vh] lg:h-[80vh] flex items-center justify-center"
       >
          <Slider progress={scrollYProgress} invert={invert} />
       </div>
@@ -35,13 +35,18 @@ const Slider = ({ progress, invert }) => {
          <Tag />
          <Tag />
          <Tag />
+         <Tag />
+         <Tag />
+         <Tag />
+         <Tag />
+         <Tag />
       </motion.div>
    );
 };
 
 const Tag = () => {
    return (
-      <h1 className="text-[100px] sm:text-[120px] text-slate-900 drop-shadow-md font-[1000]">
+      <h1 className="text-[80px] md:text-[100px] lg:text-[120px] text-slate-900 drop-shadow-md font-[1000]">
          Projects
       </h1>
    );

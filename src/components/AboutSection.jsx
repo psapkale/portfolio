@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import { WaterDropGrid } from "./WaterDropGrid";
 import { ButtonComponent } from "./ButtonComponent";
+import { useIsDesktop } from "../hooks/useIsDesktop";
 
 export const AboutSection = () => {
+   const isDesktop = useIsDesktop(800);
    const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
          if (entry.isIntersecting) {
@@ -35,17 +37,17 @@ export const AboutSection = () => {
    }, []);
 
    return (
-      <div className="h-screen flex items-center justify-center my-10 mb-40 px-28 text-left relative">
+      <div className="w-full h-screen flex items-center justify-center lg:my-10 lg:mb-40 lg:px-28 text-center lg:text-left relative">
          <div className="z-10">
             <h1
                id="aboutHeading"
-               className="w-fit text-[80px] font-[1000] text-slate-950 drop-shadow-lg about-hidden text-nowrap"
+               className="w-full lg:w-fit scale-y-[1.2] md:scale-y-[1] text-[50px] md:text-[80px] font-[1000] text-slate-950 drop-shadow-lg about-hidden text-nowrap"
             >
                Namaste🙏
             </h1>
             <p
                id="aboutText"
-               className="text-2xl font-[600] mt-2 sm:mt-8 w-full sm:w-2/3 about-hidden"
+               className="text-xl md:text-2xl px-6 lg:px-0 scale-y-[1.2] lg:scale-y-[1] font-[600] mt-10 md:mt-12 xl:mt-8 w-full lg:w-2/3 about-hidden"
             >
                Hellow, I'm Prem Sapkale, a{" "}
                <span className="text-slate-600 line-through">notorious</span>{" "}
@@ -53,13 +55,10 @@ export const AboutSection = () => {
                experience on the internet. I develop exceptional websites and
                web apps that provide intutive, pixel-perfect user interfaces.
             </p>
-
             <div id="aboutButton" className="mt-10 about-hidden">
-               <div></div>
-               <div></div>
-               <div></div>
-               <div></div>
                <ButtonComponent
+                  classname=""
+                  id="aboutButton"
                   onClick={handleClick}
                   text="More About Me"
                   width={300}
@@ -67,7 +66,7 @@ export const AboutSection = () => {
                />
             </div>
          </div>
-         {window.innerWidth > 600 && (
+         {isDesktop && (
             <div className="absolute top-0 sm:top-auto left-0 sm:left-auto bottom-0 sm:bottom-auto right-0">
                <WaterDropGrid gridWidth={28} gridHeight={56} />
             </div>

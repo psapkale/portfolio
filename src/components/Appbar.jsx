@@ -2,10 +2,12 @@ import gsap from "gsap";
 import { forwardRef, useEffect, useRef } from "react";
 import { GsapMagnetic } from "./GSAPMagnetic";
 import logo from "/logo.svg";
+import { useIsDesktop } from "../hooks/useIsDesktop";
 
 export const Appbar = forwardRef((props, ref) => {
    const appbarRef = useRef(null);
    let scroll = window.scrollY;
+   const isDesktop = useIsDesktop(800);
 
    const handleScroll = () => {
       const newScroll = window.scrollY;
@@ -67,7 +69,7 @@ export const Appbar = forwardRef((props, ref) => {
          </div>
 
          <div className="flex items-center justify-between sm:w-1/3" ref={ref}>
-            {window.innerWidth > 600 && (
+            {isDesktop && (
                <GsapMagnetic>
                   <div className="text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]">
                      <a href="/projects" className="uppercase">

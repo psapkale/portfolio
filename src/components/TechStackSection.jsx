@@ -1,6 +1,8 @@
 import { useEffect } from "react";
+import { useIsDesktop } from "../hooks/useIsDesktop";
 
 export const TechStackSection = () => {
+   const isDesktop = useIsDesktop(600);
    const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
          if (entry.isIntersecting) {
@@ -17,7 +19,7 @@ export const TechStackSection = () => {
    }, []);
 
    return (
-      <div className="h-[120vh] grid place-content-center gap-10 px-20 bg-black">
+      <div className="h-[120vh] grid place-content-center gap-6 lg:gap-10 px-2 lg:px-20 bg-black">
          <h1 className="text-center text-[#f1f1f1] text-6xl font-[1000] drop-shadow-md mb-2 sm:mb-20">
             Skills
          </h1>
@@ -32,8 +34,8 @@ export const TechStackSection = () => {
                   <img
                      src={stack.img}
                      alt={stack.title}
-                     width={window.innerWidth < 600 ? 30 : 40}
-                     height={window.innerWidth < 600 ? 30 : 40}
+                     width={!isDesktop ? 30 : 40}
+                     height={!isDesktop ? 30 : 40}
                   />
                </div>
             ))}

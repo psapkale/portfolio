@@ -95,7 +95,7 @@ export const ProjectsMini = ({ id }) => {
       const preview = document.querySelector(".preview");
       gsap.to(preview, {
          x: e.clientX + 200,
-         y: e.clientY + 3121,
+         y: e.clientY + 3800,
          duration: 1,
          ease: "power3.out",
       });
@@ -103,7 +103,7 @@ export const ProjectsMini = ({ id }) => {
 
    return (
       <div
-         className="container w-[100%] h-[100vh]"
+         className="container h-[100vh]"
          onMouseMoveCapture={handlePreviewMouseMove}
       >
          <div className="preview absolute top-0 left-0 w-[500px] h-[250px] z-10 pointer-events-none">
@@ -112,7 +112,7 @@ export const ProjectsMini = ({ id }) => {
          </div>
 
          <div
-            className="menu w-[100%] my-[20em]"
+            className="menu w-screen my-[20em]"
             onMouseOut={handlePreviewMouseOut}
             id={id}
          >

@@ -6,12 +6,14 @@ import { ProjectsElement } from "./components/ProjectsElement";
 import { Appbar } from "./components/Appbar";
 import { Cursor } from "./components/Cursor";
 import { PreLoader } from "./components/PreLoader";
+import { useIsDesktop } from "./hooks/useIsDesktop";
 
 function App() {
    const appbarRef = useRef(null);
    const socialRef = useRef(null);
    const projectsRef = useRef(null);
    const [showCursor, setShowCursor] = useState(true);
+   const isDesktop = useIsDesktop(800);
 
    useEffect(() => {
       const projectsMiniElement = document.getElementById(
@@ -52,7 +54,7 @@ function App() {
    return (
       <>
          <>
-            {window.innerWidth > 600 && (
+            {isDesktop && (
                <Cursor
                   showCursor={showCursor}
                   appbarRef={appbarRef}
