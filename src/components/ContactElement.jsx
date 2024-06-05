@@ -37,6 +37,11 @@ export const ContactElement = forwardRef((props, ref) => {
       });
    }
 
+   function mailHandler(e, mail) {
+      window.location.href = `mailto:${mail}`;
+      e.preventDefault();
+   }
+
    return (
       <div
          ref={container}
@@ -47,7 +52,7 @@ export const ContactElement = forwardRef((props, ref) => {
             <ContactText progress={scrollYProgress} />
             <ButtonComponent
                id="cta-button"
-               onClick={() => {}}
+               onClick={(e) => mailHandler(e, "prempravinsapkale@gmail.com")}
                text="Drop me an Email!"
                width={380}
                height={78}
@@ -55,15 +60,15 @@ export const ContactElement = forwardRef((props, ref) => {
             />
          </div>
          <div className="text-lg sm:text-xl h-[10%] flex items-center justify-between">
-            <a
-               href="/"
+            <div
                style={{
                   display: `${window.innerWidth < 600 ? "none" : "block"}`,
                }}
-               className="uppercase z-10"
+               className="sm:w-[10%] flex items-center justify-center uppercase z-10"
             >
-               Prem
-            </a>
+               <p className="inline">N 19° 51' 1.288''</p>
+               <p className="inline ml-2">E 75° 19' 0.053''</p>
+            </div>
             <div
                className="w-full sm:w-1/3 flex items-center justify-center group gap-6 sm:gap-10 z-10"
                ref={ref}

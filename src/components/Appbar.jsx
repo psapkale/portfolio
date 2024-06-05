@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { forwardRef, useEffect, useRef } from "react";
 import { GsapMagnetic } from "./GSAPMagnetic";
+import logo from "/logo.svg";
 
 export const Appbar = forwardRef((props, ref) => {
    const appbarRef = useRef(null);
@@ -55,7 +56,13 @@ export const Appbar = forwardRef((props, ref) => {
       >
          <div className="text-lg font-[600] py-3 px-4 sm:px-6 rounded-full flex">
             <a href="/" className="uppercase">
-               Prem
+               <img
+                  src={logo}
+                  alt="Prem Sapkale"
+                  width={40}
+                  height={40}
+                  className="hover:fill-white"
+               />
             </a>
          </div>
 

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const ButtonComponent = ({
    onClick,
    text,
@@ -7,7 +9,8 @@ export const ButtonComponent = ({
    id,
 }) => {
    return (
-      <button
+      <Link
+         to="#"
          id={id}
          onClick={onClick}
          style={{
@@ -20,6 +23,6 @@ export const ButtonComponent = ({
          <div className="pl-6 transition-all duration-[0.4s] group-hover:pl-0 group-hover:text-[#f1f1f1] group-hover:z-10 uppercase text-nowrap drop-shadow-md group-hover:drop-shadow-sm">
             {text}
          </div>
-      </button>
+      </Link>
    );
 };

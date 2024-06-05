@@ -103,12 +103,12 @@
 .button-hidden {
    opacity: 0;
    transition: all 800ms;
-   transform: translateY(-40%);
+   /* transform: translateY(-40%); */
 }
 
 .button-show {
    opacity: 1;
    filter: blur(0);
    transition: all 0.6s;
-   transform: translateY(0);
+   /* transform: translateY(0); */
 }
