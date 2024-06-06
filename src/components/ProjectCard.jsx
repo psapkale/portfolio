@@ -19,8 +19,8 @@ export const ProjectCard = forwardRef(
                className={`text-6xl text-sky-500 font-bold absolute ${
                   isDesktop
                      ? isInverted
-                        ? "top-24 -right-6"
-                        : "top-24 -left-6"
+                        ? "top-4 -right-6"
+                        : "top-4 -left-6"
                      : "-top-10 md:top-0 -left-6"
                } group-hover:text-orange-500 transition-colors duration-300 lg:custom-text group-hover:custom-text-unset drop-shadow-lg -z-10`}
             >
@@ -38,8 +38,8 @@ export const ProjectCard = forwardRef(
                className={`text-[50px] text-nowrap md:text-[60px] scale-y-110 scale-x-110 text-sky-500 font-bold absolute ${
                   isDesktop
                      ? isInverted
-                        ? "bottom-[180px] -left-10"
-                        : "bottom-[180px] -right-10"
+                        ? "bottom-[100px] -left-10"
+                        : "bottom-[100px] -right-10"
                      : "bottom-[50px] right-0 md:bottom-[120px] md:right-10"
                } group-hover:text-orange-500 transition-colors duration-200 ease-in-out font-extrabold lg:custom-text group-hover:custom-text-unset drop-shadow-lg`}
             >

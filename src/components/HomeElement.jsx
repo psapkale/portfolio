@@ -10,7 +10,7 @@ import { useIsDesktop } from "../hooks/useIsDesktop";
 import { ProjectsSection } from "./ProjectsSection";
 import { projects } from "./ProjectsElement";
 
-export const HomeElement = forwardRef(({ socialRef, projectsRef }, ref) => {
+const HomeElement = forwardRef(({ socialRef, projectsRef }, ref) => {
    const id = "projectsElement";
    const isDesktop = useIsDesktop(800);
    const observer = new IntersectionObserver((entries) => {
@@ -49,3 +49,5 @@ export const HomeElement = forwardRef(({ socialRef, projectsRef }, ref) => {
       </div>
    );
 });
+
+export default HomeElement;

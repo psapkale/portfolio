@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ContactElement } from "./ContactElement";
 import { ProjectsSection } from "./ProjectsSection";
 
-export const ProjectsElement = ({ id, socialRef, projectsRef }, ref) => {
+const ProjectsElement = ({ id, socialRef, projectsRef }, ref) => {
    const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
          if (entry.isIntersecting) {
@@ -34,6 +34,8 @@ export const ProjectsElement = ({ id, socialRef, projectsRef }, ref) => {
       </div>
    );
 };
+
+export default ProjectsElement;
 
 export const projects = [
    {

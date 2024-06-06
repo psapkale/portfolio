@@ -1,14 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { HomeElement } from "./components/HomeElement";
-import { ProjectsElement } from "./components/ProjectsElement";
+import { Routes, Route, useLocation } from "react-router-dom";
+import HomeElement from "./components/HomeElement";
+import ProjectsElement from "./components/ProjectsElement";
 import { Appbar } from "./components/Appbar";
 import { Cursor } from "./components/Cursor";
-import { PreLoader } from "./components/PreLoader";
 import { useIsDesktop } from "./hooks/useIsDesktop";
+import { AnimatePresence } from "framer-motion";
+import transition from "./animations/transition";
+
+const TransitionedHomeElement = transition(HomeElement);
+const TransitionedProjectsElement = transition(ProjectsElement);
 
 function App() {
+   const location = useLocation();
    const appbarRef = useRef(null);
    const socialRef = useRef(null);
    const projectsRef = useRef(null);
@@ -64,26 +69,23 @@ function App() {
             )}
             <Appbar ref={appbarRef} />
 
-            <Router>
-               <Routes>
+            <AnimatePresence mode="wait">
+               <Routes location={location} key={location.pathname}>
                   <Route
-                     path="/"
+                     index
                      element={
-                        <>
-                           <PreLoader />
-                           <HomeElement
-                              ref={(socialRef, projectsRef)}
-                              socialRef={socialRef}
-                              projectsRef={projectsRef}
-                           />
-                        </>
+                        <TransitionedHomeElement
+                           ref={(socialRef, projectsRef)}
+                           socialRef={socialRef}
+                           projectsRef={projectsRef}
+                        />
                      }
                   />
                   {isDesktop ? (
                      <Route
                         path="/projects"
                         element={
-                           <ProjectsElement
+                           <TransitionedProjectsElement
                               id="projectsElement"
                               ref={(socialRef, projectsRef)}
                               socialRef={socialRef}
@@ -95,7 +97,7 @@ function App() {
                      <></>
                   )}
                </Routes>
-            </Router>
+            </AnimatePresence>
          </>
       </>
    );
