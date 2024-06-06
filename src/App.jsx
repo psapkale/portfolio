@@ -71,21 +71,29 @@ function App() {
                      element={
                         <>
                            <PreLoader />
-                           <HomeElement ref={socialRef} />
+                           <HomeElement
+                              ref={(socialRef, projectsRef)}
+                              socialRef={socialRef}
+                              projectsRef={projectsRef}
+                           />
                         </>
                      }
                   />
-                  <Route
-                     path="/projects"
-                     element={
-                        <ProjectsElement
-                           id="projectsElement"
-                           ref={(socialRef, projectsRef)}
-                           socialRef={socialRef}
-                           projectsRef={projectsRef}
-                        />
-                     }
-                  />
+                  {isDesktop ? (
+                     <Route
+                        path="/projects"
+                        element={
+                           <ProjectsElement
+                              id="projectsElement"
+                              ref={(socialRef, projectsRef)}
+                              socialRef={socialRef}
+                              projectsRef={projectsRef}
+                           />
+                        }
+                     />
+                  ) : (
+                     <></>
+                  )}
                </Routes>
             </Router>
          </>

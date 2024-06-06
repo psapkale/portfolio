@@ -47,7 +47,7 @@ export const AboutSection = () => {
             </h1>
             <p
                id="aboutText"
-               className="text-xl md:text-2xl px-6 lg:px-0 scale-y-[1.2] lg:scale-y-[1] font-[600] mt-10 md:mt-12 xl:mt-8 w-full lg:w-2/3 about-hidden"
+               className="text-xl md:text-2xl px-6 lg:px-0 scale-y-[1.2] lg:scale-y-[1] font-[600] mt-16 md:mt-12 xl:mt-8 w-full lg:w-2/3 about-hidden"
             >
                Hellow, I'm Prem Sapkale, a{" "}
                <span className="text-slate-600 line-through">notorious</span>{" "}

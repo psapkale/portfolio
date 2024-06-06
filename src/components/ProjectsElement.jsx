@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ContactElement } from "./ContactElement";
-import { ProjectCard } from "./ProjectCard";
+import { ProjectsSection } from "./ProjectsSection";
 
 export const ProjectsElement = ({ id, socialRef, projectsRef }, ref) => {
    const observer = new IntersectionObserver((entries) => {
@@ -29,18 +29,7 @@ export const ProjectsElement = ({ id, socialRef, projectsRef }, ref) => {
                pleasure of working on.
             </h2>
          </div>
-         <div className="flex flex-col" ref={projectsRef}>
-            {projects.map((project, idx) => (
-               <ProjectCard
-                  key={project.title}
-                  // ref={(el) => (projectsRef.current[idx] = el)}
-                  projectData={project}
-                  serial={idx + 1}
-                  isInverted={idx % 2}
-                  id={id}
-               />
-            ))}
-         </div>
+         <ProjectsSection projects={projects} id={id} ref={projectsRef} />
          <ContactElement ref={socialRef} />
       </div>
    );

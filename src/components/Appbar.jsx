@@ -61,8 +61,8 @@ export const Appbar = forwardRef((props, ref) => {
                <img
                   src={logo}
                   alt="Prem Sapkale"
-                  width={40}
-                  height={40}
+                  width={!isDesktop ? 24 : 40}
+                  height={!isDesktop ? 24 : 40}
                   className="hover:fill-white"
                />
             </a>
@@ -79,7 +79,7 @@ export const Appbar = forwardRef((props, ref) => {
                </GsapMagnetic>
             )}
             <GsapMagnetic>
-               <div className="text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]">
+               <div className="text-[16px] lg:text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]">
                   <div
                      onClick={handleContact}
                      className="uppercase cursor-pointer"
@@ -89,7 +89,7 @@ export const Appbar = forwardRef((props, ref) => {
                </div>
             </GsapMagnetic>
             <GsapMagnetic>
-               <div className="text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]">
+               <div className="text-[16px] lg:text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]">
                   <a
                      href="https://drive.google.com/file/d/1o7M34_D3PApT21mFHlWQ_Uw7eKlrw5lI/view?usp=sharing"
                      target="_blank"

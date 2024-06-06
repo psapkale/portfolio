@@ -3,15 +3,30 @@ import { NameElement } from "./NameElement";
 import { AboutSection } from "./AboutSection";
 import { ContactElement } from "./ContactElement";
 import { TechStackSection } from "./TechStackSection";
-import { forwardRef } from "react";
+import { forwardRef, useEffect } from "react";
 import { ProjectsTag } from "./ProjectsTag";
 import ColorChangeOnScrollGsap from "./ColorChangeOnScroll";
-import { useRef } from "react";
 import { useIsDesktop } from "../hooks/useIsDesktop";
+import { ProjectsSection } from "./ProjectsSection";
+import { projects } from "./ProjectsElement";
 
-export const HomeElement = forwardRef((props, ref) => {
-   const projectsRef = useRef();
+export const HomeElement = forwardRef(({ socialRef, projectsRef }, ref) => {
+   const id = "projectsElement";
    const isDesktop = useIsDesktop(800);
+   const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+         if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+         } else {
+            entry.target.classList.remove("show");
+         }
+      });
+   });
+
+   useEffect(() => {
+      const projectsElement = document.querySelectorAll(`#${id}`);
+      projectsElement.forEach((el) => observer.observe(el));
+   }, []);
 
    return (
       <div>
@@ -21,30 +36,16 @@ export const HomeElement = forwardRef((props, ref) => {
          {/* <ColorChangeOnScrollGsap /> */}
          <ProjectsTag />
          {!isDesktop ? (
-            // projects.map((project, idx) => (
-            //    <a
-            //       key={project.title}
-            //       href={project.link}
-            //       target="_blank"
-            //       className="z-10"
-            //    >
-            //       <ProjectCard
-            //          projectData={project}
-            //          serial={idx + 1}
-            //          isInverted={idx % 2}
-            //          id="projectsElement"
-            //          ref={projectsRef}
-            //       />
-            //    </a>
-            // ))
-            <>asd</>
+            <>
+               <ProjectsSection projects={projects} id={id} ref={projectsRef} />
+            </>
          ) : (
             <>
                <ProjectsMini id="projectsMiniElement" />
             </>
          )}
          <ProjectsTag invert />
-         <ContactElement ref={ref} />
+         <ContactElement ref={socialRef} />
       </div>
    );
 });

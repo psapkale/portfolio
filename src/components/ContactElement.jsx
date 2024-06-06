@@ -69,7 +69,7 @@ export const ContactElement = forwardRef((props, ref) => {
                </div>
             )}
             <div
-               className="w-full lg:w-1/3 flex items-center justify-center group gap-6 sm:gap-10 z-10"
+               className="w-full lg:w-1/3 flex items-center justify-center group gap-10 z-10"
                ref={ref}
             >
                {isDesktop ? (
@@ -121,28 +121,48 @@ export const ContactElement = forwardRef((props, ref) => {
                         href="https://github.com/psapkale"
                         className=""
                      >
-                        git
+                        <img
+                           src="/github.jpg"
+                           alt="github.com/psapkale"
+                           width={28}
+                           height={28}
+                        />
                      </a>
                      <a
                         target="_blank"
                         href="https://twitter.com/premstw"
                         className=""
                      >
-                        twi
+                        <img
+                           src="/x.jpg"
+                           alt="twitter.com/premstw"
+                           width={28}
+                           height={28}
+                        />
                      </a>
                      <a
                         target="_blank"
                         href="https://www.linkedin.com/in/premsapkale"
                         className=""
                      >
-                        lin
+                        <img
+                           src="/linkedin.svg"
+                           alt="linkedin.com/in/premsapkale"
+                           width={28}
+                           height={28}
+                        />
                      </a>
                      <a
                         target="_blank"
                         href="https://www.instagram.com/prem__thxi"
                         className=""
                      >
-                        ins
+                        <img
+                           src="/instagram.jpg"
+                           alt="instagram.com/prem__thxi"
+                           width={28}
+                           height={28}
+                        />
                      </a>
                   </>
                )}

@@ -1,8 +1,10 @@
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { forwardRef, useEffect } from "react";
+import { useIsDesktop } from "../hooks/useIsDesktop";
 
 export const ProjectCard = forwardRef(
    ({ projectData, serial, isInverted, id }, ref) => {
+      const isDesktop = useIsDesktop(800);
       if (serial < 10) {
          serial = "0" + serial;
       }
@@ -11,12 +13,16 @@ export const ProjectCard = forwardRef(
          <a
             href={projectData.link}
             target="_blank"
-            className="w-[40%] h-full grid place-content-center relative"
+            className="w-[90%] md:w-full lg:w-[40%] h-full grid place-content-center relative"
          >
             <h1
                className={`text-6xl text-sky-500 font-bold absolute ${
-                  isInverted ? "-right-6" : "-left-6"
-               } top-2 group-hover:text-orange-500 transition-colors duration-300 drop-shadow-lg`}
+                  isDesktop
+                     ? isInverted
+                        ? "top-24 -right-6"
+                        : "top-24 -left-6"
+                     : "-top-10 md:top-0 -left-6"
+               } group-hover:text-orange-500 transition-colors duration-300 lg:custom-text group-hover:custom-text-unset drop-shadow-lg -z-10`}
             >
                {serial}
             </h1>
@@ -24,14 +30,18 @@ export const ProjectCard = forwardRef(
                <img
                   src={projectData.imgSrc}
                   alt={projectData.title}
-                  className="w-[600px] h-[300px] object-cover rounded-3xl shadow-lg group-hover:shadow-2xl transition-shadow duration-400"
+                  className="w-[700px] h-[360px] md:w-[600px] md:h-[300px] object-cover rounded-3xl shadow-lg group-hover:shadow-2xl transition-shadow duration-400"
                />
                <div className="fadeBottom h-[5rem] relative bottom-[80px] right-0 rounded-b-3xl" />
             </div>
             <div
-               className={`text-[60px] scale-y-110 scale-x-110 text-sky-500 font-bold absolute ${
-                  isInverted ? "-left-10" : "-right-10"
-               } bottom-[90px] group-hover:text-orange-500 transition-colors duration-200 ease-in-out font-extrabold custom-text group-hover:custom-text-unset drop-shadow-lg`}
+               className={`text-[50px] text-nowrap md:text-[60px] scale-y-110 scale-x-110 text-sky-500 font-bold absolute ${
+                  isDesktop
+                     ? isInverted
+                        ? "bottom-[180px] -left-10"
+                        : "bottom-[180px] -right-10"
+                     : "bottom-[50px] right-0 md:bottom-[120px] md:right-10"
+               } group-hover:text-orange-500 transition-colors duration-200 ease-in-out font-extrabold lg:custom-text group-hover:custom-text-unset drop-shadow-lg`}
             >
                {projectData.title}
             </div>
@@ -40,9 +50,13 @@ export const ProjectCard = forwardRef(
 
       const rightContent = (
          <div
-            className={`w-[60%] h-full grid place-content-center px-[100px] ${
-               isInverted ? "text-left" : "text-right"
-            } text-xl text-[#111]`}
+            className={`w-full lg:w-[60%] lg:h-full grid place-content-center px-[12px] lg:px-[100px] ${
+               isDesktop
+                  ? isInverted
+                     ? "text-left"
+                     : "text-right"
+                  : "text-center"
+            } text-2xl lg:text-xl text-[#111]`}
          >
             {projectData.description}
          </div>
@@ -53,15 +67,30 @@ export const ProjectCard = forwardRef(
             <div
                ref={ref}
                id={id}
-               className={`w-full h-[90vh] flex items-center justify-between p-[10px] sm:p-[80px] group ${
-                  isInverted ? "custom-invert-hidden" : "custom-hidden"
+               className={`w-full h-[90vh] flex ${
+                  isDesktop ? "flex-row" : "flex-col"
+               } items-center justify-between p-[10px] sm:p-[80px] group ${
+                  !isDesktop
+                     ? !isInverted
+                        ? "custom-hidden"
+                        : "custom-hidden"
+                     : isInverted
+                     ? "custom-invert-desktop-hidden"
+                     : "custom-desktop-hidden"
                }`}
             >
-               {isInverted ? (
-                  <>
-                     {rightContent}
-                     {leftContent}
-                  </>
+               {isDesktop ? (
+                  isInverted ? (
+                     <>
+                        {rightContent}
+                        {leftContent}
+                     </>
+                  ) : (
+                     <>
+                        {leftContent}
+                        {rightContent}
+                     </>
+                  )
                ) : (
                   <>
                      {leftContent}
