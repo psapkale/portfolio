@@ -68,16 +68,21 @@ export const Appbar = forwardRef((props, ref) => {
             </a>
          </div>
 
-         <div className="flex items-center justify-between sm:w-1/3" ref={ref}>
-            {isDesktop && (
-               <GsapMagnetic>
-                  <div className="text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]">
-                     <a href="/projects" className="uppercase">
-                        Projects
-                     </a>
-                  </div>
-               </GsapMagnetic>
-            )}
+         <div
+            className="flex items-center justify-between sm:w-1/3 md:w-fit"
+            ref={ref}
+         >
+            <GsapMagnetic>
+               <div
+                  className={`text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000] ${
+                     isDesktop ? "inline" : "hidden"
+                  }`}
+               >
+                  <a href="/projects" className="uppercase">
+                     Projects
+                  </a>
+               </div>
+            </GsapMagnetic>
             <GsapMagnetic>
                <div className="text-[16px] lg:text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]">
                   <div

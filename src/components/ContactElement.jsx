@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ButtonComponent } from "./ButtonComponent";
 import { useEffect } from "react";
+import logoWhite from "/logo-white.svg";
 import { useIsDesktop } from "../hooks/useIsDesktop";
 
 export const ContactElement = forwardRef((props, ref) => {
@@ -58,14 +59,21 @@ export const ContactElement = forwardRef((props, ref) => {
                text="Drop me an Email!"
                width={!isDesktop ? 300 : 380}
                height={!isDesktop ? 70 : 78}
-               classname="absolute bottom-[28%] left-auto md:bottom-[30%] md:left-[30%] lg:bottom-[28%] lg:left-[36%]"
+               classname="absolute bottom-[28%] left-auto xs:left-[10%] md:bottom-[30%] md:left-[30%] lg:bottom-[28%] lg:left-[36%]"
             />
          </div>
          <div className="text-lg sm:text-xl h-[10%] flex items-center justify-between">
             {isDesktop && (
                <div className="sm:w-[10%] flex items-center justify-center uppercase z-10">
-                  <p className="inline">N 19° 51' 1.288''</p>
-                  <p className="inline ml-2">E 75° 19' 0.053''</p>
+                  {/* <p className="inline">N 19° 51' 1.288''</p>
+                  <p className="inline ml-2">E 75° 19' 0.053''</p> */}
+                  <img
+                     src={logoWhite}
+                     alt="Prem Sapkale"
+                     width={30}
+                     height={30}
+                     className="fill-white"
+                  />
                </div>
             )}
             <div
@@ -169,7 +177,7 @@ export const ContactElement = forwardRef((props, ref) => {
             </div>
             {isDesktop && (
                <div
-                  className="sm:text-lg cursor-pointer z-10"
+                  className="sm:text-lg text-nowrap cursor-pointer z-10"
                   onClick={handleClick}
                >
                   Back in time
@@ -191,7 +199,7 @@ const ContactText = ({ progress, isDesktop }) => {
          <motion.div className="flex flex-col sm:flex-row gap-6 items-center">
             <motion.h1
                id="contact-text"
-               className="text-[40px] md:text-[58px] text-nowrap lg:text-[100px] text-[#f1f1f1] scale-y-[1.6] lg:scale-y-[1] font-[1000]"
+               className="text-[38px] xs:text-[40px] md:text-[58px] text-nowrap lg:text-[100px] text-[#f1f1f1] scale-y-[1.6] lg:scale-y-[1] font-[1000]"
             >
                Let's have a Coffee
             </motion.h1>

@@ -33,7 +33,7 @@ export const NameElement = () => {
          <div className="header h-screen flex items-center justify-center pointer-events-none select-none">
             <div
                id="nameText"
-               className="letters text-[#0E100F] flex flex-row text-[40px] sm:text-[60px] md:text-[80px] lg:text-[150px] scale-y-[3] sm:scale-y-[2.4] uppercase font-[880] drop-shadow-lg name-hidden"
+               className="letters text-[#0E100F] flex flex-row text-[40px] sm:text-[60px] md:text-[88px] lg:text-[120px] xl:text-[150px] scale-y-[4] scale-x-[1.14] xs:scale-x-[1.18] sm:scale-y-[2.4] sm:scale-x-[1] uppercase font-[880] drop-shadow-lg name-hidden"
             >
                <div className="text-center flex">
                   <h1>p</h1>

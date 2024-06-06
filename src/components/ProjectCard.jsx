@@ -19,9 +19,9 @@ export const ProjectCard = forwardRef(
                className={`text-6xl text-sky-500 font-bold absolute ${
                   isDesktop
                      ? isInverted
-                        ? "top-4 -right-6"
-                        : "top-4 -left-6"
-                     : "-top-10 md:top-0 -left-6"
+                        ? "top-4 md:top-20 -right-6"
+                        : "top-4 md:top-20 -left-6"
+                     : "-top-10 sm:top-26 md:top-6 -left-6"
                } group-hover:text-orange-500 transition-colors duration-300 lg:custom-text group-hover:custom-text-unset drop-shadow-lg -z-10`}
             >
                {serial}
