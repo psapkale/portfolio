@@ -46,18 +46,17 @@ export const Cursor = ({ showCursor, appbarRef, socialRef, projectsRef }) => {
       socialRef.current.addEventListener("mouseover", manageMouseOver);
       socialRef.current.addEventListener("mouseleave", manageMouseLeave);
 
-      if (projectsRef.current) {
-         projectsRef.current.addEventListener(
-            "mouseover",
-            manageProjectMouseOver
-         );
-         projectsRef.current.addEventListener(
-            "mouseleave",
-            manageProjectMouseLeave
-         );
-      }
+      // if (projectsRef.current) {
+      //    projectsRef.current.addEventListener(
+      //       "mouseover",
+      //       manageProjectMouseOver
+      //    );
+      //    projectsRef.current.addEventListener(
+      //       "mouseleave",
+      //       manageProjectMouseLeave
+      //    );
+      // }
       return () => {
-         // window.removeEventListener("mousemove", manageMouseMove);
          document.removeEventListener("mousemove", manageMouseMove);
          appbarRef.current.removeEventListener("mouseover", manageMouseOver);
          appbarRef.current.removeEventListener("mouseleave", manageMouseLeave);
@@ -65,23 +64,23 @@ export const Cursor = ({ showCursor, appbarRef, socialRef, projectsRef }) => {
          socialRef.current.removeEventListener("mouseover", manageMouseOver);
          socialRef.current.removeEventListener("mouseleave", manageMouseLeave);
 
-         if (projectsRef.current) {
-            projectsRef.current.removeEventListener(
-               "mouseover",
-               manageProjectMouseOver
-            );
-            projectsRef.current.removeEventListener(
-               "mouseleave",
-               manageProjectMouseLeave
-            );
-         }
+         // if (projectsRef.current) {
+         //    projectsRef.current.removeEventListener(
+         //       "mouseover",
+         //       manageProjectMouseOver
+         //    );
+         //    projectsRef.current.removeEventListener(
+         //       "mouseleave",
+         //       manageProjectMouseLeave
+         //    );
+         // }
       };
    }, [cursorSize]);
 
    return showCursor ? (
       !isProjectHovered ? (
          <motion.div
-            className={`w-[20px] h-[20px] fixed top-0 left-0 rounded-full bg-[#111] ${
+            className={`hidden md:block w-[20px] h-[20px] fixed top-0 left-0 rounded-full bg-[#111] ${
                isHovered ? "opacity-[10%]" : "opacity-[30%]"
             }`}
             style={{

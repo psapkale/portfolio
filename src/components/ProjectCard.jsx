@@ -19,9 +19,11 @@ export const ProjectCard = forwardRef(
                className={`text-6xl text-sky-500 font-bold absolute ${
                   isDesktop
                      ? isInverted
-                        ? "top-4 md:top-20 -right-6"
-                        : "top-4 md:top-20 -left-6"
-                     : "-top-10 sm:top-26 md:top-6 -left-6"
+                        ? "top-4 md:top-20 -right-6 lg:top-4 xl:top-4 2xl:top-4"
+                        : "top-4 md:top-20 -left-6 lg:top-4 xl:top-4 2xl:top-4"
+                     : isInverted
+                     ? "-top-10 xs:-top-6 sm:top-26 md:top-20 -left-6"
+                     : "-top-10 xs:-top-6 sm:top-26 md:top-6 -left-6"
                } group-hover:text-orange-500 transition-colors duration-300 lg:custom-text group-hover:custom-text-unset drop-shadow-lg -z-10`}
             >
                {serial}
@@ -38,9 +40,11 @@ export const ProjectCard = forwardRef(
                className={`text-[50px] text-nowrap md:text-[60px] scale-y-110 scale-x-110 text-sky-500 font-bold absolute ${
                   isDesktop
                      ? isInverted
-                        ? "bottom-[100px] -left-10"
-                        : "bottom-[100px] -right-10"
-                     : "bottom-[50px] right-0 md:bottom-[120px] md:right-10"
+                        ? "bottom-[100px] -left-10 lg:bottom-20 xl:bottom-20 2xl:bottom-20"
+                        : "bottom-[100px] -right-10 lg:bottom-20 xl:bottom-20 2xl:bottom-20"
+                     : isInverted
+                     ? "bottom-[50px] right-0 xs:bottom-10 md:bottom-40 md:right-8"
+                     : "bottom-[50px] right-0 xs:bottom-10 xs:right-0 md:bottom-28 md:right-0"
                } group-hover:text-orange-500 transition-colors duration-200 ease-in-out font-extrabold lg:custom-text group-hover:custom-text-unset drop-shadow-lg`}
             >
                {projectData.title}
@@ -50,7 +54,7 @@ export const ProjectCard = forwardRef(
 
       const rightContent = (
          <div
-            className={`w-full lg:w-[60%] lg:h-full grid place-content-center px-[12px] lg:px-[100px] ${
+            className={`w-full lg:w-[60%] h-fit lg:h-full grid place-content-center px-[12px] lg:px-[100px] ${
                isDesktop
                   ? isInverted
                      ? "text-left"
@@ -67,7 +71,7 @@ export const ProjectCard = forwardRef(
             <div
                ref={ref}
                id={id}
-               className={`w-full h-[90vh] flex ${
+               className={`w-full h-fit lg:h-[90vh] flex ${
                   isDesktop ? "flex-row" : "flex-col"
                } items-center justify-between p-[10px] sm:p-[80px] group ${
                   !isDesktop
@@ -105,7 +109,7 @@ export const ProjectCard = forwardRef(
 );
 
 const styledCursor = function () {
-   const cursorSize = isHovered ? 60 : 20;
+   const cursorSize = 100;
    const mouse = {
       x: useMotionValue(0),
       y: useMotionValue(0),
@@ -122,7 +126,9 @@ const styledCursor = function () {
       mouse.y.set(clientY - cursorSize / 2);
    };
 
-   useEffect(() => {});
+   useEffect(() => {
+      document.addEventListener("mousemove", manageMouseMove);
+   });
 
    return (
       <motion.div

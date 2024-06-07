@@ -74,9 +74,7 @@ export const Appbar = forwardRef((props, ref) => {
          >
             <GsapMagnetic>
                <div
-                  className={`text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000] ${
-                     isDesktop ? "inline" : "hidden"
-                  }`}
+                  className={`hidden lg:inline text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]`}
                >
                   <a href="/projects" className="uppercase">
                      Projects

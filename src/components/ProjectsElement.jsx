@@ -46,6 +46,13 @@ export const projects = [
       imgSrc: "/img1-1.jpg",
    },
    {
+      title: "Conception",
+      link: "https://theconception.vercel.app",
+      description:
+         "Conception, a visionary platform inspired by Notion's brilliance, brings organization and productivity to the forefront. Built with Next.js prowess, it mirrors its predecessor's essence flawlessly. From crafting scalable code to optimizing client-side performance, Conception ensures a seamless user experience.",
+      imgSrc: "/img4-4.jpg",
+   },
+   {
       title: "Intercord",
       link: "https://intercord.vercel.app",
       description:
@@ -56,7 +63,7 @@ export const projects = [
       title: "Hunger Bites",
       link: "https://hunger-bites.vercel.app",
       description:
-         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quibusdam est deleniti, et accusantium suscipit deserunt non eos exercitationem vitae, rerum labore quaerat nulla dolore, quisquam provident sequi. Cumque magnam doloribus tempore temporibus architecto.",
+         "Hunger Bites, a dynamic platform inspired by the success of Swiggy, brings convenience and flavor to your fingertips. Built with cutting-edge technology React.js, Hunger Bites offers a delightful experience akin to its predecessor. From browsing a diverse array of restaurants to swift and awesome cart feature, Hunger Bites ensures that your cravings are met with efficiency and satisfaction.This innovative clone mirrors Swiggy's essence, making it your go-to destination for culinary adventures.",
       imgSrc: "/img3-3.jpg",
    },
 ];

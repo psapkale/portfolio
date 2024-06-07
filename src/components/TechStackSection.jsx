@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useIsDesktop } from "../hooks/useIsDesktop";
-
 export const TechStackSection = () => {
    const isDesktop = useIsDesktop(600);
    const observer = new IntersectionObserver((entries) => {

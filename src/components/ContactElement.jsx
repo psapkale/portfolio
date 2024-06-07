@@ -51,22 +51,21 @@ export const ContactElement = forwardRef((props, ref) => {
          id="contact"
          className="h-[120vh] lg:h-[160vh] bg-sky-600 px-10 text-xl font-[600] text-[#f1f1f1]"
       >
-         <div className="w-full h-[90%] relative">
+         <div className="w-full h-[90%] flex flex-col items-center justify-center">
             <ContactText progress={scrollYProgress} isDesktop={isDesktop} />
+            <div className="h-[12%]" />
             <ButtonComponent
                id="cta-button"
                onClick={(e) => mailHandler(e, "prempravinsapkale@gmail.com")}
                text="Drop me an Email!"
                width={!isDesktop ? 300 : 380}
                height={!isDesktop ? 70 : 78}
-               classname="absolute bottom-[28%] left-auto xs:left-[10%] md:bottom-[30%] md:left-[30%] lg:bottom-[28%] lg:left-[36%]"
+               // classname="absolute translate-x-[50%] translate-y-[50%] bottom-[28%] left-auto xs:left-[10%] sm:left-[12%] md:left-[12%] md:bottom-[30%] lg:bottom-[28%] lg:left-[36%]"
             />
          </div>
          <div className="text-lg sm:text-xl h-[10%] flex items-center justify-between">
             {isDesktop && (
                <div className="sm:w-[10%] flex items-center justify-center uppercase z-10">
-                  {/* <p className="inline">N 19° 51' 1.288''</p>
-                  <p className="inline ml-2">E 75° 19' 0.053''</p> */}
                   <img
                      src={logoWhite}
                      alt="Prem Sapkale"
@@ -193,7 +192,7 @@ const ContactText = ({ progress, isDesktop }) => {
 
    return (
       <motion.div
-         className="h-[85%] flex gap-10 flex-col items-center justify-center pointer-events-none drop-shadow-md z-10"
+         className="h-[85%] h-fit flex gap-10 flex-col items-center justify-center pointer-events-none drop-shadow-md z-10"
          style={{ y }}
       >
          <motion.div className="flex flex-col sm:flex-row gap-6 items-center">

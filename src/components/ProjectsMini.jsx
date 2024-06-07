@@ -1,12 +1,18 @@
 import gsap from "gsap";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useState } from "react";
 import "./styles.css";
 
 export const ProjectsMini = ({ id }) => {
    const menuItemRef = useRef([]);
+   const scrollHeight = document.documentElement.scrollHeight;
 
-   const [imageSources] = useState(["img1-1.jpg", "img2-2.jpg", "img3-3.jpg"]);
+   const [imageSources] = useState([
+      "img1-1.jpg",
+      "img4-4.jpg",
+      "img2-2.jpg",
+      "img3-3.jpg",
+   ]);
 
    const appendImages = (src) => {
       const preview1 = document.querySelector(".preview-img-1");
@@ -95,7 +101,7 @@ export const ProjectsMini = ({ id }) => {
       const preview = document.querySelector(".preview");
       gsap.to(preview, {
          x: e.clientX + 200,
-         y: e.clientY + 3800,
+         y: e.clientY + scrollHeight - 2800,
          duration: 1,
          ease: "power3.out",
       });
@@ -152,6 +158,12 @@ const menuItems = [
       name: "Immersive Booking Experience",
       tag: "Elegance",
       link: "http://localhost:5173/projects#homely",
+   },
+   {
+      info: "Conception",
+      name: "Productivity at peak",
+      tag: "Beauty",
+      link: "http://localhost:5173/projects#conception",
    },
    {
       info: "Intercord",

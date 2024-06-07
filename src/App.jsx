@@ -8,6 +8,7 @@ import { Cursor } from "./components/Cursor";
 import { useIsDesktop } from "./hooks/useIsDesktop";
 import { AnimatePresence } from "framer-motion";
 import transition from "./animations/transition";
+import { Preloader } from "./components/Preloader";
 
 const TransitionedHomeElement = transition(HomeElement);
 const TransitionedProjectsElement = transition(ProjectsElement);
@@ -19,6 +20,7 @@ function App() {
    const projectsRef = useRef(null);
    const [showCursor, setShowCursor] = useState(true);
    const isDesktop = useIsDesktop(800);
+   const [isLoading, setIsLoading] = useState(true);
 
    useEffect(() => {
       const projectsMiniElement = document.getElementById(
@@ -44,6 +46,11 @@ function App() {
       if (waterDropGridElement) {
          observer.observe(waterDropGridElement);
       }
+
+      setTimeout(() => {
+         setIsLoading(false);
+         window.scrollTo(0, 0);
+      }, 2000);
 
       return () => {
          if (projectsMiniElement) {
@@ -74,14 +81,19 @@ function App() {
                   <Route
                      index
                      element={
-                        <TransitionedHomeElement
-                           ref={(socialRef, projectsRef)}
-                           socialRef={socialRef}
-                           projectsRef={projectsRef}
-                        />
+                        <>
+                           <AnimatePresence mode="wait">
+                              {isLoading && <Preloader />}
+                           </AnimatePresence>
+                           <HomeElement
+                              ref={(socialRef, projectsRef)}
+                              socialRef={socialRef}
+                              projectsRef={projectsRef}
+                           />
+                        </>
                      }
                   />
-                  {isDesktop ? (
+                  {isDesktop && (
                      <Route
                         path="/projects"
                         element={
@@ -93,8 +105,6 @@ function App() {
                            />
                         }
                      />
-                  ) : (
-                     <></>
                   )}
                </Routes>
             </AnimatePresence>

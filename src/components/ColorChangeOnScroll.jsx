@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Scrollbar from "smooth-scrollbar";
+import { AboutSection } from "./AboutSection";
+import { TechStackSection } from "./TechStackSection";
 
 const poppins = {
    weight: "400",
@@ -73,10 +75,10 @@ function ColorChangeOnScrollGsap() {
       <div className="techContainer h-screen w-full flex flex-col overflow-auto">
          <section
             className="min-h-screen w-screen relative flex items-center justify-center px-32"
-            data-bgcolor="#070707"
-            data-textcolor="#ffffff"
+            data-bgcolor="#f1f1f1"
+            data-textcolor="#111111"
          >
-            <div className="w-full  text-[9vw] leading-[1.1] tracking-tighter ">
+            {/* <div className="w-full  text-[9vw] leading-[1.1] tracking-tighter ">
                <span className={`${poppins.className} text-left`}>
                   Scroll To Change
                </span>
@@ -86,14 +88,15 @@ function ColorChangeOnScrollGsap() {
                   </span>{" "}
                   <span className={`${poppins.className} mx-8`}> Color </span>
                </div>
-            </div>
+            </div> */}
+            <AboutSection />
          </section>
          <section
             className="min-h-screen w-screen relative flex items-center justify-center px-32"
-            data-bgcolor="#3b2525"
-            data-textcolor="#d0b6c0"
+            data-bgcolor="#111111"
+            data-textcolor="#f1f1f1"
          >
-            <div className="w-full flex items-center justify-around">
+            {/* <div className="w-full flex items-center justify-around">
                <div className="w-96 text-5xl">
                   In nature, nothing is{" "}
                   <span className={`${damion.className} text-green`}>
@@ -109,9 +112,10 @@ function ColorChangeOnScrollGsap() {
                      className="rounded-3xl"
                   />
                </div>
-            </div>
+            </div> */}
+            <TechStackSection />
          </section>
-         <section
+         {/* <section
             className="min-h-screen w-screen relative flex items-center justify-center px-32"
             data-bgcolor="#3b3825"
             data-textcolor="#c2c1b3"
@@ -162,7 +166,7 @@ function ColorChangeOnScrollGsap() {
             <div className="w-full  text-[9vw] leading-[1.1] tracking-tighter ">
                <span className={`${poppins.className}`}>End Of Scroll</span>
             </div>
-         </section>
+         </section> */}
       </div>
    );
 }
