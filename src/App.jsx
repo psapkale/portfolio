@@ -47,10 +47,11 @@ function App() {
          observer.observe(waterDropGridElement);
       }
 
-      setTimeout(() => {
-         setIsLoading(false);
-         window.scrollTo(0, 0);
-      }, 2440);
+      location.pathname === "/" &&
+         setTimeout(() => {
+            setIsLoading(false);
+            window.scrollTo(0, 0);
+         }, 2440);
 
       return () => {
          if (projectsMiniElement) {

@@ -13,38 +13,35 @@ export const ProjectCard = forwardRef(
          <a
             href={projectData.link}
             target="_blank"
-            className="w-[90%] md:w-full lg:w-[40%] h-full grid place-content-center relative"
+            className="w-[90%] md:w-full lg:w-[40%] h-fit flex flex-col relative"
          >
             <h1
-               className={`text-6xl text-sky-500 font-bold absolute ${
+               className={`text-6xl text-sky-500 font-bold flex items-center ${
                   isDesktop
                      ? isInverted
-                        ? "top-4 md:top-20 -right-6 lg:top-4 xl:top-4 2xl:top-4"
-                        : "top-4 md:top-20 -left-6 lg:top-4 xl:top-4 2xl:top-4"
-                     : isInverted
-                     ? "-top-10 xs:-top-6 sm:top-26 md:top-20 -left-6"
-                     : "-top-10 xs:-top-6 sm:top-26 md:top-6 -left-6"
+                        ? "justify-end"
+                        : "justify-start"
+                     : "justify-start"
                } group-hover:text-orange-500 transition-colors duration-300 lg:custom-text group-hover:custom-text-unset drop-shadow-lg -z-10`}
             >
                {serial}
             </h1>
-            <div className="rounded-lg">
+            <div className="h-[240px] lg:h-[230px]" />
+            <div className="w-full h-[300px] rounded-lg absolute top-auto left-auto right-auto bottom-auto translate-y-[14%]">
                <img
                   src={projectData.imgSrc}
                   alt={projectData.title}
-                  className="w-[700px] h-[360px] md:w-[600px] md:h-[300px] object-cover rounded-3xl shadow-lg group-hover:shadow-2xl transition-shadow duration-400"
+                  className="w-full h-full object-cover rounded-3xl shadow-lg group-hover:shadow-2xl transition-shadow duration-400"
                />
                <div className="fadeBottom h-[5rem] relative bottom-[80px] right-0 rounded-b-3xl" />
             </div>
             <div
-               className={`text-[50px] text-nowrap md:text-[60px] scale-y-110 scale-x-110 text-sky-500 font-bold absolute ${
+               className={`text-[50px] text-nowrap md:text-[60px] scale-y-110 scale-x-110 text-sky-500 font-bold flex items-center ${
                   isDesktop
                      ? isInverted
-                        ? "bottom-[100px] -left-10 lg:bottom-20 xl:bottom-20 2xl:bottom-20"
-                        : "bottom-[100px] -right-10 lg:bottom-20 xl:bottom-20 2xl:bottom-20"
-                     : isInverted
-                     ? "bottom-[50px] right-0 xs:bottom-10 md:bottom-40 md:right-8"
-                     : "bottom-[50px] right-0 xs:bottom-10 xs:right-0 md:bottom-28 md:right-0"
+                        ? "justify-start"
+                        : "justify-end"
+                     : "justify-end"
                } group-hover:text-orange-500 transition-colors duration-200 ease-in-out font-extrabold lg:custom-text group-hover:custom-text-unset drop-shadow-lg`}
             >
                {projectData.title}
