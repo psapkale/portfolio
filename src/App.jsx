@@ -8,7 +8,7 @@ import { Cursor } from "./components/Cursor";
 import { useIsDesktop } from "./hooks/useIsDesktop";
 import { AnimatePresence } from "framer-motion";
 import transition from "./animations/transition";
-import { Preloader } from "./components/Preloader";
+import { Preloader } from "./components/PreLoader";
 import PageTitle from "./components/PageTitle";
 
 const TransitionedHomeElement = transition(HomeElement);
