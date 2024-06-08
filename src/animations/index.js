@@ -13,7 +13,7 @@ export const preLoaderAnim = () => {
    })
       .to(".landing", {
          duration: 0.05,
-         css: { overflowY: "hidden", height: "90vh" },
+         css: { overflowY: "hidden", height: "90dvh" },
       })
       .to(".texts-container", {
          duration: 0,
@@ -55,7 +55,7 @@ export const preLoaderAnim = () => {
          ".preloader",
          {
             duration: 1.5,
-            height: "0vh",
+            height: "0dvh",
             ease: "Power3.easeOut",
             onComplete: mobileLanding(),
          },

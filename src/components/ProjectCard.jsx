@@ -68,7 +68,7 @@ export const ProjectCard = forwardRef(
             <div
                ref={ref}
                id={id}
-               className={`w-full h-fit lg:h-[90vh] flex ${
+               className={`w-full h-fit lg:h-[90dvh] flex ${
                   isDesktop ? "flex-row" : "flex-col"
                } items-center justify-between p-[10px] sm:p-[80px] group ${
                   !isDesktop
@@ -99,7 +99,7 @@ export const ProjectCard = forwardRef(
                   </>
                )}
             </div>
-            {/* <hr className="w-[80vw] mx-auto" /> */}
+            {/* <hr className="w-[80dvw] mx-auto" /> */}
          </>
       );
    }
@@ -124,7 +124,7 @@ const styledCursor = function () {
    };
 
    useEffect(() => {
-      document.addEventListener("mousemove", manageMouseMove);
+      document?.addEventListener("mousemove", manageMouseMove);
    });
 
    return (

@@ -1,9 +1,7 @@
-import { forwardRef } from "react";
+import { forwardRef, useRef, useEffect } from "react";
 import { GsapMagnetic } from "./GSAPMagnetic";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
 import { ButtonComponent } from "./ButtonComponent";
-import { useEffect } from "react";
 import logoWhite from "/logo-white.svg";
 import { useIsDesktop } from "../hooks/useIsDesktop";
 
@@ -14,22 +12,27 @@ export const ContactElement = forwardRef((props, ref) => {
       offset: ["start end", "end start"],
    });
    const isDesktop = useIsDesktop(800);
-   const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-         if (entry.isIntersecting) {
-            entry.target.classList.add("button-show");
-         } else {
-            entry.target.classList.remove("button-show");
-         }
-      });
-   });
 
    useEffect(() => {
+      const observer = new IntersectionObserver((entries) => {
+         entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+               entry.target.classList.add("button-show");
+            } else {
+               entry.target.classList.remove("button-show");
+            }
+         });
+      });
+
       const ctaButton = document.getElementById("cta-button");
-      observer.observe(ctaButton);
+      if (ctaButton) {
+         observer.observe(ctaButton);
+      }
 
       return () => {
-         observer.unobserve(ctaButton);
+         if (ctaButton) {
+            observer.unobserve(ctaButton);
+         }
       };
    }, []);
 
@@ -49,7 +52,7 @@ export const ContactElement = forwardRef((props, ref) => {
       <div
          ref={container}
          id="contact"
-         className="h-[120vh] lg:h-[160vh] bg-sky-600 px-10 text-xl font-[600] text-[#f1f1f1]"
+         className="h-[120dvh] lg:h-[160dvh] bg-sky-600 px-0 xs:px-10 text-xl font-[600] text-[#f1f1f1]"
       >
          <div className="w-full h-[90%] flex flex-col items-center justify-center">
             <ContactText progress={scrollYProgress} isDesktop={isDesktop} />
@@ -192,7 +195,7 @@ const ContactText = ({ progress, isDesktop }) => {
 
    return (
       <motion.div
-         className="h-[85%] h-fit flex gap-10 flex-col items-center justify-center pointer-events-none drop-shadow-md z-10"
+         className="h-fit flex gap-10 flex-col items-center justify-center pointer-events-none drop-shadow-md z-10"
          style={{ y }}
       >
          <motion.div className="flex flex-col sm:flex-row gap-6 items-center">

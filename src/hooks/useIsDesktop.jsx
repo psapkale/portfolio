@@ -6,9 +6,9 @@ export const useIsDesktop = (breakpoint = 600) => {
    useEffect(() => {
       const handleResize = () => setIsDesktop(window.innerWidth > breakpoint);
 
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-   }, [breakpoint]);
+      window?.addEventListener("resize", handleResize);
+      return () => window?.removeEventListener("resize", handleResize);
+   }, [breakpoint, isDesktop]);
 
    return isDesktop;
 };

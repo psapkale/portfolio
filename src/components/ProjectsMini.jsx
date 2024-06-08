@@ -1,11 +1,12 @@
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./styles.css";
 
 export const ProjectsMini = ({ id }) => {
    const menuItemRef = useRef([]);
-   const scrollHeight = document.documentElement.scrollHeight;
+   const preview1Ref = useRef(null);
+   const preview2Ref = useRef(null);
+   const previewRef = useRef(null);
 
    const [imageSources] = useState([
       "img1-1.jpg",
@@ -15,8 +16,7 @@ export const ProjectsMini = ({ id }) => {
    ]);
 
    const appendImages = (src) => {
-      const preview1 = document.querySelector(".preview-img-1");
-      const preview2 = document.querySelector(".preview-img-2");
+      if (!preview1Ref.current || !preview2Ref.current) return;
 
       const img1 = document.createElement("img");
       const img2 = document.createElement("img");
@@ -26,46 +26,40 @@ export const ProjectsMini = ({ id }) => {
       img2.src = src;
       img2.style.clipPath = "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)";
 
-      preview1.appendChild(img1);
-      preview2.appendChild(img2);
+      preview1Ref.current.appendChild(img1);
+      preview2Ref.current.appendChild(img2);
 
       gsap.to([img1, img2], {
          clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
          duration: 1,
          ease: "power3.out",
-         onComplete: function () {
-            removeExtraImages(preview1);
-            removeExtraImages(preview2);
+         onComplete: () => {
+            removeExtraImages(preview1Ref.current);
+            removeExtraImages(preview2Ref.current);
          },
       });
    };
 
-   // TODO implement image optimization
-   function removeImages() {
-      const preview1 = document.querySelector(".preview-img-1");
-      const preview2 = document.querySelector(".preview-img-2");
-
-      const img1 = document.querySelector(".preview-img-1 > img");
-      const img2 = document.querySelector(".preview-img-2 > img");
-
-      preview1.removeChild(img1);
-      preview2.removeChild(img2);
-   }
-
-   function removeExtraImages(container) {
+   const removeExtraImages = (container) => {
       while (container.children.length > 10) {
          container.removeChild(container.firstChild);
       }
-   }
+   };
 
-   function handleMouseOver(item, index) {
-      mouseOverAnimation(item);
-      appendImages(imageSources[index]);
-   }
+   const handleMouseOver = (index) => {
+      const item = menuItemRef.current[index];
+      if (item) {
+         mouseOverAnimation(item);
+         appendImages(imageSources[index]);
+      }
+   };
 
-   function handleMouseOut(item) {
-      mouseOutAnimation(item);
-   }
+   const handleMouseOut = (index) => {
+      const item = menuItemRef.current[index];
+      if (item) {
+         mouseOutAnimation(item);
+      }
+   };
 
    const mouseOverAnimation = (elem) => {
       gsap.to(elem.querySelectorAll("p:nth-child(1)"), {
@@ -89,32 +83,41 @@ export const ProjectsMini = ({ id }) => {
       });
    };
 
-   function handlePreviewMouseOut() {
+   const handlePreviewMouseOut = () => {
       gsap.to(".preview-img img", {
          clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
          duration: 1,
          ease: "power3.out",
       });
-   }
+   };
 
-   function handlePreviewMouseMove(e) {
-      const preview = document.querySelector(".preview");
-      gsap.to(preview, {
+   const handlePreviewMouseMove = (e) => {
+      if (!previewRef.current) return;
+      gsap.to(previewRef.current, {
          x: e.clientX + 200,
-         y: e.clientY + scrollHeight - 2800,
+         y: e.clientY + document.documentElement.scrollHeight - 2800,
          duration: 1,
          ease: "power3.out",
       });
-   }
+   };
 
    return (
       <div
-         className="container h-[100vh]"
+         className="container h-[100dvh]"
          onMouseMoveCapture={handlePreviewMouseMove}
       >
-         <div className="preview absolute top-0 left-0 w-[500px] h-[250px] z-10 pointer-events-none">
-            <div className="preview-img absolute w-[100%] h-[100%] preview-img-1"></div>
-            <div className="preview-img absolute w-[100%] h-[100%] preview-img-2 top-[20px] left-[20px]"></div>
+         <div
+            className="preview absolute top-0 left-0 w-[500px] h-[250px] z-10 pointer-events-none"
+            ref={previewRef}
+         >
+            <div
+               className="preview-img absolute w-[100%] h-[100%] preview-img-1"
+               ref={preview1Ref}
+            ></div>
+            <div
+               className="preview-img absolute w-[100%] h-[100%] preview-img-2 top-[20px] left-[20px]"
+               ref={preview2Ref}
+            ></div>
          </div>
 
          <div
@@ -128,10 +131,8 @@ export const ProjectsMini = ({ id }) => {
                   className="menu-item w-[100%] px-[0.6em] sm:px-[2em] flex items-center cursor-pointer"
                   key={idx}
                   ref={(el) => (menuItemRef.current[idx] = el)}
-                  onMouseOver={() =>
-                     handleMouseOver(menuItemRef.current[idx], idx)
-                  }
-                  onMouseOut={() => handleMouseOut(menuItemRef.current[idx])}
+                  onMouseOver={() => handleMouseOver(idx)}
+                  onMouseOut={() => handleMouseOut(idx)}
                >
                   <div className="info relative text-[#111] overflow-hidden flex-[1] h-[12px] sm:h-[14px] text-[12px] sm:text-[14px]">
                      <p>{item.info}</p>

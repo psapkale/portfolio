@@ -2,27 +2,32 @@ import { useEffect } from "react";
 import { useIsDesktop } from "../hooks/useIsDesktop";
 export const TechStackSection = () => {
    const isDesktop = useIsDesktop(600);
-   const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-         if (entry.isIntersecting) {
-            entry.target.classList.add("tech-show");
-         } else {
-            entry.target.classList.remove("tech-show");
-         }
-      });
-   });
 
    useEffect(() => {
+      const observer = new IntersectionObserver((entries) => {
+         entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+               entry.target.classList.add("tech-show");
+            } else {
+               entry.target.classList.remove("tech-show");
+            }
+         });
+      });
+
       const techElement = document.querySelectorAll(`#techElement`);
       techElement.forEach((el) => observer.observe(el));
+
+      return () => {
+         techElement.forEach((el) => observer.unobserve(el));
+      };
    }, []);
 
    return (
-      <div className="h-[120vh] grid place-content-center gap-6 lg:gap-10 px-2 lg:px-20 bg-black">
+      <div className="h-fit grid place-content-center gap-6 lg:gap-10 px-2 lg:px-20 py-20 bg-black">
          <h1 className="text-center text-[#f1f1f1] text-6xl font-[1000] drop-shadow-md mb-2 sm:mb-20">
             Skills
          </h1>
-         <div className="w-full sm:w-[80%] mx-auto flex gap-4 sm:gap-10 flex-wrap items-center justify-center">
+         <div className="w-full sm:w-[80%] mx-auto flex gap-4 sm:gap-6 md:gap-10 flex-wrap items-center justify-center">
             {techStack.map((stack, idx) => (
                <div
                   id={`techElement`}

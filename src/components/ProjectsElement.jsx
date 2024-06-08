@@ -3,24 +3,32 @@ import { ContactElement } from "./ContactElement";
 import { ProjectsSection } from "./ProjectsSection";
 
 const ProjectsElement = ({ id, socialRef, projectsRef }, ref) => {
-   const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-         if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-         } else {
-            entry.target.classList.remove("show");
-         }
-      });
-   });
+   const observer = useRef(null);
 
    useEffect(() => {
+      observer.current = new IntersectionObserver((entries) => {
+         entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+               entry.target.classList.add("show");
+            } else {
+               entry.target.classList.remove("show");
+            }
+         });
+      });
+
       const projectsElement = document.querySelectorAll(`#${id}`);
-      projectsElement.forEach((el) => observer.observe(el));
-   }, []);
+      projectsElement.forEach((el) => observer.current.observe(el));
+
+      return () => {
+         if (observer.current) {
+            observer.current.disconnect();
+         }
+      };
+   }, [id]);
 
    return (
       <div className="mt-[101px]">
-         <div className="h-[90vh] grid place-content-center gap-10 text-center text-6xl">
+         <div className="h-[90dvh] grid place-content-center gap-10 text-center text-6xl">
             <h1 className="font-[1000] scale-y-[2.2] scale-x-[0.8] uppercase drop-shadow-lg">
                Recent Projects
             </h1>

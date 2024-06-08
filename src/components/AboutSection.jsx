@@ -5,36 +5,38 @@ import { useIsDesktop } from "../hooks/useIsDesktop";
 
 export const AboutSection = () => {
    const isDesktop = useIsDesktop(800);
-   const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-         if (entry.isIntersecting) {
-            entry.target.classList.add("about-show");
-         } else {
-            entry.target.classList.remove("about-show");
-         }
+
+   useEffect(() => {
+      const observer = new IntersectionObserver((entries) => {
+         entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+               entry.target.classList.add("about-show");
+            } else {
+               entry.target.classList.remove("about-show");
+            }
+         });
       });
-   });
+
+      const aboutText = document.getElementById(`aboutText`);
+      const aboutHeading = document.getElementById(`aboutHeading`);
+      const aboutButton = document.getElementById(`aboutButton`);
+
+      if (aboutText) observer.observe(aboutText);
+      if (aboutHeading) observer.observe(aboutHeading);
+      if (aboutButton) observer.observe(aboutButton);
+
+      return () => {
+         if (aboutText) observer.unobserve(aboutText);
+         if (aboutHeading) observer.unobserve(aboutHeading);
+         if (aboutButton) observer.unobserve(aboutButton);
+      };
+   }, []);
 
    function handleClick() {
       document.getElementById("contact").scrollIntoView({
          behavior: "smooth",
       });
    }
-
-   useEffect(() => {
-      const aboutText = document.getElementById(`aboutText`);
-      const aboutHeading = document.getElementById(`aboutHeading`);
-      const aboutButton = document.getElementById(`aboutButton`);
-      observer.observe(aboutText);
-      observer.observe(aboutHeading);
-      observer.observe(aboutButton);
-
-      return () => {
-         observer.unobserve(aboutText);
-         observer.unobserve(aboutHeading);
-         observer.unobserve(aboutButton);
-      };
-   }, []);
 
    return (
       <div className="w-full h-screen flex items-center justify-center lg:my-10 lg:mb-40 lg:px-28 text-center lg:text-left relative">

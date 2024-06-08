@@ -8,9 +8,9 @@ export const GsapMagnetic = ({ children }) => {
    const cursorRef = useRef(null);
    const isDesktop = useIsDesktop(800);
 
-   if (!isDesktop) return children;
-
    useEffect(() => {
+      if (!isDesktop) return;
+
       const mouseMove = (e) => {
          const { clientX, clientY } = e;
          const { width, height, left, top } =
@@ -28,14 +28,16 @@ export const GsapMagnetic = ({ children }) => {
          gsap.to(ref.current, { y: 0 });
       };
 
-      ref.current.addEventListener("mousemove", mouseMove);
-      ref.current.addEventListener("mouseleave", mouseLeave);
+      ref.current?.addEventListener("mousemove", mouseMove);
+      ref.current?.addEventListener("mouseleave", mouseLeave);
 
       return () => {
-         ref.current.removeEventListener("mousemove", mouseMove);
-         ref.current.removeEventListener("mouseleave", mouseLeave);
+         ref.current?.removeEventListener("mousemove", mouseMove);
+         ref.current?.removeEventListener("mouseleave", mouseLeave);
       };
-   }, []);
+   }, [isDesktop]);
+
+   if (!isDesktop) return children;
 
    return React.cloneElement(children, { ref });
 };

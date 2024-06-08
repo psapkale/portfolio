@@ -13,20 +13,25 @@ import { projects } from "./ProjectsElement";
 const HomeElement = forwardRef(({ socialRef, projectsRef }, ref) => {
    const id = "projectsElement";
    const isDesktop = useIsDesktop(800);
-   const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-         if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-         } else {
-            entry.target.classList.remove("show");
-         }
-      });
-   });
 
    useEffect(() => {
+      const observer = new IntersectionObserver((entries) => {
+         entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+               entry.target.classList.add("show");
+            } else {
+               entry.target.classList.remove("show");
+            }
+         });
+      });
+
       const projectsElement = document.querySelectorAll(`#${id}`);
       projectsElement.forEach((el) => observer.observe(el));
-   }, []);
+
+      return () => {
+         projectsElement.forEach((el) => observer.unobserve(el));
+      };
+   }, [id]);
 
    return (
       <div>

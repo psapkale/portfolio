@@ -50,8 +50,8 @@ function App() {
 
       location.pathname === "/" &&
          setTimeout(() => {
-            setIsLoading(false);
             window.scrollTo(0, 0);
+            setIsLoading(false);
          }, 2440);
 
       return () => {
@@ -63,32 +63,46 @@ function App() {
             observer.unobserve(waterDropGridElement);
          }
       };
-   }, []);
+   }, [location.pathname]);
 
    return (
       <>
-         <>
-            {isDesktop && (
-               <Cursor
-                  showCursor={showCursor}
-                  appbarRef={appbarRef}
-                  socialRef={socialRef}
-                  projectsRef={projectsRef}
-               />
-            )}
-            <Appbar ref={appbarRef} />
+         {isDesktop && (
+            <Cursor
+               showCursor={showCursor}
+               appbarRef={appbarRef}
+               socialRef={socialRef}
+               projectsRef={projectsRef}
+            />
+         )}
+         <Appbar ref={appbarRef} />
 
-            <AnimatePresence mode="wait">
-               <Routes location={location} key={location.pathname}>
+         <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+               <Route
+                  index
+                  element={
+                     <>
+                        <AnimatePresence mode="wait">
+                           {isLoading && <Preloader />}
+                        </AnimatePresence>
+                        <PageTitle title="Portfolio | Prem Sapkale" />
+                        <HomeElement
+                           ref={(socialRef, projectsRef)}
+                           socialRef={socialRef}
+                           projectsRef={projectsRef}
+                        />
+                     </>
+                  }
+               />
+               {isDesktop && (
                   <Route
-                     index
+                     path="/projects"
                      element={
                         <>
-                           <AnimatePresence mode="wait">
-                              {isLoading && <Preloader />}
-                           </AnimatePresence>
-                           <PageTitle title="Portfolio | Prem Sapkale" />
-                           <HomeElement
+                           <PageTitle title="Projects | Prem Sapkale" />
+                           <TransitionedProjectsElement
+                              id="projectsElement"
                               ref={(socialRef, projectsRef)}
                               socialRef={socialRef}
                               projectsRef={projectsRef}
@@ -96,25 +110,9 @@ function App() {
                         </>
                      }
                   />
-                  {isDesktop && (
-                     <Route
-                        path="/projects"
-                        element={
-                           <>
-                              <PageTitle title="Projects | Prem Sapkale" />
-                              <TransitionedProjectsElement
-                                 id="projectsElement"
-                                 ref={(socialRef, projectsRef)}
-                                 socialRef={socialRef}
-                                 projectsRef={projectsRef}
-                              />
-                           </>
-                        }
-                     />
-                  )}
-               </Routes>
-            </AnimatePresence>
-         </>
+               )}
+            </Routes>
+         </AnimatePresence>
       </>
    );
 }

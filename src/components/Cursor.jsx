@@ -39,12 +39,12 @@ export const Cursor = ({ showCursor, appbarRef, socialRef, projectsRef }) => {
 
    useEffect(() => {
       // window.addEventListener("mousemove", manageMouseMove);
-      document.addEventListener("mousemove", manageMouseMove);
-      appbarRef.current.addEventListener("mouseover", manageMouseOver);
-      appbarRef.current.addEventListener("mouseleave", manageMouseLeave);
+      document?.addEventListener("mousemove", manageMouseMove);
+      appbarRef.current?.addEventListener("mouseover", manageMouseOver);
+      appbarRef.current?.addEventListener("mouseleave", manageMouseLeave);
 
-      socialRef.current.addEventListener("mouseover", manageMouseOver);
-      socialRef.current.addEventListener("mouseleave", manageMouseLeave);
+      socialRef.current?.addEventListener("mouseover", manageMouseOver);
+      socialRef.current?.addEventListener("mouseleave", manageMouseLeave);
 
       // if (projectsRef.current) {
       //    projectsRef.current.addEventListener(
@@ -57,12 +57,12 @@ export const Cursor = ({ showCursor, appbarRef, socialRef, projectsRef }) => {
       //    );
       // }
       return () => {
-         document.removeEventListener("mousemove", manageMouseMove);
-         appbarRef.current.removeEventListener("mouseover", manageMouseOver);
-         appbarRef.current.removeEventListener("mouseleave", manageMouseLeave);
+         document?.removeEventListener("mousemove", manageMouseMove);
+         appbarRef.current?.removeEventListener("mouseover", manageMouseOver);
+         appbarRef.current?.removeEventListener("mouseleave", manageMouseLeave);
 
-         socialRef.current.removeEventListener("mouseover", manageMouseOver);
-         socialRef.current.removeEventListener("mouseleave", manageMouseLeave);
+         socialRef.current?.removeEventListener("mouseover", manageMouseOver);
+         socialRef.current?.removeEventListener("mouseleave", manageMouseLeave);
 
          // if (projectsRef.current) {
          //    projectsRef.current.removeEventListener(
@@ -75,7 +75,7 @@ export const Cursor = ({ showCursor, appbarRef, socialRef, projectsRef }) => {
          //    );
          // }
       };
-   }, [cursorSize]);
+   }, [appbarRef, socialRef, projectsRef, cursorSize]);
 
    return showCursor ? (
       !isProjectHovered ? (

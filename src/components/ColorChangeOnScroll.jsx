@@ -78,7 +78,7 @@ function ColorChangeOnScrollGsap() {
             data-bgcolor="#f1f1f1"
             data-textcolor="#111111"
          >
-            {/* <div className="w-full  text-[9vw] leading-[1.1] tracking-tighter ">
+            {/* <div className="w-full  text-[9dvw] leading-[1.1] tracking-tighter ">
                <span className={`${poppins.className} text-left`}>
                   Scroll To Change
                </span>
@@ -163,7 +163,7 @@ function ColorChangeOnScrollGsap() {
             data-bgcolor="#582e1a"
             data-textcolor="#ffffff"
          >
-            <div className="w-full  text-[9vw] leading-[1.1] tracking-tighter ">
+            <div className="w-full  text-[9dvw] leading-[1.1] tracking-tighter ">
                <span className={`${poppins.className}`}>End Of Scroll</span>
             </div>
          </section> */}
