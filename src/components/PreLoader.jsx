@@ -3,15 +3,25 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { opacity, slideUp } from "../animations/anim.js";
 
+// const words = [
+//    "Hello",
+//    "Bonjour",
+//    "Ciao",
+//    "Olà",
+//    "やあ",
+//    "Hallå",
+//    "Guten tag",
+//    "Hallo",
+// ];
 const words = [
-   "Hello",
-   "Bonjour",
-   "Ciao",
-   "Olà",
-   "やあ",
-   "Hallå",
-   "Guten tag",
-   "Hallo",
+   "/headphone.png",
+   "/aeroplane.png",
+   "/game.png",
+   "/tree.png",
+   "/football.png",
+   "/formula.png",
+   "/mountain.png",
+   "/laptop.png",
 ];
 
 export const Preloader = () => {
@@ -28,7 +38,7 @@ export const Preloader = () => {
          () => {
             setIndex(index + 1);
          },
-         index == 0 ? 1000 : 150
+         index == 0 ? 1200 : 220
       );
    }, [index]);
 
@@ -62,8 +72,12 @@ export const Preloader = () => {
          {dimension.width > 0 && (
             <>
                <motion.p variants={opacity} initial="initial" animate="enter">
-                  <span></span>
-                  {words[index]}
+                  <img
+                     src={words[index]}
+                     alt="Prem Sapkale"
+                     width={160}
+                     height={160}
+                  />
                </motion.p>
                <svg>
                   <motion.path
