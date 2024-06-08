@@ -9,6 +9,7 @@ import { useIsDesktop } from "./hooks/useIsDesktop";
 import { AnimatePresence } from "framer-motion";
 import transition from "./animations/transition";
 import { Preloader } from "./components/Preloader";
+import PageTitle from "./components/PageTitle";
 
 const TransitionedHomeElement = transition(HomeElement);
 const TransitionedProjectsElement = transition(ProjectsElement);
@@ -86,6 +87,7 @@ function App() {
                            <AnimatePresence mode="wait">
                               {isLoading && <Preloader />}
                            </AnimatePresence>
+                           <PageTitle title="Portfolio | Prem Sapkale" />
                            <HomeElement
                               ref={(socialRef, projectsRef)}
                               socialRef={socialRef}
@@ -98,12 +100,15 @@ function App() {
                      <Route
                         path="/projects"
                         element={
-                           <TransitionedProjectsElement
-                              id="projectsElement"
-                              ref={(socialRef, projectsRef)}
-                              socialRef={socialRef}
-                              projectsRef={projectsRef}
-                           />
+                           <>
+                              <PageTitle title="Projects | Prem Sapkale" />
+                              <TransitionedProjectsElement
+                                 id="projectsElement"
+                                 ref={(socialRef, projectsRef)}
+                                 socialRef={socialRef}
+                                 projectsRef={projectsRef}
+                              />
+                           </>
                         }
                      />
                   )}
