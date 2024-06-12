@@ -158,25 +158,37 @@ const menuItems = [
       info: "Homely",
       name: "Immersive Booking Experience",
       tag: "Elegance",
-      link: "http://localhost:5173/projects#homely",
+      link:
+         import.meta.env.MODE === "DEVELOPMENT"
+            ? `${import.meta.env.DEVELOPMENT_URL}/projects#homely`
+            : `${import.meta.env.PRODUCTION_URL}/projects#homely`,
    },
    {
       info: "Conception",
       name: "Productivity at peak",
       tag: "Beauty",
-      link: "http://localhost:5173/projects#conception",
+      link:
+         import.meta.env.MODE === "DEVELOPMENT"
+            ? `${import.meta.env.DEVELOPMENT_URL}/projects#conception`
+            : `${import.meta.env.PRODUCTION_URL}/projects#conception`,
    },
    {
       info: "Intercord",
       name: "MCQ Examination System",
       tag: "Power",
-      link: "http://localhost:5173/projects#intercord",
+      link:
+         import.meta.env.MODE === "DEVELOPMENT"
+            ? `${import.meta.env.DEVELOPMENT_URL}/projects#intercord`
+            : `${import.meta.env.PRODUCTION_URL}/projects#intercord`,
    },
    {
       info: "Hunger Bites",
       name: "Food Point",
       tag: "Lightening Fast",
-      link: "http://localhost:5173/projects#hunger-bites",
+      link:
+         import.meta.env.MODE === "DEVELOPMENT"
+            ? `${import.meta.env.DEVELOPMENT_URL}/projects#hunger-bites`
+            : `${import.meta.env.PRODUCTION_URL}/projects#hunger-bites`,
    },
    // {
    //    info: "Grid",

@@ -57,7 +57,7 @@ export const Appbar = forwardRef((props, ref) => {
          ref={appbarRef}
       >
          <div className="text-lg font-[600] py-3 px-4 sm:px-6 rounded-full flex">
-            <a href="/" className="uppercase">
+            <a to="/" className="uppercase">
                <img
                   src={logo}
                   alt="Prem Sapkale"
@@ -76,7 +76,7 @@ export const Appbar = forwardRef((props, ref) => {
                <div
                   className={`hidden lg:inline text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]`}
                >
-                  <a href="/projects" className="uppercase">
+                  <a to="/projects" className="uppercase">
                      Projects
                   </a>
                </div>

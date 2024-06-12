@@ -72,9 +72,7 @@ export const ProjectCard = forwardRef(
                   isDesktop ? "flex-row" : "flex-col"
                } items-center justify-between p-[10px] sm:p-[80px] group ${
                   !isDesktop
-                     ? !isInverted
-                        ? "custom-hidden"
-                        : "custom-hidden"
+                     ? "custom-hidden"
                      : isInverted
                      ? "custom-invert-desktop-hidden"
                      : "custom-desktop-hidden"
