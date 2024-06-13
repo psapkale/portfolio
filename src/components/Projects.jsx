@@ -73,7 +73,7 @@ export default function Projects({ id }) {
       offset: ["start end", "end start"],
    });
 
-   const height = useTransform(scrollYProgress, [0, 1], [50, 10]);
+   const height = useTransform(scrollYProgress, [0, 1], [50, 8]);
 
    useEffect(() => {
       console.log(container.current);

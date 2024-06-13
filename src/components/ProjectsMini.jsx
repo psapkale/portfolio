@@ -190,14 +190,4 @@ const menuItems = [
             ? `${import.meta.env.VITE_DEVELOPMENT_URL}/projects#hunger-bites`
             : `${import.meta.env.VITE_PRODUCTION_URL}/projects#hunger-bites`,
    },
-   // {
-   //    info: "Grid",
-   //    name: "Grid 7 Years",
-   //    tag: "Art Direction",
-   // },
-   // {
-   //    info: "Puma",
-   //    name: "Puma Music Battle",
-   //    tag: "Direction",
-   // },
 ];

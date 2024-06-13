@@ -1,10 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import styles from "../animations/about.module.scss";
+import { slideUp2 } from "../animations/anim";
 import { WaterDropGrid } from "./WaterDropGrid";
 import { ButtonComponent } from "./ButtonComponent";
 import { useIsDesktop } from "../hooks/useIsDesktop";
+import { useInView } from "framer-motion";
 
 export const AboutSection = () => {
    const isDesktop = useIsDesktop(800);
+   const phrase =
+      "Helping brands to stand out in the digital era. Together we will set the new status quo. No nonsense, always on the cutting edge.";
+   const description = useRef(null);
+   const isInView = useInView(description);
 
    useEffect(() => {
       const observer = new IntersectionObserver((entries) => {
@@ -39,7 +46,10 @@ export const AboutSection = () => {
    }
 
    return (
-      <div className="w-full h-screen flex items-center justify-center lg:my-10 lg:mb-40 lg:px-28 text-center lg:text-left relative">
+      <div
+         ref={description}
+         className="w-full h-screen flex items-center justify-center lg:my-10 lg:mb-40 lg:px-28 text-center lg:text-left relative"
+      >
          <div className="z-10">
             <h1
                id="aboutHeading"

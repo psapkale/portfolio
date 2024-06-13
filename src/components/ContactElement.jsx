@@ -191,12 +191,12 @@ export const ContactElement = forwardRef((props, ref) => {
 });
 
 const ContactText = ({ progress, isDesktop }) => {
-   const y = useTransform(progress, [0, 1], [-180, 180]);
+   // const y = useTransform(progress, [0, 1], [-180, 180]);
 
    return (
       <motion.div
          className="h-fit flex gap-10 flex-col items-center justify-center pointer-events-none drop-shadow-md z-10"
-         style={{ y }}
+         // style={{ y }}
       >
          <motion.div className="flex flex-col sm:flex-row gap-6 items-center">
             <motion.h1

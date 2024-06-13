@@ -64,6 +64,12 @@ function App() {
       };
    }, [location.pathname]);
 
+   console.log(
+      import.meta.env.VITE_MODE === "DEVELOPMENT"
+         ? import.meta.env.VITE_DEVELOPMENT_URL
+         : import.meta.env.VITE_PRODUCTION_URL
+   );
+
    return (
       <>
          {/* {isDesktop && (
@@ -79,7 +85,7 @@ function App() {
          <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
                <Route
-                  index
+                  path="/"
                   element={
                      <>
                         <AnimatePresence mode="wait">
