@@ -40,13 +40,13 @@ function App() {
          }
       );
 
-      if (projectsMiniElement) {
-         observer.observe(projectsMiniElement);
-      }
+      // if (projectsMiniElement) {
+      //    observer.observe(projectsMiniElement);
+      // }
 
-      if (waterDropGridElement) {
-         observer.observe(waterDropGridElement);
-      }
+      // if (waterDropGridElement) {
+      //    observer.observe(waterDropGridElement);
+      // }
 
       location.pathname === "/" &&
          setTimeout(() => {
@@ -55,26 +55,25 @@ function App() {
          }, 2440);
 
       return () => {
-         if (projectsMiniElement) {
-            observer.unobserve(projectsMiniElement);
-         }
-
-         if (waterDropGridElement) {
-            observer.unobserve(waterDropGridElement);
-         }
+         // if (projectsMiniElement) {
+         //    observer.unobserve(projectsMiniElement);
+         // }
+         // if (waterDropGridElement) {
+         //    observer.unobserve(waterDropGridElement);
+         // }
       };
    }, [location.pathname]);
 
    return (
       <>
-         {isDesktop && (
+         {/* {isDesktop && (
             <Cursor
                showCursor={showCursor}
                appbarRef={appbarRef}
                socialRef={socialRef}
                projectsRef={projectsRef}
             />
-         )}
+         )} */}
          <Appbar ref={appbarRef} />
 
          <AnimatePresence mode="wait">

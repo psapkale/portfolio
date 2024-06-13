@@ -9,6 +9,7 @@ import ColorChangeOnScrollGsap from "./ColorChangeOnScroll";
 import { useIsDesktop } from "../hooks/useIsDesktop";
 import { ProjectsSection } from "./ProjectsSection";
 import { projects } from "./ProjectsElement";
+import Projects from "./Projects";
 
 const HomeElement = forwardRef(({ socialRef, projectsRef }, ref) => {
    const id = "projectsElement";
@@ -37,17 +38,19 @@ const HomeElement = forwardRef(({ socialRef, projectsRef }, ref) => {
          <AboutSection />
          <TechStackSection />
          {/* <ColorChangeOnScrollGsap /> */}
-         <ProjectsTag />
          {!isDesktop ? (
             <>
-               <ProjectsSection projects={projects} id={id} ref={projectsRef} />
+               <Projects id="" />
+               {/* <ProjectsSection projects={projects} id={id} ref={projectsRef} /> */}
             </>
          ) : (
-            <>
-               <ProjectsMini id="projectsMiniElement" />
-            </>
+            <div id="projectsMiniElement">
+               <ProjectsTag />
+               {/* <ProjectsMini id="projectsMiniElement" /> */}
+               <Projects id="" />
+               {/* <ProjectsTag invert /> */}
+            </div>
          )}
-         <ProjectsTag invert />
          <ContactElement ref={socialRef} />
       </div>
    );

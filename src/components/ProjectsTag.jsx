@@ -11,7 +11,7 @@ export const ProjectsTag = ({ invert }) => {
    return (
       <div
          ref={container}
-         className="h-[50dvh] md:h-[55dvh] lg:h-[80dvh] flex items-center justify-center"
+         className="h-[32vh] flex items-center justify-center overflow-x-hidden"
       >
          <Slider progress={scrollYProgress} invert={invert} />
       </div>
@@ -24,7 +24,7 @@ const Slider = ({ progress, invert }) => {
    const y = useTransform(progress, [0, 1], [-140, 140]);
 
    return (
-      <motion.div className="flex gap-10" style={{ x, y }}>
+      <motion.div className="flex gap-10" style={{ x }}>
          <Tag />
          <Tag />
          <Tag />
