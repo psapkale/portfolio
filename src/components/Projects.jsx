@@ -11,28 +11,37 @@ const projects = [
       src: "conception.jpg",
       color: "#000000",
       link: "https://theconception.vercel.app",
-      description: "",
+      description: "Productivity at peak",
+      techStackLink: ["next.jpg", "react.svg", "tailwind.svg"],
    },
    {
       title: "Homely",
       src: "homely.jpg",
       color: "#8C8C8C",
       link: "https://homely-jet.vercel.app",
-      description: "",
+      description: "Immersive Booking Experience",
+      techStackLink: ["next.jpg", "react.svg", "tailwind.svg"],
    },
    {
       title: "Intercord",
       src: "intercord.jpg",
       color: "#EFE8D3",
       link: "https://intercord.vercel.app",
-      description: "",
+      description: "MCQ Examination System",
+      techStackLink: [
+         "react.svg",
+         "tailwind.svg",
+         "expressjs.svg",
+         "nodejs.svg",
+      ],
    },
    {
       title: "Hunger Bites",
       src: "hunger-bites.jpg",
       color: "#706D63",
       link: "https://hunger-bites.vercel.app",
-      description: "",
+      description: "Lightening Fast",
+      techStackLink: ["react.svg", "tailwind.svg", "redux.svg"],
    },
 ];
 
@@ -143,15 +152,21 @@ export default function Projects({ id }) {
                         link={project.link}
                         description={project.description}
                         imgSrc={project.src}
+                        techStack={project.techStackLink}
                         manageModal={manageModal}
                      />
                      <div className="w-[110%] border" />
                   </div>
                );
             })}
-            <motion.div style={{ height }} className={styles.circleContainer}>
-               <div className={styles.circle}></div>
-            </motion.div>
+            {isDesktop && (
+               <motion.div
+                  style={{ height }}
+                  className={styles.circleContainer}
+               >
+                  <div className={styles.circle}></div>
+               </motion.div>
+            )}
          </motion.div>
 
          {/* Remove or convert this Link component as per your project's needs */}

@@ -7,6 +7,7 @@ export default function Project({
    link,
    description,
    imgSrc,
+   techStack,
    manageModal,
 }) {
    const isDesktop = useIsDesktop(800);
@@ -27,12 +28,23 @@ export default function Project({
          <h2 className="text-6xl text-[#111] font-bold transition-all duration-300 md:group-hover:-translate-x-4 md:group-hover:text-[#aaa] text-nowrap">
             {title}
          </h2>
-         <p className="transition-all duration-300 md:group-hover:translate-x-4 md:group-hover:text-[#aaa]">
-            Design & Development
+         <p className="flex flex-col items-center gap-6 transition-all duration-300 md:group-hover:translate-x-4 md:group-hover:text-[#aaa]">
+            <div className="flex gap-8">
+               {techStack?.map((used) => (
+                  <img
+                     src={`/${used}`}
+                     alt={used}
+                     width={isDesktop ? 24 : 36}
+                     height={isDesktop ? 24 : 36}
+                  />
+               ))}
+            </div>
+            {/* <h1>Design & Development</h1> */}
+            <h1>{description}</h1>
          </p>
          {!isDesktop && (
             <>
-               <img src={imgSrc} alt={title} className="w-full h-fit" />
+               <img src={imgSrc} alt={title} className="w-full h-fit mt-6" />
             </>
          )}
       </a>

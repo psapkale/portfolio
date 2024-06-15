@@ -90,6 +90,10 @@ const techStack = [
       img: "/postgresql.jpg",
    },
    {
+      title: "Redux",
+      img: "/redux.svg",
+   },
+   {
       title: "MongoDB",
       img: "/mongodb.svg",
    },
