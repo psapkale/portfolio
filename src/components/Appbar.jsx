@@ -19,19 +19,12 @@ export const Appbar = forwardRef((props, ref) => {
             ease: "power3.out",
          });
       } else if (newScroll <= scroll) {
-         // appbarRef.current.style.boxShadow =
-         //    "rgba(17,_17,_26,_0.1)_0px_0px_16px";
-
          gsap.to(".appbar", {
             y: "0%",
             transitionDuration: "100ms",
             ease: "power3.out",
          });
       }
-
-      // if (scroll === 0) {
-      //    appbarRef.current.style.boxShadow = "none";
-      // }
 
       scroll = newScroll;
    };

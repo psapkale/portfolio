@@ -63,7 +63,6 @@ export const ContactElement = forwardRef((props, ref) => {
                text="Drop me an Email!"
                width={!isDesktop ? 300 : 380}
                height={!isDesktop ? 70 : 78}
-               // classname="absolute translate-x-[50%] translate-y-[50%] bottom-[28%] left-auto xs:left-[10%] sm:left-[12%] md:left-[12%] md:bottom-[30%] lg:bottom-[28%] lg:left-[36%]"
             />
          </div>
          <div className="text-lg sm:text-xl h-[10%] flex items-center justify-between">

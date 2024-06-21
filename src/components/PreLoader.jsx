@@ -3,16 +3,6 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { opacity, slideUp } from "../animations/anim.js";
 
-// const words = [
-//    "Hello",
-//    "Bonjour",
-//    "Ciao",
-//    "Olà",
-//    "やあ",
-//    "Hallå",
-//    "Guten tag",
-//    "Hallo",
-// ];
 const words = [
    "/headphone.png",
    "/aeroplane.png",

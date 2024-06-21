@@ -40,28 +40,13 @@ function App() {
          }
       );
 
-      // if (projectsMiniElement) {
-      //    observer.observe(projectsMiniElement);
-      // }
-
-      // if (waterDropGridElement) {
-      //    observer.observe(waterDropGridElement);
-      // }
-
       location.pathname === "/" &&
          setTimeout(() => {
             window.scrollTo(0, 0);
             setIsLoading(false);
          }, 2440);
 
-      return () => {
-         // if (projectsMiniElement) {
-         //    observer.unobserve(projectsMiniElement);
-         // }
-         // if (waterDropGridElement) {
-         //    observer.unobserve(waterDropGridElement);
-         // }
-      };
+      return () => {};
    }, [location.pathname]);
 
    console.log(
