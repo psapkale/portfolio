@@ -1,5 +1,4 @@
-import { motion, useMotionValue, useSpring } from "framer-motion";
-import { forwardRef, useEffect } from "react";
+import { forwardRef } from "react";
 import { useIsDesktop } from "../hooks/useIsDesktop";
 
 export const ProjectCard = forwardRef(
@@ -10,11 +9,7 @@ export const ProjectCard = forwardRef(
       }
 
       const leftContent = (
-         <a
-            href={projectData.link}
-            target="_blank"
-            className="w-[90%] md:w-full lg:w-[40%] h-fit flex flex-col relative"
-         >
+         <div className="w-[90%] md:w-full lg:w-[40%] h-fit flex flex-col relative">
             <h1
                className={`text-6xl text-sky-500 font-bold flex items-center ${
                   isDesktop
@@ -46,7 +41,7 @@ export const ProjectCard = forwardRef(
             >
                {projectData.title}
             </div>
-         </a>
+         </div>
       );
 
       const rightContent = (
@@ -65,7 +60,9 @@ export const ProjectCard = forwardRef(
 
       return (
          <>
-            <div
+            <a
+               href={projectData.link}
+               target="_blank"
                ref={ref}
                id={id}
                className={`w-full h-fit lg:h-[90dvh] flex ${
@@ -96,46 +93,8 @@ export const ProjectCard = forwardRef(
                      {rightContent}
                   </>
                )}
-            </div>
-            {/* <hr className="w-[80dvw] mx-auto" /> */}
+            </a>
          </>
       );
    }
 );
-
-const styledCursor = function () {
-   const cursorSize = 100;
-   const mouse = {
-      x: useMotionValue(0),
-      y: useMotionValue(0),
-   };
-
-   const smoothMouse = {
-      x: useSpring(mouse.x, { damping: 100, stiffness: 2000, mass: 0.5 }),
-      y: useSpring(mouse.y, { damping: 100, stiffness: 2000, mass: 0.5 }),
-   };
-
-   const manageMouseMove = (e) => {
-      const { clientX, clientY } = e;
-      mouse.x.set(clientX - cursorSize / 2);
-      mouse.y.set(clientY - cursorSize / 2);
-   };
-
-   useEffect(() => {
-      document?.addEventListener("mousemove", manageMouseMove);
-   });
-
-   return (
-      <motion.div
-         className={`w-[20px] h-[20px] fixed top-0 left-0 rounded-full bg-red-500`}
-         style={{
-            left: smoothMouse.x,
-            top: smoothMouse.y,
-         }}
-         animate={{
-            width: cursorSize,
-            height: cursorSize,
-         }}
-      ></motion.div>
-   );
-};
