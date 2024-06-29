@@ -10,6 +10,7 @@ import { useIsDesktop } from "../hooks/useIsDesktop";
 import { ProjectsSection } from "./ProjectsSection";
 import { projects } from "./ProjectsElement";
 import Projects from "./Projects";
+import { StackProjects } from "./StackProjects";
 
 const HomeElement = forwardRef(({ socialRef, projectsRef }, ref) => {
    const id = "projectsElement";
@@ -38,19 +39,15 @@ const HomeElement = forwardRef(({ socialRef, projectsRef }, ref) => {
          <AboutSection />
          <TechStackSection />
          {/* <ColorChangeOnScrollGsap /> */}
-         {!isDesktop ? (
-            <>
-               <Projects id="" />
-               {/* <ProjectsSection projects={projects} id={id} ref={projectsRef} /> */}
-            </>
-         ) : (
+         {isDesktop && (
             <div id="projectsMiniElement">
                <ProjectsTag />
                {/* <ProjectsMini id="projectsMiniElement" /> */}
-               <Projects id="" />
                {/* <ProjectsTag invert /> */}
             </div>
          )}
+         <StackProjects />
+         {/* <Projects id="" /> */}
          <ContactElement ref={socialRef} />
       </div>
    );

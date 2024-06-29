@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import { ArrowDownRight } from "lucide-react";
 import { useEffect } from "react";
 
 export const NameElement = () => {
@@ -35,26 +36,13 @@ export const NameElement = () => {
             >
                <div className="wave"></div>
                <div className="wave"></div>
-               <div className="text-center flex">
-                  <h1>p</h1>
-                  <h1>r</h1>
-                  <h1>e</h1>
-                  <h1>m</h1>
-               </div>
-               <div className="mr-2 lg:mr-12" />
-               <div className="flex">
-                  <h1>s</h1>
-                  <h1>a</h1>
-                  <h1>p</h1>
-                  <h1>k</h1>
-                  <h1>a</h1>
-                  <h1>l</h1>
-                  <h1>e</h1>
-               </div>
+               <div className="text-nowrap">Prem Sapkale</div>
             </div>
             <div className="h-[26%] sm:h-[32%] md:h-[44%] lg:h-[52%] xl:h-[60%]" />
             <div className="w-[36%] xs:w-[40%] lg:w-[50%] xl:w-[40%] h-fit flex gap-6 items-center justify-end top-[62%] right-[16%] xs:top-[62%] xs:right-[16%] md:top-[62%] md:right-[14%] lg:top-[74%] lg:right-[20%] xl:top-[84%] xl:right-[20%] 2xl:top-[86.2%] 2xl:right-[16%] text-[12px] font-[360] 2xl:font-[400] scale-y-[1.28] scale-x-[1.4] md:scale-y-[1.6] md:scale-x-[1.62] 2xl:scale-x-[1.8] uppercase text-nowrap">
-               <span className="scale-125">&#8600;</span>
+               <span className="lg:scale-125">
+                  <ArrowDownRight strokeWidth={1.6} />
+               </span>
                <h1>
                   FullStack Developer <br />
                   based in India
