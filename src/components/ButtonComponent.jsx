@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 export const ButtonComponent = ({
-   onClick,
+   href,
    text,
    width,
    height,
@@ -10,9 +10,8 @@ export const ButtonComponent = ({
 }) => {
    return (
       <Link
-         to="#"
+         to={href}
          id={id}
-         onClick={onClick}
          style={{
             width: width,
             height: height,

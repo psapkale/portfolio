@@ -24,7 +24,7 @@ export const ProjectCard = forwardRef(
             <div className="h-[240px] lg:h-[230px]" />
             <div className="w-full h-[300px] rounded-lg absolute top-auto left-auto right-auto bottom-auto translate-y-[14%]">
                <img
-                  src={projectData.imgSrc}
+                  src={projectData.img}
                   alt={projectData.title}
                   className="w-full h-full object-cover rounded-3xl shadow-lg group-hover:shadow-2xl transition-shadow duration-400"
                />
@@ -52,9 +52,20 @@ export const ProjectCard = forwardRef(
                      ? "text-left"
                      : "text-right"
                   : "text-center"
-            } text-2xl lg:text-xl text-[#111]`}
+            }`}
          >
-            {projectData.description}
+            <div
+               className={`mb-10 px-2 py-1 flex gap-6 items-center ${
+                  !isInverted && "justify-end"
+               }`}
+            >
+               {projectData.tech?.map((tec) => (
+                  <img src={tec} alt={tec?.slice(1)} width={40} height={40} />
+               ))}
+            </div>
+            <div className="text-2xl lg:text-xl text-[#111]">
+               {projectData.description}
+            </div>
          </div>
       );
 

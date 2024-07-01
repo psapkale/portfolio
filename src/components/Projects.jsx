@@ -151,7 +151,7 @@ export default function Projects({ id }) {
                         title={project.title}
                         link={project.link}
                         description={project.description}
-                        imgSrc={project.src}
+                        img={project.src}
                         techStack={project.techStackLink}
                         manageModal={manageModal}
                      />

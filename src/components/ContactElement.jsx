@@ -43,11 +43,6 @@ export const ContactElement = forwardRef((props, ref) => {
       });
    }
 
-   function mailHandler(e, mail) {
-      window.location.href = `mailto:${mail}`;
-      e.preventDefault();
-   }
-
    return (
       <div
          ref={container}
@@ -58,8 +53,8 @@ export const ContactElement = forwardRef((props, ref) => {
             <ContactText progress={scrollYProgress} isDesktop={isDesktop} />
             <div className="h-[12%]" />
             <ButtonComponent
+               href={"mailto:prempravinsapkale@gmail.com"}
                id="cta-button"
-               onClick={(e) => mailHandler(e, "prempravinsapkale@gmail.com")}
                text="Drop me an Email!"
                width={!isDesktop ? 300 : 380}
                height={!isDesktop ? 70 : 78}

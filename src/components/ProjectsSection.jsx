@@ -7,7 +7,6 @@ import { StyledCursor } from "../common/StyledCursor";
 import { Link } from "lucide-react";
 
 export const ProjectsSection = forwardRef(({ projects, id }, ref) => {
-   const isDesktop = useIsDesktop(800);
    const [cursorVisible, setCursorVisible] = useState(false);
 
    const container = useRef(null);
@@ -52,11 +51,9 @@ export const ProjectsSection = forwardRef(({ projects, id }, ref) => {
             }
             visible={cursorVisible}
          />
-         {isDesktop && (
-            <motion.div style={{ height }} className={styles.circleContainer}>
-               <div className={styles.circle}></div>
-            </motion.div>
-         )}
+         <motion.div style={{ height }} className={styles.circleContainer}>
+            <div className={styles.circle}></div>
+         </motion.div>
       </motion.div>
    );
 });

@@ -40,11 +40,11 @@ function App() {
          }
       );
 
-      location.pathname === "/" &&
-         setTimeout(() => {
-            window.scrollTo(0, 0);
-            setIsLoading(false);
-         }, 2440);
+      // location.pathname === "/" &&
+      //    setTimeout(() => {
+      //       window.scrollTo(0, 0);
+      //       setIsLoading(false);
+      //    }, 2440);
 
       return () => {};
    }, [location.pathname]);
@@ -74,7 +74,7 @@ function App() {
                   element={
                      <>
                         <AnimatePresence mode="wait">
-                           {isLoading && <Preloader />}
+                           {/* {isLoading && <Preloader />} */}
                         </AnimatePresence>
                         <PageTitle title="Portfolio | Prem Sapkale" />
                         <HomeElement

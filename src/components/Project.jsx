@@ -6,7 +6,7 @@ export default function Project({
    title,
    link,
    description,
-   imgSrc,
+   img,
    techStack,
    manageModal,
 }) {
@@ -44,7 +44,7 @@ export default function Project({
          </p>
          {!isDesktop && (
             <>
-               <img src={imgSrc} alt={title} className="w-full h-fit mt-6" />
+               <img src={img} alt={title} className="w-full h-fit mt-6" />
             </>
          )}
       </a>

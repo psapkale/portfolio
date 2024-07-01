@@ -1,33 +1,7 @@
 import gsap from "gsap";
 import { useEffect, useLayoutEffect, useRef } from "react";
 import { useIsDesktop } from "../hooks/useIsDesktop";
-
-const stack = [
-   {
-      img: "/conception-2.gif",
-      title: "Conception",
-      link: "https://theconception.vercel.app",
-      tech: ["/next.jpg", "/tailwind.svg"],
-   },
-   {
-      img: "/homely-3.jpg",
-      title: "Homely",
-      link: "https://homely-jet.vercel.app",
-      tech: ["/next.jpg", "/tailwind.svg"],
-   },
-   {
-      img: "/intercord-2.gif",
-      title: "Intercord",
-      link: "https://intercord.vercel.app",
-      tech: ["/react.svg", "/tailwind.svg", "/expressjs.svg", "/nodejs.svg"],
-   },
-   {
-      img: "/hunger-bites-3.jpg",
-      title: "Hunger Bites",
-      link: "https://hunger-bites.vercel.app",
-      tech: ["/react.svg", "/tailwind.svg", "/redux.svg"],
-   },
-];
+import { projects as stack } from "../common/projects";
 
 export const StackProjects = () => {
    const container = useRef();
@@ -79,7 +53,7 @@ export const StackProjects = () => {
          className="stackProjects h-screen my-10 lg:my-40 flex items-center justify-center"
       >
          <div className="relative w-[90vw] lg:w-[80vw] h-[50vh] md:h-[60vh] lg:h-[80vh]">
-            {stack.map((sta) => (
+            {stack.slice(0, 4).map((sta) => (
                <a
                   href={sta.link}
                   target="_blank"
@@ -88,7 +62,7 @@ export const StackProjects = () => {
                >
                   <img
                      className="w-full h-full rounded-lg object-cover"
-                     src={sta.img}
+                     src={sta.heroImg}
                      alt={sta.title}
                   />
                   <div className="fadeBottomCustom h-full relative bottom-[100%] right-0 rounded-lg transition-all duration-300" />

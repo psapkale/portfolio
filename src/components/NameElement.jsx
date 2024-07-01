@@ -1,6 +1,9 @@
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowDownRight } from "lucide-react";
 import { useEffect } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const NameElement = () => {
    useEffect(() => {

@@ -33,7 +33,7 @@ export const TechStackSection = () => {
                <div
                   id={`techElement`}
                   key={stack.title}
-                  className="px-4 sm:px-10 py-[12px] sm:py-6 rounded-xl text-lg font-bold text-[#f1f1f1] bg-[#111] z-10 transition-all duration-300 flex gap-2 sm:gap-4 items-center hover:bg-[#f1f1f1] hover:text-[#111] tech-hidden"
+                  className="px-4 sm:px-10 py-[12px] sm:py-6 rounded-xl text-lg font-bold text-[#f1f1f1] bg-[rgba(100,100,100,0.1)] z-10 transition-all duration-300 flex gap-2 sm:gap-4 items-center hover:bg-[#f1f1f1] hover:text-[#111] tech-hidden"
                >
                   <h1 className="pointer-events-none">{stack.title}</h1>
                   <img

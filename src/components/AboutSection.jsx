@@ -1,8 +1,6 @@
 import { useEffect, useRef } from "react";
 import styles from "../animations/about.module.scss";
-import { slideUp2 } from "../animations/anim";
 import { WaterDropGrid } from "./WaterDropGrid";
-import { ButtonComponent } from "./ButtonComponent";
 import { useIsDesktop } from "../hooks/useIsDesktop";
 import { useInView } from "framer-motion";
 import gsap from "gsap";
@@ -78,7 +76,7 @@ export const AboutSection = () => {
             </h1>
             <p
                id="aboutText"
-               className="text-xl md:text-2xl px-6 lg:px-0 scale-y-[1.2] lg:scale-y-[1] font-[600] mt-16 md:mt-12 xl:mt-8 w-full lg:w-2/3 about-hidden"
+               className="lg:bg-[#f1f1f1] lg:rounded-e-full py-2 text-xl md:text-2xl px-6 lg:px-0 scale-y-[1.2] lg:scale-y-[1] font-[600] mt-16 md:mt-12 xl:mt-8 w-full lg:w-2/3 about-hidden"
             >
                Hellow, I'm Prem Sapkale, a{" "}
                <span className="text-slate-600 line-through">notorious</span>{" "}
@@ -86,16 +84,6 @@ export const AboutSection = () => {
                experience on the internet. I develop exceptional websites and
                web apps that provide intutive, pixel-perfect user interfaces.
             </p>
-            <div id="aboutButton" className="mt-10 about-hidden">
-               <ButtonComponent
-                  classname=""
-                  id="aboutButton"
-                  onClick={handleClick}
-                  text="More About Me"
-                  width={300}
-                  height={80}
-               />
-            </div>
          </div>
          {isDesktop && (
             <div className="absolute top-0 sm:top-auto left-0 sm:left-auto bottom-0 sm:bottom-auto right-0">

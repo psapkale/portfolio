@@ -8,7 +8,7 @@ import { ProjectsTag } from "./ProjectsTag";
 import ColorChangeOnScrollGsap from "./ColorChangeOnScroll";
 import { useIsDesktop } from "../hooks/useIsDesktop";
 import { ProjectsSection } from "./ProjectsSection";
-import { projects } from "./ProjectsElement";
+import { projects } from "../common/projects";
 import Projects from "./Projects";
 import { StackProjects } from "./StackProjects";
 
