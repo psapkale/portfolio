@@ -5,15 +5,34 @@ import { WaterDropGrid } from "./WaterDropGrid";
 import { ButtonComponent } from "./ButtonComponent";
 import { useIsDesktop } from "../hooks/useIsDesktop";
 import { useInView } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const AboutSection = () => {
    const isDesktop = useIsDesktop(800);
-   const phrase =
-      "Helping brands to stand out in the digital era. Together we will set the new status quo. No nonsense, always on the cutting edge.";
    const description = useRef(null);
    const isInView = useInView(description);
 
    useEffect(() => {
+      // Change background to #111
+      gsap.fromTo(
+         ".skillsSection",
+         {
+            background: "#f1f1f1",
+         },
+         {
+            background: "black",
+            scrollTrigger: {
+               trigger: ".aboutSection",
+               start: isDesktop ? "90% center" : "75% center",
+               end: isDesktop ? "125% center" : "bottom center",
+               scrub: true,
+            },
+         }
+      );
+
       const observer = new IntersectionObserver((entries) => {
          entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -48,7 +67,7 @@ export const AboutSection = () => {
    return (
       <div
          ref={description}
-         className="w-full h-screen flex items-center justify-center lg:my-10 lg:mb-40 lg:px-28 text-center lg:text-left relative"
+         className="aboutSection w-full h-screen flex items-center justify-center lg:my-10 lg:mb-40 lg:px-28 text-center lg:text-left relative"
       >
          <div className="z-10">
             <h1

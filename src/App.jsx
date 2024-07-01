@@ -74,7 +74,7 @@ function App() {
                   element={
                      <>
                         <AnimatePresence mode="wait">
-                           {/* {isLoading && <Preloader />} */}
+                           {isLoading && <Preloader />}
                         </AnimatePresence>
                         <PageTitle title="Portfolio | Prem Sapkale" />
                         <HomeElement

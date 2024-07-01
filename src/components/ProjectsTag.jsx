@@ -1,5 +1,9 @@
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const ProjectsTag = ({ invert }) => {
    const container = useRef();
@@ -8,10 +12,29 @@ export const ProjectsTag = ({ invert }) => {
       offset: ["start end", "end start"],
    });
 
+   useEffect(() => {
+      // Revert background to #f1f1f1
+      gsap.fromTo(
+         ".skillsSection",
+         {
+            background: "black",
+         },
+         {
+            background: "#f1f1f1",
+            scrollTrigger: {
+               trigger: ".projectsTag",
+               start: "top center",
+               end: "bottom center",
+               scrub: true,
+            },
+         }
+      );
+   }, []);
+
    return (
       <div
          ref={container}
-         className="h-[32vh] flex items-center justify-center overflow-x-hidden"
+         className="projectsTag h-[32vh] flex items-center justify-center overflow-x-hidden"
       >
          <Slider progress={scrollYProgress} invert={invert} />
       </div>

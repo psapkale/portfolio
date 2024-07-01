@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useIsDesktop } from "../hooks/useIsDesktop";
+
 export const TechStackSection = () => {
    const isDesktop = useIsDesktop(600);
 
@@ -23,7 +24,7 @@ export const TechStackSection = () => {
    }, []);
 
    return (
-      <div className="h-fit grid place-content-center gap-6 lg:gap-10 px-2 lg:px-20 py-20 bg-black">
+      <div className="skillsSection h-[120vh] lg:h-[140vh] 2xl:h-[120vh] grid place-content-center gap-6 lg:gap-10 px-2 lg:px-20 py-20 bg-[#f1f1f1]">
          <h1 className="text-center text-[#f1f1f1] text-6xl font-[1000] drop-shadow-md mb-2 sm:mb-20">
             Skills
          </h1>

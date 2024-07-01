@@ -1,8 +1,6 @@
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef } from "react";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useEffect, useLayoutEffect, useRef } from "react";
+import { useIsDesktop } from "../hooks/useIsDesktop";
 
 const stack = [
    {
@@ -33,6 +31,7 @@ const stack = [
 
 export const StackProjects = () => {
    const container = useRef();
+   const isDesktop = useIsDesktop(800);
 
    useLayoutEffect(() => {
       const ctx = gsap.context(() => {
@@ -54,10 +53,30 @@ export const StackProjects = () => {
       return () => ctx.revert();
    }, []);
 
+   useEffect(() => {
+      // Revert background to #f1f1f1
+      !isDesktop &&
+         gsap.fromTo(
+            ".skillsSection",
+            {
+               background: "#111",
+            },
+            {
+               background: "#f1f1f1",
+               scrollTrigger: {
+                  trigger: ".stackProjects",
+                  start: "top center",
+                  end: "40% center",
+                  scrub: true,
+               },
+            }
+         );
+   }, []);
+
    return (
       <div
          ref={container}
-         className="h-screen my-10 lg:my-40 flex items-center justify-center"
+         className="stackProjects h-screen my-10 lg:my-40 flex items-center justify-center"
       >
          <div className="relative w-[90vw] lg:w-[80vw] h-[50vh] md:h-[60vh] lg:h-[80vh]">
             {stack.map((sta) => (
