@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { useIsDesktop } from "../hooks/useIsDesktop";
 import { projects as stack } from "../common/projects";
 
@@ -27,26 +27,6 @@ export const StackProjects = () => {
       return () => ctx.revert();
    }, []);
 
-   useEffect(() => {
-      // Revert background to #f1f1f1
-      !isDesktop &&
-         gsap.fromTo(
-            ".skillsSection",
-            {
-               background: "#111",
-            },
-            {
-               background: "#f1f1f1",
-               scrollTrigger: {
-                  trigger: ".stackProjects",
-                  start: "top center",
-                  end: "40% center",
-                  scrub: true,
-               },
-            }
-         );
-   }, []);
-
    return (
       <div
          ref={container}
@@ -72,7 +52,7 @@ export const StackProjects = () => {
                      </p>
                      <div className="flex items-center justify-center gap-6 flex-row lg:flex-row">
                         {sta.tech.map((t) => (
-                           <img src={t} width={34} height={34} />
+                           <img src={t} width={34} height={34} key={t} />
                         ))}
                      </div>
                   </div>

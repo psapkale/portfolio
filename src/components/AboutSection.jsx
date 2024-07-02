@@ -3,10 +3,6 @@ import styles from "../animations/about.module.scss";
 import { WaterDropGrid } from "./WaterDropGrid";
 import { useIsDesktop } from "../hooks/useIsDesktop";
 import { useInView } from "framer-motion";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export const AboutSection = () => {
    const isDesktop = useIsDesktop(800);
@@ -14,23 +10,6 @@ export const AboutSection = () => {
    const isInView = useInView(description);
 
    useEffect(() => {
-      // Change background to #111
-      gsap.fromTo(
-         ".skillsSection",
-         {
-            background: "#f1f1f1",
-         },
-         {
-            background: "black",
-            scrollTrigger: {
-               trigger: ".aboutSection",
-               start: isDesktop ? "90% center" : "75% center",
-               end: isDesktop ? "125% center" : "bottom center",
-               scrub: true,
-            },
-         }
-      );
-
       const observer = new IntersectionObserver((entries) => {
          entries.forEach((entry) => {
             if (entry.isIntersecting) {
