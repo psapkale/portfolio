@@ -19,8 +19,8 @@ export const TechStackSection = () => {
             background: "black",
             scrollTrigger: {
                trigger: ".skillsSection",
-               start: "-25% center",
-               end: "top center",
+               start: "-5% center",
+               end: "15% center",
                scrub: true,
             },
          }
@@ -34,8 +34,8 @@ export const TechStackSection = () => {
             background: "#f1f1f1",
             scrollTrigger: {
                trigger: ".skillsSection",
-               start: "bottom center",
-               end: "125% center",
+               start: "115% center",
+               end: "135% center",
                scrub: true,
             },
          }

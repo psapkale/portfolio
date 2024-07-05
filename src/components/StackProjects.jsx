@@ -2,6 +2,7 @@ import gsap from "gsap";
 import { useLayoutEffect, useRef } from "react";
 import { useIsDesktop } from "../hooks/useIsDesktop";
 import { projects as stack } from "../common/projects";
+import { ButtonComponent } from "./ButtonComponent";
 
 export const StackProjects = () => {
    const container = useRef();

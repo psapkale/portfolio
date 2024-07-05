@@ -147,13 +147,13 @@ body {
 .name-hidden {
    opacity: 0;
    transition: all 1s;
-   transform: translateX(-100%);
+   transform: translateY(10%);
 }
 
 .name-show {
    opacity: 1;
    filter: blur(0);
-   transform: translateX(0);
+   transform: translateY(0);
 }
 
 .button-hidden {
@@ -226,6 +226,33 @@ body {
 .wave:nth-child(2) {
    animation-delay: 7s;
    background: rgba(255, 255, 255, 0.1);
+}
+
+.text-outline {
+   -webkit-text-fill-color: transparent;
+   -webkit-text-stroke-color: currentColor;
+   -webkit-text-stroke-width: 0.012em;
+}
+
+.text-outline-hover {
+   position: relative;
+}
+
+.text-outline-hover::before {
+   position: absolute;
+   top: 0;
+   left: 0;
+   max-width: 0;
+   width: 100%;
+   overflow: hidden;
+   white-space: nowrap;
+   content: attr(data-text);
+   transition: max-width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+   -webkit-text-fill-color: currentColor;
+}
+
+.text-outline-hover:hover > .text-outline-hover::before {
+   max-width: 100%;
 }
 
 @keyframes bganimation {

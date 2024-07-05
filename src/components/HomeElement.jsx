@@ -11,6 +11,9 @@ import { ProjectsSection } from "./ProjectsSection";
 import { projects } from "../common/projects";
 import Projects from "./Projects";
 import { StackProjects } from "./StackProjects";
+import { ButtonComponent } from "./ButtonComponent";
+import { HeroProjectsSection } from "./HeroProjectsSection";
+import "./styles.css";
 
 const HomeElement = forwardRef(({ socialRef, projectsRef }, ref) => {
    const id = "projectsElement";
@@ -46,7 +49,7 @@ const HomeElement = forwardRef(({ socialRef, projectsRef }, ref) => {
                {/* <ProjectsTag invert /> */}
             </div>
          )}
-         <StackProjects />
+         <HeroProjectsSection />
          {/* <Projects id="" /> */}
          <ContactElement ref={socialRef} />
       </div>

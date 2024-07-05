@@ -1,6 +1,5 @@
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
-import "./styles.css";
 
 export const ProjectsMini = ({ id }) => {
    const menuItemRef = useRef([]);

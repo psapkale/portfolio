@@ -54,7 +54,6 @@ export const ContactElement = forwardRef((props, ref) => {
             <div className="h-[12%]" />
             <ButtonComponent
                href={"mailto:prempravinsapkale@gmail.com"}
-               id="cta-button"
                text="Drop me an Email!"
                width={!isDesktop ? 300 : 380}
                height={!isDesktop ? 70 : 78}

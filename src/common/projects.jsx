@@ -35,4 +35,11 @@ export const projects = [
       img: "/hunger-bites.jpg",
       tech: ["/react.svg", "/tailwind.svg", "/redux.svg"],
    },
+   {
+      title: "Caption Editor",
+      description:
+         "Discover enhanced video accessibility through our advanced application designed to prioritize user interaction and inclusivity. Seamlessly integrate hosted video URLs and synchronize personalized captions with pinpoint accuracy using intuitive timestamping features. Empower your audience to engage deeply with content by controlling playback and experiencing dynamically displayed captions. Elevate accessibility standards and enrich user experience with our innovative video captioning solution, setting a new benchmark for inclusive digital interactions.",
+      img: "/spyne-assesment.jpg",
+      tech: ["/react.svg"],
+   },
 ];
