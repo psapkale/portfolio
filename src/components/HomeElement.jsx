@@ -13,7 +13,8 @@ import Projects from "./Projects";
 import { StackProjects } from "./StackProjects";
 import { ButtonComponent } from "./ButtonComponent";
 import { HeroProjectsSection } from "./HeroProjectsSection";
-import "./styles.css";
+import "../animations/styles.css";
+import { SliceThrough } from "./SliceThrough";
 
 const HomeElement = forwardRef(({ socialRef, projectsRef }, ref) => {
    const id = "projectsElement";
@@ -51,7 +52,7 @@ const HomeElement = forwardRef(({ socialRef, projectsRef }, ref) => {
          )}
          <HeroProjectsSection />
          {/* <Projects id="" /> */}
-         <ContactElement ref={socialRef} />
+         <SliceThrough />
       </div>
    );
 });

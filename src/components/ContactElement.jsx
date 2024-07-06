@@ -1,11 +1,11 @@
-import { forwardRef, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { GsapMagnetic } from "./GSAPMagnetic";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ButtonComponent } from "./ButtonComponent";
 import logoWhite from "/logo-white.svg";
 import { useIsDesktop } from "../hooks/useIsDesktop";
 
-export const ContactElement = forwardRef((props, ref) => {
+export const ContactElement = () => {
    const container = useRef();
    const { scrollYProgress } = useScroll({
       target: container,
@@ -47,7 +47,8 @@ export const ContactElement = forwardRef((props, ref) => {
       <div
          ref={container}
          id="contact"
-         className="h-[120dvh] lg:h-[160dvh] bg-sky-600 px-0 xs:px-10 text-xl font-[600] text-[#f1f1f1]"
+         // className="border border-white h-[120dvh] lg:h-[160dvh] bg-sky-600 px-0 xs:px-10 text-xl font-[600] text-[#f1f1f1] z-50"
+         className="h-screen bg-sky-600 px-0 xs:px-10 text-xl font-[600] text-[#f1f1f1]"
       >
          <div className="w-full h-[90%] flex flex-col items-center justify-center">
             <ContactText progress={scrollYProgress} isDesktop={isDesktop} />
@@ -61,7 +62,7 @@ export const ContactElement = forwardRef((props, ref) => {
          </div>
          <div className="text-lg sm:text-xl h-[10%] flex items-center justify-between">
             {isDesktop && (
-               <div className="sm:w-[10%] flex items-center justify-center uppercase z-10">
+               <div className="sm:w-[10%] flex items-center justify-center uppercase ">
                   <img
                      src={logoWhite}
                      alt="Prem Sapkale"
@@ -71,10 +72,7 @@ export const ContactElement = forwardRef((props, ref) => {
                   />
                </div>
             )}
-            <div
-               className="w-full lg:w-1/3 flex items-center justify-center group gap-10 z-10"
-               ref={ref}
-            >
+            <div className="w-full lg:w-1/3 flex items-center justify-center group gap-10 ">
                {isDesktop ? (
                   <>
                      <GsapMagnetic>
@@ -172,7 +170,7 @@ export const ContactElement = forwardRef((props, ref) => {
             </div>
             {isDesktop && (
                <div
-                  className="sm:text-lg text-nowrap cursor-pointer z-10"
+                  className="sm:text-lg text-nowrap cursor-pointer "
                   onClick={handleClick}
                >
                   Back in time
@@ -181,14 +179,14 @@ export const ContactElement = forwardRef((props, ref) => {
          </div>
       </div>
    );
-});
+};
 
 const ContactText = ({ progress, isDesktop }) => {
    // const y = useTransform(progress, [0, 1], [-180, 180]);
 
    return (
       <motion.div
-         className="h-fit flex gap-10 flex-col items-center justify-center pointer-events-none drop-shadow-md z-10"
+         className="h-fit flex gap-10 flex-col items-center justify-center pointer-events-none drop-shadow-md "
          // style={{ y }}
       >
          <motion.div className="flex flex-col sm:flex-row gap-6 items-center">
