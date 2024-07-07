@@ -51,9 +51,6 @@ export const ProjectsSection = forwardRef(({ projects, id }, ref) => {
             }
             visible={cursorVisible}
          />
-         <motion.div style={{ height }} className={styles.circleContainer}>
-            <div className={styles.circle}></div>
-         </motion.div>
       </motion.div>
    );
 });

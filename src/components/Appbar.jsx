@@ -30,8 +30,8 @@ export const Appbar = forwardRef((props, ref) => {
    };
 
    function handleContact() {
-      const contact = document.getElementById("contact");
-      contact.scrollIntoView({
+      const main = document.getElementById("main");
+      main.scrollIntoView({
          behavior: "smooth",
       });
    }
@@ -87,7 +87,7 @@ export const Appbar = forwardRef((props, ref) => {
             <GsapMagnetic>
                <div className="text-[14px] md:text-[16px] lg:text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]">
                   <a
-                     href="https://drive.google.com/file/d/1o7M34_D3PApT21mFHlWQ_Uw7eKlrw5lI/view?usp=sharing"
+                     href="https://drive.google.com/file/d/1zhfJUCPIhzacavQHfp9tFRJ45b94cRgK/view"
                      target="_blank"
                      className="uppercase"
                   >

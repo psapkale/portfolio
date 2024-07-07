@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from "react";
-import { ContactElement } from "./ContactElement";
+import { useEffect, useRef } from "react";
 import { ProjectsSection } from "./ProjectsSection";
 import { projects } from "../common/projects";
+import { SliceThrough } from "./SliceThrough";
 
 const ProjectsElement = ({ id, socialRef, projectsRef }, ref) => {
    const observer = useRef(null);
@@ -39,7 +39,7 @@ const ProjectsElement = ({ id, socialRef, projectsRef }, ref) => {
             </h2>
          </div>
          <ProjectsSection projects={projects} id={id} ref={projectsRef} />
-         <ContactElement ref={socialRef} />
+         <SliceThrough />
       </div>
    );
 };

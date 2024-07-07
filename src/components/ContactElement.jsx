@@ -48,7 +48,7 @@ export const ContactElement = () => {
          ref={container}
          id="contact"
          // className="border border-white h-[120dvh] lg:h-[160dvh] bg-sky-600 px-0 xs:px-10 text-xl font-[600] text-[#f1f1f1] z-50"
-         className="h-screen bg-sky-600 px-0 xs:px-10 text-xl font-[600] text-[#f1f1f1]"
+         className="h-[120vh] bg-sky-600 px-0 xs:px-10 text-xl font-[600] text-[#f1f1f1]"
       >
          <div className="w-full h-[90%] flex flex-col items-center justify-center">
             <ContactText progress={scrollYProgress} isDesktop={isDesktop} />

@@ -24,7 +24,7 @@ export const SliceThrough = () => {
             top: "0%",
          },
          {
-            top: "-50%",
+            top: "-70%",
          },
          "slice" // add same name to perform animation on same time
       )
@@ -34,14 +34,14 @@ export const SliceThrough = () => {
                bottom: "0%",
             },
             {
-               bottom: "-50%",
+               bottom: "-70%",
             },
             "slice"
          )
          .fromTo(
             "#top-h",
             {
-               top: "50vh",
+               top: "60vh",
             },
             {
                top: "120%",
@@ -51,7 +51,7 @@ export const SliceThrough = () => {
          .fromTo(
             "#bottom-h",
             {
-               bottom: "50vh",
+               bottom: "60vh",
             },
             {
                bottom: "120%",
@@ -77,11 +77,11 @@ export const SliceThrough = () => {
    return (
       <div
          id="main"
-         className="w-full h-screen relative bg-sky-600 font-extrabold overflow-hidden"
+         className="w-full h-[120vh] relative bg-sky-600 font-extrabold overflow-hidden"
       >
          <div
             id="top"
-            className="w-full h-[50vh] bg-[#f1f1f1] absolute overflow-hidden pointer-events-none"
+            className="w-full h-[60vh] bg-[#f1f1f1] absolute overflow-hidden pointer-events-none"
          >
             <h1
                id="top-h"
@@ -91,13 +91,13 @@ export const SliceThrough = () => {
             </h1>
          </div>
 
-         <div id="center" className="content w-full h-screen">
+         <div id="center" className="content w-full h-[120vh]">
             <ContactElement />
          </div>
 
          <div
             id="bottom"
-            className="w-full h-[50vh] bg-[#f1f1f1] absolute overflow-hidden pointer-events-none"
+            className="w-full h-[60vh] bg-[#f1f1f1] absolute overflow-hidden pointer-events-none"
          >
             <h1
                id="bottom-h"
