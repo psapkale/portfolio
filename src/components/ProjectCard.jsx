@@ -31,7 +31,7 @@ export const ProjectCard = forwardRef(
                <div className="fadeBottom h-[5rem] relative bottom-[80px] right-0 rounded-b-3xl" />
             </div>
             <div
-               className={`text-[50px] text-nowrap md:text-[60px] scale-y-110 scale-x-110 text-sky-500 font-bold flex items-center ${
+               className={`text-[48px] text-nowrap md:text-[60px] scale-y-110 scale-x-110 text-sky-500 font-bold flex items-center ${
                   isDesktop
                      ? isInverted
                         ? "justify-start"
@@ -46,24 +46,24 @@ export const ProjectCard = forwardRef(
 
       const rightContent = (
          <div
-            className={`w-full lg:w-[60%] h-fit lg:h-full grid place-content-center px-[12px] lg:px-[100px] ${
+            className={`w-full lg:w-[60%] h-fit lg:h-full flex flex-col justify-center px-[12px] lg:px-[100px] ${
                isDesktop
                   ? isInverted
-                     ? "text-left"
-                     : "text-right"
-                  : "text-center"
+                     ? "items-start text-left"
+                     : "items-end text-right"
+                  : "mt-10 text-justify"
             }`}
          >
             <div
-               className={`mb-10 px-2 py-1 flex gap-6 items-center ${
-                  !isInverted && "justify-end"
+               className={`mb-4 lg:mb-10 px-2 py-1 flex gap-6 items-center ${
+                  isDesktop ? !isInverted && "justify-end" : "justify-center"
                }`}
             >
                {projectData.tech?.map((tec) => (
                   <img src={tec} alt={tec?.slice(1)} width={40} height={40} />
                ))}
             </div>
-            <div className="text-2xl lg:text-xl text-[#111]">
+            <div className="px-4 lg:px-0 text-xl lg:text-xl text-[#111]">
                {projectData.description}
             </div>
          </div>

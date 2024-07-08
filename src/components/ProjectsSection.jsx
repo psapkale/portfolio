@@ -8,6 +8,7 @@ import { Link } from "lucide-react";
 
 export const ProjectsSection = forwardRef(({ projects, id }, ref) => {
    const [cursorVisible, setCursorVisible] = useState(false);
+   const isDesktop = useIsDesktop(800);
 
    const container = useRef(null);
    const { scrollYProgress } = useScroll({
@@ -28,7 +29,7 @@ export const ProjectsSection = forwardRef(({ projects, id }, ref) => {
    return (
       <motion.div ref={container}>
          <div
-            className="mt-20 md:mt-0 py-20 md:py-0 flex gap-28 md:gap-0 flex-col"
+            className="mt-0 md:mt-0 py-0 md:py-0 flex gap-28 md:gap-0 flex-col"
             ref={ref}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -45,12 +46,19 @@ export const ProjectsSection = forwardRef(({ projects, id }, ref) => {
                );
             })}
          </div>
-         <StyledCursor
-            icon={
-               <Link color="#f1f1f1" width={20} height={20} strokeWidth={1} />
-            }
-            visible={cursorVisible}
-         />
+         {isDesktop && (
+            <StyledCursor
+               icon={
+                  <Link
+                     color="#f1f1f1"
+                     width={20}
+                     height={20}
+                     strokeWidth={1}
+                  />
+               }
+               visible={cursorVisible}
+            />
+         )}
       </motion.div>
    );
 });

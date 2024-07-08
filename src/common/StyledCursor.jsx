@@ -4,8 +4,8 @@ import { useEffect } from "react";
 export const StyledCursor = ({ icon, visible }) => {
    const cursorSize = 100;
    const mouse = {
-      x: useMotionValue(0),
-      y: useMotionValue(0),
+      x: useMotionValue(null),
+      y: useMotionValue(null),
    };
 
    const smoothMouse = {

@@ -33,7 +33,7 @@ export const StackProjects = () => {
          ref={container}
          className="stackProjects h-screen my-10 lg:my-40 flex items-center justify-center"
       >
-         <div className="relative w-[90vw] lg:w-[80vw] h-[50vh] md:h-[60vh] lg:h-[80vh]">
+         <div className="relative w-[90vw] lg:w-[80vw] h-[68vh] md:h-[60vh] lg:h-[80vh]">
             {stack.slice(0, 4).map((sta) => (
                <a
                   href={sta.link}
@@ -47,7 +47,7 @@ export const StackProjects = () => {
                      alt={sta.title}
                   />
                   <div className="fadeBottomCustom h-full relative bottom-[100%] right-0 rounded-lg transition-all duration-300" />
-                  <div className="absolute top-0 lg:top-[26%] left-0 flex flex-col lg:flex-row items-center justify-center lg:justify-between h-full w-full px-10">
+                  <div className="absolute top-0 lg:top-[26%] left-0 flex flex-col lg:flex-row gap-4 lg:gap-0 items-center justify-center lg:justify-between h-full w-full px-10">
                      <p className="animated-bg-white text-[40px] xs:text-[50px] sm:text-[90px] md:text-[100px] lg:text-[108px] text-[#f1f1f1] font-[1000] text-nowrap">
                         {sta.title}
                      </p>

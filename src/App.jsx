@@ -85,22 +85,20 @@ function App() {
                      </>
                   }
                />
-               {isDesktop && (
-                  <Route
-                     path="/projects"
-                     element={
-                        <>
-                           <PageTitle title="Projects | Prem Sapkale" />
-                           <TransitionedProjectsElement
-                              id="projectsElement"
-                              ref={(socialRef, projectsRef)}
-                              socialRef={socialRef}
-                              projectsRef={projectsRef}
-                           />
-                        </>
-                     }
-                  />
-               )}
+               <Route
+                  path="/projects"
+                  element={
+                     <>
+                        <PageTitle title="Projects | Prem Sapkale" />
+                        <TransitionedProjectsElement
+                           id="projectsElement"
+                           ref={(socialRef, projectsRef)}
+                           socialRef={socialRef}
+                           projectsRef={projectsRef}
+                        />
+                     </>
+                  }
+               />
             </Routes>
          </AnimatePresence>
       </>

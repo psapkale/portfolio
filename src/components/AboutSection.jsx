@@ -44,7 +44,7 @@ export const AboutSection = () => {
    return (
       <div
          ref={description}
-         className="aboutSection w-full h-screen flex items-center justify-center lg:my-10 lg:mb-40 lg:px-28 text-center lg:text-left relative"
+         className="aboutSection w-full  h-[66dvh] lg:h-screen flex items-center justify-center lg:my-10 lg:mb-40 lg:px-28 text-center lg:text-left relative"
       >
          <div className="z-10">
             <h1
