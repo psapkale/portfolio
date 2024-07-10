@@ -1,33 +1,11 @@
-import gsap from "gsap";
-import { forwardRef, useEffect, useRef } from "react";
+import { forwardRef, useRef } from "react";
 import { GsapMagnetic } from "./GSAPMagnetic";
 import logo from "/logo.svg";
 import { useIsDesktop } from "../hooks/useIsDesktop";
 
 export const Appbar = forwardRef((props, ref) => {
    const appbarRef = useRef(null);
-   let scroll = window.scrollY;
    const isDesktop = useIsDesktop(800);
-
-   const handleScroll = () => {
-      const newScroll = window.scrollY;
-
-      if (newScroll > scroll) {
-         gsap.to(".appbar", {
-            y: "-100%",
-            transitionDuration: "150ms",
-            ease: "power3.out",
-         });
-      } else if (newScroll <= scroll) {
-         gsap.to(".appbar", {
-            y: "0%",
-            transitionDuration: "100ms",
-            ease: "power3.out",
-         });
-      }
-
-      scroll = newScroll;
-   };
 
    function handleContact() {
       const main = document.getElementById("main");
@@ -36,17 +14,9 @@ export const Appbar = forwardRef((props, ref) => {
       });
    }
 
-   useEffect(() => {
-      window?.addEventListener("scroll", handleScroll);
-
-      return () => {
-         window?.removeEventListener("scroll", handleScroll);
-      };
-   }, []);
-
    return (
       <nav
-         className="appbar text-[#0E100F] flex items-center font-['Mulish'] justify-between p-4 sm:p-6 z-50 fixed top-0 left-0 w-[100dvw] transition-colors duration-300"
+         className="appbar text-[#0E100F] flex items-center font-['Mulish'] justify-between p-4 sm:p-6 z-20 absolute top-0 left-0 w-[100dvw] transition-colors duration-300"
          ref={appbarRef}
       >
          <div className="text-lg font-[600] py-3 px-4 sm:px-6 rounded-full flex ">

@@ -46,7 +46,7 @@ export const AboutSection = () => {
          ref={description}
          className="aboutSection w-full  h-[66dvh] lg:h-screen flex items-center justify-center lg:my-10 lg:mb-40 lg:px-28 text-center lg:text-left relative"
       >
-         <div className="z-10">
+         <div>
             <h1
                id="aboutHeading"
                className="w-full lg:w-fit scale-y-[1.2] md:scale-y-[1] text-[50px] md:text-[80px] font-[1000] text-slate-950 drop-shadow-lg about-hidden text-nowrap"
@@ -65,7 +65,7 @@ export const AboutSection = () => {
             </p>
          </div>
          {isDesktop && (
-            <div className="absolute top-0 sm:top-auto left-0 sm:left-auto bottom-0 sm:bottom-auto right-0">
+            <div className="absolute top-0 sm:top-auto left-0 sm:left-auto bottom-0 sm:bottom-auto right-0 -z-10">
                <WaterDropGrid gridWidth={28} gridHeight={56} />
             </div>
          )}

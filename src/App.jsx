@@ -10,6 +10,7 @@ import { AnimatePresence } from "framer-motion";
 import transition from "./animations/transition";
 import { Preloader } from "./components/PreLoader";
 import PageTitle from "./components/PageTitle";
+import { MenuOverlay } from "./components/MenuOverlay";
 
 const TransitionedHomeElement = transition(HomeElement);
 const TransitionedProjectsElement = transition(ProjectsElement);
@@ -66,6 +67,7 @@ function App() {
             />
          )} */}
          <Appbar ref={appbarRef} />
+         <MenuOverlay />
 
          <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
