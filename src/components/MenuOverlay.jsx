@@ -87,16 +87,13 @@ export const MenuOverlay = () => {
                </a>
             </div>
          </div>
-         {/* hamburger */}
          <div
             onClick={handleShowOverlayModal}
-            className={`hamburger w-[40px] ${
+            className={`menu-btn-3 w-[48px] h-[30px] fixed top-6 lg:top-1/2 right-10 ${
                showMenuOverlay ? "active" : ""
-            } fixed top-6 lg:top-[50%] right-10 cursor-pointer z-30`}
+            } z-30 cursor-pointer`}
          >
-            <div class="bar first"></div>
-            <div class="bar second"></div>
-            <div class="bar third"></div>
+            <span></span>
          </div>
       </>
    );
