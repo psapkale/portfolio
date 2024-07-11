@@ -51,25 +51,29 @@ export const MenuOverlay = () => {
          <div
             className={`border-r-4 border-[#111] fixed top-0 left-0 ${
                showMenuOverlay ? "z-30" : "z-0"
-            } w-[120dvw] h-screen flex items-center bg-[#f1f1f1] px-10 duration-[600ms] ${
+            } w-[120dvw] h-screen flex items-center bg-[#f1f1f1] px-2 lg:px-10 duration-[600ms] ${
                showMenuOverlay ? "translate-x-0" : "translate-x-[-100%]"
             }`}
          >
-            <div className="h-[80%] text-[100px] font-[1000] flex flex-col gap-2 items-start justify-evenly uppercase leading-tight">
-               <a href="/" data-fill-text="Home" className="menuText">
+            <div className="h-full lg:h-[80%] text-[40px] md:text-[60px] lg:text-[100px] font-[1000] flex flex-col gap-6 lg:gap-2 items-start justify-center lg:justify-evenly uppercase leading-tight">
+               <a
+                  href="/"
+                  data-fill-text="Home"
+                  className="menuText pl-[6px] lg:pl-[20px]"
+               >
                   Home
                </a>
                <a
                   href="/projects"
                   data-fill-text="Projects"
-                  className="menuText"
+                  className="menuText pl-[6px] lg:pl-[20px]"
                >
                   Projects
                </a>
                <span
                   onClick={handleContact}
                   data-fill-text="Contact"
-                  className="menuText"
+                  className="menuText pl-[6px] lg:pl-[20px]"
                >
                   Contact
                </span>
@@ -77,17 +81,18 @@ export const MenuOverlay = () => {
                   href="https://drive.google.com/file/d/1zhfJUCPIhzacavQHfp9tFRJ45b94cRgK/view"
                   target="_blank"
                   data-fill-text="Resume"
-                  className="menuText"
+                  className="menuText pl-[6px] lg:pl-[20px]"
                >
                   Resume
                </a>
             </div>
          </div>
+         {/* hamburger */}
          <div
             onClick={handleShowOverlayModal}
-            className={`hamburger ${
+            className={`hamburger w-[40px] ${
                showMenuOverlay ? "active" : ""
-            } fixed top-[50%] right-10 cursor-pointer z-30`}
+            } fixed top-6 lg:top-[50%] right-10 cursor-pointer z-30`}
          >
             <div class="bar first"></div>
             <div class="bar second"></div>

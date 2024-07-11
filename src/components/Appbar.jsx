@@ -16,10 +16,10 @@ export const Appbar = forwardRef((props, ref) => {
 
    return (
       <nav
-         className="appbar text-[#0E100F] flex items-center font-['Mulish'] justify-between p-4 sm:p-6 z-20 absolute top-0 left-0 w-[100dvw] transition-colors duration-300"
+         className="appbar text-[#0E100F] flex items-center font-['Mulish'] justify-end p-4 sm:p-6 absolute top-0 left-0 w-[100dvw] transition-colors duration-300"
          ref={appbarRef}
       >
-         <div className="text-lg font-[600] py-3 px-4 sm:px-6 rounded-full flex ">
+         <div className="fixed top-4 left-4 text-lg py-3 px-4 sm:px-6 font-[600] rounded-full flex z-50">
             <a href="/" className="uppercase cursor-pointer">
                <img
                   src={logo}
@@ -32,12 +32,12 @@ export const Appbar = forwardRef((props, ref) => {
          </div>
 
          <div
-            className="flex items-center justify-between sm:w-1/3 md:w-fit"
+            className="hidden lg:flex items-center justify-between sm:w-1/3 md:w-fit"
             ref={ref}
          >
             <GsapMagnetic>
                <div
-                  className={`hidden lg:inline text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]`}
+                  className={`text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]`}
                >
                   <a href="/projects" className="uppercase cursor-pointer">
                      Projects
