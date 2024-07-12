@@ -348,10 +348,6 @@ body {
    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
-/* .menu-btn-3:hover {
-   background: #8cff32;
-} */
-
 .menu-btn-3.active {
    clip-path: none;
 }
@@ -361,7 +357,6 @@ body {
 }
 
 .menu-btn-3.active span::before {
-   background: #8cff32;
    margin-top: 0;
    width: 48px;
    -webkit-transform: rotate(45deg);
@@ -371,7 +366,11 @@ body {
 }
 
 .menu-btn-3.active:hover span::before {
-   background: #111;
+   background: #ef4444;
+}
+
+.menu-btn-3.active:hover span::after {
+   background: #ef4444;
 }
 
 .menu-btn-3.active span::after {
