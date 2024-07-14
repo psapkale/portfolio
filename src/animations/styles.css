@@ -365,14 +365,6 @@ body {
    transform: rotate(45deg);
 }
 
-.menu-btn-3.active:hover span::before {
-   background: #ef4444;
-}
-
-.menu-btn-3.active:hover span::after {
-   background: #ef4444;
-}
-
 .menu-btn-3.active span::after {
    background: #111;
    width: 48px;
