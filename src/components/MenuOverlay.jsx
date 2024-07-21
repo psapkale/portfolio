@@ -88,6 +88,64 @@ export const MenuOverlay = () => {
             </div>
          </div>
          <div
+            className={`w-full fixed top-[90%] lg:top-6 z-30 duration-[800ms] ${
+               showMenuOverlay
+                  ? "translate-y-0"
+                  : "translate-y-[400%] lg:translate-y-[-400%]"
+            }`}
+         >
+            <div className="px-6 flex gap-6 items-center justify-center lg:justify-end">
+               <a
+                  target="_blank"
+                  href="https://github.com/psapkale"
+                  className=""
+               >
+                  <img
+                     src="/github.jpg"
+                     alt="github.com/psapkale"
+                     width={28}
+                     height={28}
+                  />
+               </a>
+               <a
+                  target="_blank"
+                  href="https://twitter.com/premstw"
+                  className=""
+               >
+                  <img
+                     src="/x.jpg"
+                     alt="twitter.com/premstw"
+                     width={28}
+                     height={28}
+                  />
+               </a>
+               <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/premsapkale"
+                  className=""
+               >
+                  <img
+                     src="/linkedin.svg"
+                     alt="linkedin.com/in/premsapkale"
+                     width={28}
+                     height={28}
+                  />
+               </a>
+               <a
+                  target="_blank"
+                  href="https://www.instagram.com/prem__thxi"
+                  className=""
+               >
+                  <img
+                     src="/instagram.jpg"
+                     alt="instagram.com/prem__thxi"
+                     width={28}
+                     height={28}
+                  />
+               </a>
+            </div>
+         </div>
+         <div
             onClick={handleShowOverlayModal}
             className={`menu-btn-3 w-[48px] h-[30px] fixed top-6 lg:top-1/2 right-10 ${
                showMenuOverlay ? "active" : ""
