@@ -44,31 +44,46 @@ export const AboutSection = () => {
    return (
       <div
          ref={description}
-         className="aboutSection w-full  h-[66dvh] lg:h-screen flex items-center justify-center lg:my-10 lg:mb-40 lg:px-28 text-center lg:text-left relative"
+         className="aboutSection w-full h-screen lg:h-[120dvh] flex items-center justify-center lg:my-10 lg:mb-40 lg:px-28 text-center lg:text-left relative"
       >
          <div>
             <h1
                id="aboutHeading"
-               className="w-full lg:w-fit scale-y-[1.2] md:scale-y-[1] text-[50px] md:text-[80px] font-[1000] text-slate-950 drop-shadow-lg about-hidden text-nowrap"
+               className="w-full text-center scale-y-[4] scale-x-[1.68] xs:scale-x-[2] md:scale-x-[2.2] lg:scale-x-[3.2] xl:scale-x-[4] 2xl:scale-x-[4.6] text-[50px] leading-tight md:text-[80px] font-[1000] drop-shadow-lg about-hidden text-nowrap fadeBottomText"
             >
-               Namaste🙏
+               Namaste
             </h1>
             <p
                id="aboutText"
-               className="lg:bg-[#f1f1f1] lg:rounded-e-full py-2 text-xl md:text-2xl px-6 lg:px-0 scale-y-[1.2] lg:scale-y-[1] font-[600] mt-16 md:mt-12 xl:mt-8 w-full lg:w-2/3 about-hidden"
+               className="text-slate-950 text-center py-2 text-xl md:text-2xl lg:text-4xl px-6 lg:px-0 scale-y-[1.2] lg:scale-y-[1] font-[600] mt-40 w-full about-hidden"
             >
-               Hellow, I'm Prem Sapkale, a{" "}
-               <span className="text-slate-600 line-through">notorious</span>{" "}
+               {/* 🙏  */}
+               I'm Prem Sapkale, a{" "}
+               <span className="text-slate-600 line-through">
+                  notorious
+               </span>{" "}
                curious FullStack Developer who enjoys creating immersive
                experience on the internet. I develop exceptional websites and
                web apps that provide intutive, pixel-perfect user interfaces.
             </p>
+            <section className="absolute top-0 left-0 w-full h-3/4 shootingStarsSection">
+               <span></span>
+               <span></span>
+               <span></span>
+               <span></span>
+               <span></span>
+               <span></span>
+               <span></span>
+               <span></span>
+               <span></span>
+               <span></span>
+            </section>
          </div>
-         {isDesktop && (
+         {/* {isDesktop && (
             <div className="absolute top-0 sm:top-auto left-0 sm:left-auto bottom-0 sm:bottom-auto right-0 -z-10">
                <WaterDropGrid gridWidth={28} gridHeight={56} />
             </div>
-         )}
+         )} */}
       </div>
    );
 };
