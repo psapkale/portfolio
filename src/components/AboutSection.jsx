@@ -44,12 +44,12 @@ export const AboutSection = () => {
    return (
       <div
          ref={description}
-         className="aboutSection w-full h-screen lg:h-[120dvh] flex items-center justify-center lg:my-10 lg:mb-40 lg:px-28 text-center lg:text-left relative"
+         className="aboutSection w-full h-screen lg:h-[120dvh] flex items-center justify-center lg:my-10 lg:mb-40 lg:px-28 text-center lg:text-left relative overflow-x-clip"
       >
          <div>
             <h1
                id="aboutHeading"
-               className="w-full text-center scale-y-[4] scale-x-[1.68] xs:scale-x-[2] md:scale-x-[2.2] lg:scale-x-[3.2] xl:scale-x-[4] 2xl:scale-x-[4.6] text-[50px] leading-tight md:text-[80px] font-[1000] drop-shadow-lg about-hidden text-nowrap fadeBottomText"
+               className="w-fit absolute top-[25%] left-[66px] xxs:left-[80px] xs:left-[100px] md:left-[200px] lg:left-[320px] xl:left-[440px] 2xl:left-[528px] text-center scale-y-[4] scale-x-[1.68] xs:scale-x-[2] md:scale-x-[2.2] lg:scale-x-[3.2] xl:scale-x-[4] 2xl:scale-x-[4.6] text-[50px] leading-tight md:text-[80px] font-[1000] drop-shadow-lg about-hidden text-nowrap fadeBottomText"
             >
                Namaste
             </h1>
@@ -66,7 +66,7 @@ export const AboutSection = () => {
                experience on the internet. I develop exceptional websites and
                web apps that provide intutive, pixel-perfect user interfaces.
             </p>
-            <section className="absolute top-0 left-0 w-full h-3/4 shootingStarsSection">
+            <section className="absolute top-0 left-0 w-screen h-full shootingStarsSection">
                <span></span>
                <span></span>
                <span></span>

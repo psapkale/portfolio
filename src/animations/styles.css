@@ -459,7 +459,7 @@ body {
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
    background-size: cover;
-   animation: animateShootingBg 50s linear infinite;
+   /* animation: animateShootingBg 50s linear infinite; */
 }
 
 .shootingStarsSection > span {
