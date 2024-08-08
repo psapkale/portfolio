@@ -47,12 +47,12 @@ export const AboutSection = () => {
          className="aboutSection w-full h-screen lg:h-[120dvh] flex items-center justify-center lg:my-10 lg:mb-40 lg:px-28 text-center lg:text-left relative overflow-x-clip"
       >
          <div>
-            <h1
+            <div
                id="aboutHeading"
-               className="w-fit absolute top-[25%] left-[66px] xxs:left-[80px] xs:left-[100px] md:left-[200px] lg:left-[320px] xl:left-[440px] 2xl:left-[528px] text-center scale-y-[4] scale-x-[1.68] xs:scale-x-[2] md:scale-x-[2.2] lg:scale-x-[3.2] xl:scale-x-[4] 2xl:scale-x-[4.6] text-[50px] leading-tight md:text-[80px] font-[1000] drop-shadow-lg about-hidden text-nowrap fadeBottomText"
+               className="w-full absolute top-[25%] left-0 text-center scale-y-[4] scale-x-[1.68] xs:scale-x-[2] md:scale-x-[2.2] lg:scale-x-[3.2] xl:scale-x-[4] 2xl:scale-x-[4.6] text-[50px] leading-tight md:text-[80px] font-[1000] drop-shadow-lg about-hidden text-nowrap fadeBottomText"
             >
-               Namaste
-            </h1>
+               <h1 className="">Namaste</h1>
+            </div>
             <p
                id="aboutText"
                className="text-slate-950 text-center py-2 text-xl md:text-2xl lg:text-4xl px-6 lg:px-0 scale-y-[1.2] lg:scale-y-[1] font-[600] mt-40 w-full about-hidden"
