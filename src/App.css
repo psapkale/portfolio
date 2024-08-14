@@ -48,5 +48,11 @@ img {
 body {
    background-color: var(--bg-color);
    color: var(--text-color);
+   cursor: url("../public/cursors/Astronaut/AstronautHyping.png") 16 16, auto;
    overflow-x: hidden;
+}
+
+.custom-cursor {
+   cursor: url("../public/cursors/Astronaut/AstronautHypingPointer.png") 16 16,
+      auto;
 }

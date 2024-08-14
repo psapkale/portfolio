@@ -39,7 +39,7 @@ export const StackProjects = () => {
                   href={sta.link}
                   target="_blank"
                   key={sta.title}
-                  className="card absolute top-0 left-0 h-full w-full group cursor-pointer"
+                  className="card absolute top-0 left-0 h-full w-full group custom-cursor"
                >
                   <img
                      className="w-full h-full rounded-lg object-cover"

@@ -127,7 +127,7 @@ export const ProjectsMini = ({ id }) => {
             {menuItems.map((item, idx) => (
                <a
                   href={item.link}
-                  className="menu-item w-[100%] px-[0.6em] sm:px-[2em] flex items-center cursor-pointer"
+                  className="menu-item w-[100%] px-[0.6em] sm:px-[2em] flex items-center custom-cursor"
                   key={idx}
                   ref={(el) => (menuItemRef.current[idx] = el)}
                   onMouseOver={() => handleMouseOver(idx)}

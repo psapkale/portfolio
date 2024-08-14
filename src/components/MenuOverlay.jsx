@@ -59,21 +59,21 @@ export const MenuOverlay = () => {
                <a
                   href="/"
                   data-fill-text="Home"
-                  className="menuText pl-[6px] lg:pl-[20px]"
+                  className="menuText custom-cursor pl-[6px] lg:pl-[20px]"
                >
                   Home
                </a>
                <a
                   href="/projects"
                   data-fill-text="Projects"
-                  className="menuText pl-[6px] lg:pl-[20px]"
+                  className="menuText custom-cursor pl-[6px] lg:pl-[20px]"
                >
                   Projects
                </a>
                <span
                   onClick={handleContact}
                   data-fill-text="Contact"
-                  className="menuText pl-[6px] lg:pl-[20px]"
+                  className="menuText custom-cursor pl-[6px] lg:pl-[20px]"
                >
                   Contact
                </span>
@@ -81,7 +81,7 @@ export const MenuOverlay = () => {
                   href="https://drive.google.com/file/d/1zhfJUCPIhzacavQHfp9tFRJ45b94cRgK/view"
                   target="_blank"
                   data-fill-text="Resume"
-                  className="menuText pl-[6px] lg:pl-[20px]"
+                  className="menuText custom-cursor pl-[6px] lg:pl-[20px]"
                >
                   Resume
                </a>
@@ -98,7 +98,7 @@ export const MenuOverlay = () => {
                <a
                   target="_blank"
                   href="https://github.com/psapkale"
-                  className=""
+                  className="custom-cursor"
                >
                   <img
                      src="/github.jpg"
@@ -110,7 +110,7 @@ export const MenuOverlay = () => {
                <a
                   target="_blank"
                   href="https://twitter.com/premstw"
-                  className=""
+                  className="custom-cursor"
                >
                   <img
                      src="/x.jpg"
@@ -122,7 +122,7 @@ export const MenuOverlay = () => {
                <a
                   target="_blank"
                   href="https://www.linkedin.com/in/premsapkale"
-                  className=""
+                  className="custom-cursor"
                >
                   <img
                      src="/linkedin.svg"
@@ -134,7 +134,7 @@ export const MenuOverlay = () => {
                <a
                   target="_blank"
                   href="https://www.instagram.com/prem__thxi"
-                  className=""
+                  className="custom-cursor"
                >
                   <img
                      src="/instagram.jpg"
@@ -149,7 +149,7 @@ export const MenuOverlay = () => {
             onClick={handleShowOverlayModal}
             className={`menu-btn-3 w-[48px] h-[30px] fixed top-6 lg:top-1/2 right-10 ${
                showMenuOverlay ? "active" : ""
-            } z-30 cursor-pointer`}
+            } z-30 custom-cursor`}
          >
             <span></span>
          </div>

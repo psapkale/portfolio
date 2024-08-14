@@ -39,7 +39,7 @@ const DotGrid = ({ gridWidth, gridHeight }) => {
          dots.push(
             <div
                onClick={handleDotClick}
-               className="group cursor-pointer rounded-full p-2 transition-colors hover:bg-slate-400"
+               className="group custom-cursor rounded-full p-2 transition-colors hover:bg-slate-400"
                data-index={index}
                key={`${i}-${j}`}
             >

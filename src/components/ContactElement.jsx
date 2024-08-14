@@ -79,7 +79,7 @@ export const ContactElement = () => {
                         <a
                            target="_blank"
                            href="https://github.com/psapkale"
-                           className="hover:text-[#f1f1f1] flex gap-2 sm:gap-10"
+                           className="custom-cursor hover:text-[#f1f1f1] flex gap-2 sm:gap-10"
                         >
                            Github
                         </a>
@@ -89,7 +89,7 @@ export const ContactElement = () => {
                         <a
                            target="_blank"
                            href="https://twitter.com/premstw"
-                           className="hover:text-[#f1f1f1] flex gap-2 sm:gap-10"
+                           className="custom-cursor hover:text-[#f1f1f1] flex gap-2 sm:gap-10"
                         >
                            Twitter
                         </a>
@@ -99,7 +99,7 @@ export const ContactElement = () => {
                         <a
                            target="_blank"
                            href="https://www.linkedin.com/in/premsapkale"
-                           className="hover:text-[#f1f1f1] flex gap-2 sm:gap-10"
+                           className="custom-cursor hover:text-[#f1f1f1] flex gap-2 sm:gap-10"
                         >
                            Linkedin
                         </a>
@@ -109,7 +109,7 @@ export const ContactElement = () => {
                         <a
                            target="_blank"
                            href="https://www.instagram.com/prem__thxi"
-                           className="hover:text-[#f1f1f1] flex gap-2 sm:gap-10"
+                           className="custom-cursor hover:text-[#f1f1f1] flex gap-2 sm:gap-10"
                         >
                            Instagram
                         </a>
@@ -170,7 +170,7 @@ export const ContactElement = () => {
             </div>
             {isDesktop && (
                <div
-                  className="sm:text-lg text-nowrap cursor-pointer "
+                  className="sm:text-lg text-nowrap custom-cursor "
                   onClick={handleClick}
                >
                   Back in time

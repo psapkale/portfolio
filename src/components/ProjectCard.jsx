@@ -76,7 +76,7 @@ export const ProjectCard = forwardRef(
                target="_blank"
                ref={ref}
                id={id}
-               className={`w-full h-fit lg:h-[90dvh] flex ${
+               className={`custom-cursor w-full h-fit lg:h-[90dvh] flex ${
                   isDesktop ? "flex-row" : "flex-col"
                } items-center justify-between p-[10px] sm:p-[80px] group ${
                   !isDesktop

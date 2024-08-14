@@ -20,7 +20,7 @@ export const Appbar = forwardRef((props, ref) => {
          ref={appbarRef}
       >
          <div className="fixed top-4 left-4 text-lg py-3 px-4 sm:px-6 font-[600] rounded-full flex z-50">
-            <a href="/" className="uppercase cursor-pointer">
+            <a href="/" className="custom-cursor uppercase custom-cursor">
                <img
                   src={logo}
                   alt="Prem Sapkale"
@@ -39,7 +39,10 @@ export const Appbar = forwardRef((props, ref) => {
                <div
                   className={`text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]`}
                >
-                  <a href="/projects" className="uppercase cursor-pointer">
+                  <a
+                     href="/projects"
+                     className="custom-cursor uppercase custom-cursor"
+                  >
                      Projects
                   </a>
                </div>
@@ -48,7 +51,7 @@ export const Appbar = forwardRef((props, ref) => {
                <div className="text-[14px] md:text-[16px] lg:text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]">
                   <div
                      onClick={handleContact}
-                     className="uppercase cursor-pointer"
+                     className="uppercase custom-cursor"
                   >
                      Contact
                   </div>
@@ -59,7 +62,7 @@ export const Appbar = forwardRef((props, ref) => {
                   <a
                      href="https://drive.google.com/file/d/1zhfJUCPIhzacavQHfp9tFRJ45b94cRgK/view"
                      target="_blank"
-                     className="uppercase"
+                     className="custom-cursor uppercase"
                   >
                      Resume
                   </a>
