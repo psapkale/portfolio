@@ -32,7 +32,7 @@ export const NameElement = () => {
 
    return (
       <div>
-         <div className="header w-[100dvw] h-[100dvh] mt-12 flex flex-col items-center justify-center pointer-events-none select-none relative">
+         <div className="header w-[100dvw] h-[60dvh] md:h-[100dvh] mt-12 flex flex-col items-center justify-center pointer-events-none select-none relative">
             <div
                id="nameText"
                className="absolute translate-x-[0%] -translate-y-[50%] letters text-[#0E100F] flex flex-row items-center justify-center text-[40px] sm:text-[60px] md:text-[88px] lg:text-[120px] xl:text-[180px] leading-[0.78] scale-y-[3.2] xs:scale-y-[4.2] sm:scale-y-[4.2] xl:scale-y-[3.2] xl:scale-x-[0.72] uppercase font-[880] drop-shadow-lg name-hidden animated-bg"
