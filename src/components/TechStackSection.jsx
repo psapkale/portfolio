@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useIsDesktop } from "../hooks/useIsDesktop";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FadeUp } from "./FadeUp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,9 +73,11 @@ export const TechStackSection = () => {
 
    return (
       <div className="skillsSection h-fit my-20 lg:my-40 grid place-content-center gap-6 lg:gap-10 px-2 lg:px-20 py-20">
-         <h1 className="text-center text-[#f1f1f1] text-6xl font-[1000] drop-shadow-md mb-2 sm:mb-20">
-            Skills
-         </h1>
+         <FadeUp>
+            <h1 className="fade-up text-center text-[#f1f1f1] text-6xl font-[1000] drop-shadow-md mb-2 sm:mb-20">
+               Skills
+            </h1>
+         </FadeUp>
          <div id="skillcards">
             {techStack.map((stack, idx) => (
                <div
