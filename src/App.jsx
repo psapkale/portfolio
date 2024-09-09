@@ -45,7 +45,7 @@ function App() {
          setTimeout(() => {
             window.scrollTo(0, 0);
             setIsLoading(false);
-         }, 2440);
+         }, 1680);
 
       return () => {};
    }, [location.pathname]);

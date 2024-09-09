@@ -4,14 +4,15 @@ import { motion } from "framer-motion";
 import { opacity, slideUp } from "../animations/anim.js";
 
 const words = [
-   "/headphone.png",
-   "/aeroplane.png",
-   "/game.png",
-   "/tree.png",
-   "/football.png",
-   "/formula.png",
-   "/mountain.png",
-   "/laptop.png",
+   // "/headphone.png",
+   // "/aeroplane.png",
+   // "/game.png",
+   // "/tree.png",
+   // "/football.png",
+   // "/formula.png",
+   // "/mountain.png",
+   // "/laptop.png",
+   "/logo-white.svg",
 ];
 
 export const Preloader = () => {
