@@ -29,7 +29,7 @@ export const FadeUp = ({
          });
 
          gsap.from(split.lines, {
-            opacity: 0,
+            // opacity: 0,
             y: "160",
             duration: duration,
             ease: "power3.inOut",
