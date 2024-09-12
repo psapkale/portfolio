@@ -90,8 +90,8 @@ export const MenuOverlay = () => {
          <div
             className={`w-full fixed top-[90%] lg:top-6 z-30 duration-[800ms] ${
                showMenuOverlay
-                  ? "translate-y-0"
-                  : "translate-y-[400%] lg:translate-y-[-400%]"
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-[600%] lg:translate-y-[-400%]"
             }`}
          >
             <div className="px-6 flex gap-6 items-center justify-center lg:justify-end">
