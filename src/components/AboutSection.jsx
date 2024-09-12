@@ -45,13 +45,13 @@ export const AboutSection = () => {
    return (
       <div
          ref={description}
-         className="aboutSection w-full h-[60dvh] md:h-screen lg:h-[120dvh] flex items-center justify-center lg:my-10 lg:mb-40 lg:px-28 text-center lg:text-left relative overflow-x-clip"
+         className="aboutSection w-full h-[66dvh] md:h-screen lg:h-[120dvh] flex items-center justify-center lg:my-10 lg:mb-40 lg:px-28 text-center lg:text-left relative overflow-x-clip"
       >
          <div>
             <FadeUp>
                <div
                   id="aboutHeading"
-                  className="w-full absolute sm:top-[25%] left-0 text-center scale-y-[4] scale-x-[1.68] xs:scale-x-[2] md:scale-x-[2.2] lg:scale-x-[3.2] xl:scale-x-[4] 2xl:scale-x-[4.6] text-[50px] leading-tight md:text-[80px] font-[1000] drop-shadow-lg about-hidden text-nowrap fadeBottomText"
+                  className="w-full absolute top-0 left-0 text-center scale-y-[4] scale-x-[1.68] xs:scale-x-[2] md:scale-x-[2.2] lg:scale-x-[3.2] xl:scale-x-[4] 2xl:scale-x-[4.6] text-[50px] leading-tight md:text-[80px] font-[1000] drop-shadow-lg about-hidden text-nowrap fadeBottomText"
                >
                   <h1 className="">Namaste</h1>
                </div>
