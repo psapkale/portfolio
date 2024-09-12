@@ -40,7 +40,7 @@ export const NameElement = () => {
    }, []);
 
    return (
-      <div>
+      <>
          <div className="header w-[100dvw] h-[100dvh] md:h-[100dvh] mt-12 flex flex-col items-center justify-center pointer-events-none select-none relative">
             <div
                id="nameText"
@@ -63,7 +63,42 @@ export const NameElement = () => {
                   based in India
                </h1>
             </div>
+            <div className="absolute bottom-[10%] left-[2%]">
+               <div
+                  className="go-down-btn relative inline-block"
+                  title="Scroll down"
+               >
+                  <svg
+                     version="1.1"
+                     xmlns="http://www.w3.org/2000/svg"
+                     className="relative block"
+                     xmlnsXlink="http://www.w3.org/1999/xlink"
+                     x="0px"
+                     y="0px"
+                     width="100px"
+                     height="100px"
+                     viewBox="0 0 100 100"
+                     enableBackground="new 0 0 100 100"
+                     xmlSpace="preserve"
+                  >
+                     <circle fill="#232426" cx="50" cy="50" r="6" />
+                     <path
+                        id="textPath"
+                        fill="none"
+                        d="M89.322,50.197c0,22.09-17.91,40-40,40c-22.089,0-40-17.91-40-40 c0-22.089,17.911-40,40-40C71.412,10.197,89.322,28.108,89.322,50.197z"
+                     />
+                     <text className="text-[10px] origin-center">
+                        <textPath xlinkHref="#textPath">
+                           <tspan x="10">SCROLL TO DISCOVER</tspan>
+                           <tspan x="122">•</tspan>
+                           <tspan x="134">SCROLL TO DISCOVER</tspan>
+                           <tspan x="248">•</tspan>
+                        </textPath>
+                     </text>
+                  </svg>
+               </div>
+            </div>
          </div>
-      </div>
+      </>
    );
 };

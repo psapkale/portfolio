@@ -564,6 +564,16 @@ body {
    animation-duration: 2.75s;
 }
 
+.go-down-btn text {
+   animation: rotate-btn 10s linear infinite;
+}
+
+@keyframes rotate-btn {
+   to {
+      transform: rotate(360deg);
+   }
+}
+
 @keyframes bganimation {
    0% {
       background-position: 50% 0%;
