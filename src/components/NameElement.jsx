@@ -62,7 +62,7 @@ export const NameElement = () => {
                based in India
             </h1>
          </div>
-         <div className="absolute bottom-0 md:bottom-[10%] left-[2%]">
+         <div className="absolute bottom-[2%] md:bottom-[10%] left-[4%] md:left-[2%]">
             <div
                className="go-down-btn relative inline-block"
                title="Scroll down"
