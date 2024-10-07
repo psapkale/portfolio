@@ -170,7 +170,7 @@ export const ContactElement = () => {
             </div>
             {isDesktop && (
                <div
-                  className="sm:text-lg text-nowrap custom-cursor "
+                  className="sm:text-lg text-nowrap custom-cursor cursor-pointer"
                   onClick={handleClick}
                >
                   Back in time
