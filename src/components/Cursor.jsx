@@ -1,119 +1,155 @@
-import { motion, useMotionValue, useSpring } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
-export const Cursor = ({ showCursor, appbarRef, socialRef, projectsRef }) => {
-   const [isHovered, setIsHovered] = useState(false);
-   const [isProjectHovered, setIsProjectHovered] = useState(false);
-   const cursorSize = isHovered ? 60 : isProjectHovered ? 100 : 20;
-   const mouse = {
-      x: useMotionValue(0),
-      y: useMotionValue(0),
-   };
+let idleTimeout = 150;
+const amount = 20;
+const sineDots = Math.floor(amount * 0.3);
+const width = 26;
+let idle = false;
 
-   const smoothMouse = {
-      x: useSpring(mouse.x, { damping: 100, stiffness: 2000, mass: 0.5 }),
-      y: useSpring(mouse.y, { damping: 100, stiffness: 2000, mass: 0.5 }),
-   };
-
-   const manageMouseMove = (e) => {
-      const { clientX, clientY } = e;
-      mouse.x.set(clientX - cursorSize / 2);
-      mouse.y.set(clientY - cursorSize / 2);
-   };
-
-   const manageMouseOver = () => {
-      setIsHovered(true);
-   };
-
-   const manageMouseLeave = () => {
-      setIsHovered(false);
-   };
-
-   function manageProjectMouseOver() {
-      setIsProjectHovered(true);
+class Dot {
+   constructor(index = 0, cursor) {
+      this.index = index;
+      this.anglespeed = 0.05;
+      this.x = 0;
+      this.y = 0;
+      this.scale = 1 - 0.05 * index;
+      this.range = width / 2 - (width / 2) * this.scale + 2;
+      this.limit = width * 0.75 * this.scale;
+      this.element = document.createElement("span");
+      gsap.set(this.element, { scale: this.scale });
+      cursor.appendChild(this.element);
    }
 
-   function manageProjectMouseLeave() {
-      setIsProjectHovered(false);
+   lock() {
+      this.lockX = this.x;
+      this.lockY = this.y;
+      this.angleX = Math.PI * 2 * Math.random();
+      this.angleY = Math.PI * 2 * Math.random();
    }
 
+   draw(delta) {
+      if (!idle || this.index <= sineDots) {
+         gsap.set(this.element, { x: this.x, y: this.y });
+      } else {
+         this.angleX += this.anglespeed;
+         this.angleY += this.anglespeed;
+         this.y = this.lockY + Math.sin(this.angleY) * this.range;
+         this.x = this.lockX + Math.sin(this.angleX) * this.range;
+         gsap.set(this.element, { x: this.x, y: this.y });
+      }
+   }
+}
+
+export const Cursor = () => {
+   const cursorRef = useRef(null);
+   const mousePosition = useRef({ x: 0, y: 0 });
+   const dots = useRef([]);
+   let lastFrame = useRef(0);
+   let timeoutID = useRef(null);
+
+   // Initialize the dots and setup event listeners
    useEffect(() => {
-      // window.addEventListener("mousemove", manageMouseMove);
-      document?.addEventListener("mousemove", manageMouseMove);
-      appbarRef.current?.addEventListener("mouseover", manageMouseOver);
-      appbarRef.current?.addEventListener("mouseleave", manageMouseLeave);
+      const cursor = cursorRef.current;
+      buildDots(cursor, dots);
 
-      socialRef.current?.addEventListener("mouseover", manageMouseOver);
-      socialRef.current?.addEventListener("mouseleave", manageMouseLeave);
-
-      // if (projectsRef.current) {
-      //    projectsRef.current.addEventListener(
-      //       "mouseover",
-      //       manageProjectMouseOver
-      //    );
-      //    projectsRef.current.addEventListener(
-      //       "mouseleave",
-      //       manageProjectMouseLeave
-      //    );
-      // }
-      return () => {
-         document?.removeEventListener("mousemove", manageMouseMove);
-         appbarRef.current?.removeEventListener("mouseover", manageMouseOver);
-         appbarRef.current?.removeEventListener("mouseleave", manageMouseLeave);
-
-         socialRef.current?.removeEventListener("mouseover", manageMouseOver);
-         socialRef.current?.removeEventListener("mouseleave", manageMouseLeave);
-
-         // if (projectsRef.current) {
-         //    projectsRef.current.removeEventListener(
-         //       "mouseover",
-         //       manageProjectMouseOver
-         //    );
-         //    projectsRef.current.removeEventListener(
-         //       "mouseleave",
-         //       manageProjectMouseLeave
-         //    );
-         // }
+      const onMouseMove = (event) => {
+         mousePosition.current.x = event.clientX - width / 2;
+         mousePosition.current.y = event.clientY - width / 2;
+         resetIdleTimer();
       };
-   }, [appbarRef, socialRef, projectsRef, cursorSize]);
 
-   return showCursor ? (
-      !isProjectHovered ? (
-         <motion.div
-            className={`hidden md:block w-[20px] h-[20px] fixed top-0 left-0 rounded-full bg-[#111] ${
-               isHovered ? "opacity-[10%]" : "opacity-[30%]"
-            }`}
-            style={{
-               left: smoothMouse.x,
-               top: smoothMouse.y,
-            }}
-            animate={{
-               width: cursorSize,
-               height: cursorSize,
-            }}
-         ></motion.div>
-      ) : (
-         <>
-            {/* <motion.div
-               className={`fixed top-0 left-0 rounded-full bg-[#111]`}
-               style={{
-                  left: smoothMouse.x,
-                  top: smoothMouse.y,
-               }}
-               animate={{
-                  width: cursorSize,
-                  height: cursorSize,
-               }}
-            >
-               <div className="w-full h-full rounded-full flex items-center justify-center shadow-lg uppercase">
-                  <h1 className="text-[18px] text-[#f1f1f1] font-[400]">
-                     Live
-                  </h1>
-               </div>
-            </motion.div> */}
-         </>
-      )
-   ) : (
-      <></>
+      const onTouchMove = (event) => {
+         mousePosition.current.x = event.touches[0].clientX - width / 2;
+         mousePosition.current.y = event.touches[0].clientY - width / 2;
+         resetIdleTimer();
+      };
+
+      window.addEventListener("mousemove", onMouseMove);
+      window.addEventListener("touchmove", onTouchMove);
+
+      // Start the animation loop
+      requestAnimationFrame(render);
+
+      return () => {
+         window.removeEventListener("mousemove", onMouseMove);
+         window.removeEventListener("touchmove", onTouchMove);
+      };
+   }, []);
+
+   const render = (timestamp) => {
+      const delta = timestamp - lastFrame.current;
+      positionCursor(delta);
+      lastFrame.current = timestamp;
+      requestAnimationFrame(render); // Continue loop
+   };
+
+   const positionCursor = (delta) => {
+      let x = mousePosition.current.x;
+      let y = mousePosition.current.y;
+      dots.current.forEach((dot, index, dots) => {
+         let nextDot = dots[index + 1] || dots[0];
+         dot.x = x;
+         dot.y = y;
+         dot.draw(delta);
+         if (!idle || index <= sineDots) {
+            const dx = (nextDot.x - dot.x) * 0.35;
+            const dy = (nextDot.y - dot.y) * 0.35;
+            x += dx;
+            y += dy;
+         }
+      });
+   };
+
+   const buildDots = (cursor, dotsRef) => {
+      for (let i = 0; i < amount; i++) {
+         let dot = new Dot(i, cursor);
+         dotsRef.current.push(dot);
+      }
+   };
+
+   const startIdleTimer = () => {
+      timeoutID.current = setTimeout(goInactive, idleTimeout);
+      idle = false;
+   };
+
+   const resetIdleTimer = () => {
+      clearTimeout(timeoutID.current);
+      startIdleTimer();
+   };
+
+   const goInactive = () => {
+      idle = true;
+      dots.current.forEach((dot) => dot.lock());
+   };
+
+   return (
+      <>
+         <svg
+            xmlns="http://www.w3.org/2000/svg"
+            version="1.1"
+            // width="800"
+            height={0}
+         >
+            <defs>
+               <filter id="goo">
+                  <feGaussianBlur
+                     in="SourceGraphic"
+                     stdDeviation="6"
+                     result="blur"
+                  />
+                  <feColorMatrix
+                     in="blur"
+                     mode="matrix"
+                     values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -15"
+                     result="goo"
+                  />
+                  <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+               </filter>
+            </defs>
+         </svg>
+
+         <div ref={cursorRef} className="Cursor"></div>
+      </>
    );
 };

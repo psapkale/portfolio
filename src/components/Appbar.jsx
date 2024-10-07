@@ -51,7 +51,7 @@ export const Appbar = forwardRef((props, ref) => {
                <div className="text-[14px] md:text-[16px] lg:text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]">
                   <div
                      onClick={handleContact}
-                     className="uppercase custom-cursor"
+                     className="uppercase custom-cursor cursor-pointer"
                   >
                      Contact
                   </div>

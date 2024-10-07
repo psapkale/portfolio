@@ -149,7 +149,7 @@ export const MenuOverlay = () => {
             onClick={handleShowOverlayModal}
             className={`menu-btn-3 w-[48px] h-[30px] fixed top-6 lg:top-1/2 right-10 ${
                showMenuOverlay ? "active" : ""
-            } z-30 custom-cursor`}
+            } z-30 custom-cursor cursor-pointer`}
          >
             <span></span>
          </div>
