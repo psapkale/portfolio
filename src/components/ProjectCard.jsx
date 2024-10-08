@@ -60,7 +60,13 @@ export const ProjectCard = forwardRef(
                }`}
             >
                {projectData.tech?.map((tec) => (
-                  <img src={tec} alt={tec?.slice(1)} width={40} height={40} />
+                  <img
+                     src={tec}
+                     alt={tec?.slice(1)}
+                     width={40}
+                     height={40}
+                     key={tec}
+                  />
                ))}
             </div>
             <div className="px-4 lg:px-0 text-xl lg:text-xl text-[#111]">

@@ -18,13 +18,13 @@ export const projects = [
       tech: ["/next.jpg", "/tailwind.svg"],
    },
    {
-      title: "Intercord",
-      link: "https://intercord.vercel.app",
+      title: "Blog.dev",
+      link: "http://blogdotdev.vercel.app",
       description:
-         "Intercord is seamless examination platform which offers students an authenticated and powerful experience of exams. This platform aims to bring the power of technology at the students' desk.",
+         "Blogify is a dynamic and responsive blogging platform that offers users a seamless experience for creating, editing, and browsing blog posts. This platform aims to bring the power of modern web development and design to content creators, enhancing their blogging experience with efficiency and ease.",
       heroImg: "/intercord-2.gif",
-      img: "/intercord.jpg",
-      tech: ["/react.svg", "/tailwind.svg", "/expressjs.svg", "/nodejs.svg"],
+      img: "/blogdotdev.jpg",
+      tech: ["/react.svg", "/tailwind.svg", "/nodejs.svg"],
    },
    {
       title: "Hunger Bites",

@@ -35,7 +35,7 @@ export const StyledCursor = ({ icon, visible }) => {
 
    return (
       <motion.div
-         className="w-[20px] h-[20px] fixed top-0 left-0 rounded-full bg-[#111] pointer-events-none flex gap-1 items-center justify-center z-50"
+         className="w-[20px] h-[20px] fixed top-0 left-0 rounded-full bg-[#111] pointer-events-none flex gap-1 items-center justify-center z-[9999]"
          style={{
             left: smoothMouse.x,
             top: smoothMouse.y,
