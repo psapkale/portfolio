@@ -1,11 +1,9 @@
 import { forwardRef, useRef } from "react";
 import { GsapMagnetic } from "./GSAPMagnetic";
 import logo from "/logo.svg";
-import { useIsDesktop } from "../hooks/useIsDesktop";
 
 export const Appbar = forwardRef((props, ref) => {
    const appbarRef = useRef(null);
-   const isDesktop = useIsDesktop(800);
 
    function handleContact() {
       const main = document.getElementById("main");
@@ -24,8 +22,8 @@ export const Appbar = forwardRef((props, ref) => {
                <img
                   src={logo}
                   alt="Prem Sapkale"
-                  width={!isDesktop ? 24 : 40}
-                  height={!isDesktop ? 24 : 40}
+                  width={40}
+                  height={40}
                   className="hover:fill-white"
                />
             </a>
