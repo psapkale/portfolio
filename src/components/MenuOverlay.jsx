@@ -55,7 +55,7 @@ export const MenuOverlay = () => {
                showMenuOverlay ? "translate-x-0" : "translate-x-[-100%]"
             }`}
          >
-            <div className="h-full lg:h-[80%] text-[40px] md:text-[60px] lg:text-[100px] font-[1000] flex flex-col gap-6 lg:gap-2 items-start justify-center lg:justify-evenly uppercase leading-tight">
+            <div className="w-[80%] xs:w-full h-full lg:h-[80%] rotate-[270deg] xs:rotate-[0deg] text-[60px] md:text-[60px] lg:text-[100px] font-[1000] flex flex-col gap-6 lg:gap-2 items-start justify-center lg:justify-evenly uppercase leading-tight">
                <a
                   href="/"
                   data-fill-text="Home"
