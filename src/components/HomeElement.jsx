@@ -41,13 +41,13 @@ const HomeElement = forwardRef(({ socialRef, projectsRef }, ref) => {
          <AboutSection />
          <TechStackSection />
          {/* <ColorChangeOnScrollGsap /> */}
-         {isDesktop && (
-            <div id="projectsMiniElement">
-               <ProjectsTag />
-               {/* <ProjectsMini id="projectsMiniElement" /> */}
-               {/* <ProjectsTag invert /> */}
-            </div>
-         )}
+         {/* {isDesktop && ( */}
+         <div id="projectsMiniElement">
+            <ProjectsTag />
+            {/* <ProjectsMini id="projectsMiniElement" /> */}
+            {/* <ProjectsTag invert /> */}
+         </div>
+         {/* )} */}
          <HeroProjectsSection />
          <SliceThrough />
       </div>

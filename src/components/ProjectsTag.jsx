@@ -11,7 +11,7 @@ export const ProjectsTag = ({ invert }) => {
    return (
       <div
          ref={container}
-         className="projectsTag h-[32vh] flex items-center justify-center overflow-x-hidden"
+         className="projectsTag h-[20vh] sm:h-[32vh] flex items-center justify-center overflow-x-hidden"
       >
          <Slider progress={scrollYProgress} invert={invert} />
       </div>

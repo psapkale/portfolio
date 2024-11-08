@@ -31,7 +31,7 @@ export const StackProjects = () => {
    return (
       <div
          ref={container}
-         className="stackProjects h-screen my-10 lg:my-40 flex items-center justify-center"
+         className="stackProjects h-screen lg:my-40 flex items-center justify-center"
       >
          <div className="relative w-[90vw] lg:w-[80vw] h-[68vh] md:h-[60vh] lg:h-[80vh]">
             {stack.slice(0, 4).map((sta) => (
