@@ -36,6 +36,14 @@ export const projects = [
       tech: ["/react.svg", "/tailwind.svg", "/redux.svg"],
    },
    {
+      title: "Weather App",
+      link: "https://weather-app-klimate.vercel.app",
+      description:
+         "The Weather App is an innovative platform that provides real-time weather updates and forecasts through a sleek, interactive interface. Its responsive design adapts seamlessly across devices, featuring engaging data visualizations and the ability to switch between light and dark themes. Built with modern technologies like React and TypeScript, the app ensures high performance and maintainability, delivering a comprehensive and intuitive weather experience tailored to users' needs.",
+      img: "/weather-app.png",
+      tech: ["/react.svg", "/typescript.svg"],
+   },
+   {
       title: "Caption Editor",
       description:
          "Discover enhanced video accessibility through our advanced application designed to prioritize user interaction and inclusivity. Seamlessly integrate hosted video URLs and synchronize personalized captions with pinpoint accuracy using intuitive timestamping features. Empower your audience to engage deeply with content by controlling playback and experiencing dynamically displayed captions. Elevate accessibility standards and enrich user experience with our innovative video captioning solution, setting a new benchmark for inclusive digital interactions.",
