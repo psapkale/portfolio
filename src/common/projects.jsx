@@ -50,4 +50,12 @@ export const projects = [
       img: "/spyne-assesment.jpg",
       tech: ["/next.jpg", "/react.svg"],
    },
+   {
+      title: "RBAC Dashboard",
+      link: "https://rbac-dashboard-react.vercel.app",
+      description:
+         "Role-Based Access Control (RBAC) is a robust system for managing user permissions based on assigned roles, implemented using React, Recoil, and ShadcnUI. It features multiple role control, allowing for differentiated access to operations according to each member's role, with higher-priority roles (like Admin) overriding permissions of lower ones (like Manager). Administrators can easily create new members or roles, change existing roles or statuses, and utilize a search functionality for efficient member management. This approach enhances security and ensures that users have access only to the resources necessary for their responsibilities.",
+      img: "/rbac.png",
+      tech: ["/react.svg", "/typescript.svg"],
+   },
 ];
