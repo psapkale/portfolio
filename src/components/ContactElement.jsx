@@ -2,7 +2,6 @@ import { useRef, useEffect } from "react";
 import { GsapMagnetic } from "./GSAPMagnetic";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ButtonComponent } from "./ButtonComponent";
-import logoWhite from "/logo-white.svg";
 import { useIsDesktop } from "../hooks/useIsDesktop";
 
 export const ContactElement = () => {
@@ -44,11 +43,11 @@ export const ContactElement = () => {
    }
 
    return (
-      <div
+      <footer
          ref={container}
          id="contact"
          // className="border border-white h-[120dvh] lg:h-[160dvh] bg-sky-600 px-0 xs:px-10 text-xl font-[600] text-[#f1f1f1] z-50"
-         className="h-[120vh] bg-sky-600 px-0 xs:px-10 text-xl font-[600] text-[#f1f1f1]"
+         className="h-[100vh] bg-sky-600 px-0 xs:px-10 text-xl font-[600] text-[#f1f1f1]"
       >
          <div className="w-full h-[90%] flex flex-col items-center justify-center">
             <ContactText progress={scrollYProgress} isDesktop={isDesktop} />
@@ -60,135 +59,13 @@ export const ContactElement = () => {
                height={!isDesktop ? 70 : 78}
             />
          </div>
-         <div className="text-lg sm:text-xl h-[10%] flex items-center justify-between">
-            {isDesktop && (
-               <div className="sm:w-[10%] flex items-center justify-center uppercase ">
-                  <img
-                     src={logoWhite}
-                     alt="Prem Sapkale"
-                     width={30}
-                     height={30}
-                     className="fill-white"
-                  />
-               </div>
-            )}
-            <div className="w-full lg:w-1/3 flex items-center justify-center group gap-10 ">
-               {isDesktop ? (
-                  <>
-                     <GsapMagnetic>
-                        <a
-                           target="_blank"
-                           href="https://github.com/psapkale"
-                           className="custom-cursor hover:text-[#f1f1f1] flex gap-2 sm:gap-10"
-                        >
-                           Github
-                        </a>
-                     </GsapMagnetic>
-                     <span className="group-hover:opacity-60">/</span>
-                     <GsapMagnetic>
-                        <a
-                           target="_blank"
-                           href="https://twitter.com/premstw"
-                           className="custom-cursor hover:text-[#f1f1f1] flex gap-2 sm:gap-10"
-                        >
-                           Twitter
-                        </a>
-                     </GsapMagnetic>
-                     <span className="group-hover:opacity-60">/</span>
-                     <GsapMagnetic>
-                        <a
-                           target="_blank"
-                           href="https://www.linkedin.com/in/premsapkale"
-                           className="custom-cursor hover:text-[#f1f1f1] flex gap-2 sm:gap-10"
-                        >
-                           Linkedin
-                        </a>
-                     </GsapMagnetic>
-                     <span className="group-hover:opacity-60">/</span>
-                     <GsapMagnetic>
-                        <a
-                           target="_blank"
-                           href="https://www.instagram.com/prem__thxi"
-                           className="custom-cursor hover:text-[#f1f1f1] flex gap-2 sm:gap-10"
-                        >
-                           Instagram
-                        </a>
-                     </GsapMagnetic>
-                  </>
-               ) : (
-                  <>
-                     <a
-                        target="_blank"
-                        href="https://github.com/psapkale"
-                        className=""
-                     >
-                        <img
-                           src="/github.jpg"
-                           alt="github.com/psapkale"
-                           width={28}
-                           height={28}
-                        />
-                     </a>
-                     <a
-                        target="_blank"
-                        href="https://twitter.com/premstw"
-                        className=""
-                     >
-                        <img
-                           src="/x.jpg"
-                           alt="twitter.com/premstw"
-                           width={28}
-                           height={28}
-                        />
-                     </a>
-                     <a
-                        target="_blank"
-                        href="https://www.linkedin.com/in/premsapkale"
-                        className=""
-                     >
-                        <img
-                           src="/linkedin.svg"
-                           alt="linkedin.com/in/premsapkale"
-                           width={28}
-                           height={28}
-                        />
-                     </a>
-                     <a
-                        target="_blank"
-                        href="https://www.instagram.com/prem__thxi"
-                        className=""
-                     >
-                        <img
-                           src="/instagram.jpg"
-                           alt="instagram.com/prem__thxi"
-                           width={28}
-                           height={28}
-                        />
-                     </a>
-                  </>
-               )}
-            </div>
-            {isDesktop && (
-               <div
-                  className="sm:text-lg text-nowrap custom-cursor cursor-pointer"
-                  onClick={handleClick}
-               >
-                  Back in time
-               </div>
-            )}
-         </div>
-      </div>
+      </footer>
    );
 };
 
-const ContactText = ({ progress, isDesktop }) => {
-   // const y = useTransform(progress, [0, 1], [-180, 180]);
-
+const ContactText = ({ isDesktop }) => {
    return (
-      <motion.div
-         className="h-fit flex gap-10 flex-col items-center justify-center pointer-events-none drop-shadow-md "
-         // style={{ y }}
-      >
+      <motion.div className="h-fit flex gap-10 flex-col items-center justify-center pointer-events-none drop-shadow-md ">
          <motion.div className="flex flex-col sm:flex-row gap-6 items-center">
             <motion.h1
                id="contact-text"

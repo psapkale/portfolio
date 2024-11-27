@@ -91,7 +91,7 @@ export const SliceThrough = () => {
             </h1>
          </div>
 
-         <div id="center" className="content w-full h-[120vh]">
+         <div id="center" className="content w-full h-[100vh]">
             <ContactElement />
          </div>
 
@@ -108,43 +108,4 @@ export const SliceThrough = () => {
          </div>
       </div>
    );
-
-   // return (
-
-   //    <div>
-   //       <div
-   //          id="main"
-   //          className="w-full h-screen relative bg-sky-600 font-mono font-extrabold"
-   //       >
-   //          <div
-   //             id="top"
-   //             className="w-full h-[50vh] bg-[#f1f1f1] absolute overflow-hidden pointer-events-none"
-   //          >
-   //             <h1
-   //                id="top-h"
-   //                className="text-[20vw] uppercase absolute left-[50%] translate-x-[-50%] translate-y-[-50%] top-[50vh]"
-   //             >
-   //                {/* bottom-[16%] */}
-   //                Excited?
-   //             </h1>
-   //          </div>
-   //          <div id="center" className="content w-full h-screen">
-   //             <ContactElement />
-   //          </div>
-   //          <div
-   //             id="bottom"
-   //             className="w-full h-[50vh] bg-[#f1f1f1] absolute overflow-hidden pointer-events-none"
-   //          >
-   //             <h1
-   //                id="bottom-h"
-   //                className="text-[20vw] uppercase absolute left-[50%] translate-x-[-50%] translate-y-[-50%] bottom-[36.5dvh] xxs:bottom-[36.1dvh] xs:bottom-[36.1dvh] md:bottom-[27.53dvh] lg:bottom-[12.14dvh] xl:bottom-[2.66dvh] 2xl:bottom-[-15.6dvh]"
-   //             >
-   //                {/* 2xl:bottom-[2dvh] */}
-   //                {/* top-[-1.78%] */}
-   //                Excited?
-   //             </h1>
-   //          </div>
-   //       </div>
-   //    </div>
-   // );
 };

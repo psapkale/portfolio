@@ -53,6 +53,12 @@ body {
    overflow-x: hidden;
 }
 
+.sacramento {
+   font-family: "Sacramento";
+   font-weight: 400;
+   font-style: normal;
+}
+
 .custom-cursor {
    /* cursor: url("../public/cursors/Astronaut/AstronautHypingPointer.png") 16 16,
       auto; */
