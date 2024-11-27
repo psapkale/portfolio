@@ -71,7 +71,7 @@ function App() {
                         <AnimatePresence mode="wait">
                            {isLoading && <Preloader />}
                         </AnimatePresence>
-                        <PageTitle title="Portfolio | Prem Sapkale" />
+                        <PageTitle title="Prem Sapkale" />
                         <HomeElement
                            ref={(socialRef, projectsRef)}
                            socialRef={socialRef}
