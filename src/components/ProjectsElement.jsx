@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { ProjectsSection } from "./ProjectsSection";
 import { projects } from "../common/projects";
 import { SliceThrough } from "./SliceThrough";
+import Footer from "./Footer";
 
 const ProjectsElement = ({ id, socialRef, projectsRef }, ref) => {
    const observer = useRef(null);
@@ -40,6 +41,7 @@ const ProjectsElement = ({ id, socialRef, projectsRef }, ref) => {
          </div>
          <ProjectsSection projects={projects} id={id} ref={projectsRef} />
          <SliceThrough />
+         <Footer />
       </div>
    );
 };
