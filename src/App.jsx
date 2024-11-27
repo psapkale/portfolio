@@ -58,7 +58,7 @@ function App() {
 
    return (
       <>
-         {/* {isDesktop && <Cursor />} */}
+         {isDesktop && <Cursor />}
          <Appbar ref={appbarRef} />
          <MenuOverlay />
 
