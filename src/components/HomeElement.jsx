@@ -1,18 +1,13 @@
 import { NameElement } from "./NameElement";
 import { AboutSection } from "./AboutSection";
-import { ContactElement } from "./ContactElement";
 import { TechStackSection } from "./TechStackSection";
 import { forwardRef, useEffect } from "react";
 import { ProjectsTag } from "./ProjectsTag";
-import ColorChangeOnScrollGsap from "./ColorChangeOnScroll";
 import { useIsDesktop } from "../hooks/useIsDesktop";
-import { ProjectsSection } from "./ProjectsSection";
-import { projects } from "../common/projects";
-import { StackProjects } from "./StackProjects";
-import { ButtonComponent } from "./ButtonComponent";
 import { HeroProjectsSection } from "./HeroProjectsSection";
 import "../animations/styles.css";
 import { SliceThrough } from "./SliceThrough";
+import Footer from "./Footer";
 
 const HomeElement = forwardRef(({ socialRef, projectsRef }, ref) => {
    const id = "projectsElement";
@@ -50,6 +45,7 @@ const HomeElement = forwardRef(({ socialRef, projectsRef }, ref) => {
          {/* )} */}
          <HeroProjectsSection />
          <SliceThrough />
+         <Footer />
       </div>
    );
 });
