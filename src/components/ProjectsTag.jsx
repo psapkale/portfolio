@@ -21,7 +21,6 @@ export const ProjectsTag = ({ invert }) => {
 const Slider = ({ progress, invert }) => {
    let dif = invert ? -1 : 1;
    const x = useTransform(progress, [0, 1], [-2500 * dif, 2500 * dif]);
-   const y = useTransform(progress, [0, 1], [-140, 140]);
 
    return (
       <motion.div className="flex gap-10" style={{ x }}>

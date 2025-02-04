@@ -79,7 +79,7 @@ export const TechStackSection = () => {
             </h1>
          </FadeUp>
          <div id="skillcards">
-            {techStack.map((stack, idx) => (
+            {techStack.map((stack) => (
                <div
                   id={`techElement`}
                   key={stack.title}

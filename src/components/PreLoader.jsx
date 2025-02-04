@@ -3,17 +3,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { opacity, slideUp } from "../animations/anim.js";
 
-const words = [
-   // "/headphone.png",
-   // "/aeroplane.png",
-   // "/game.png",
-   // "/tree.png",
-   // "/football.png",
-   // "/formula.png",
-   // "/mountain.png",
-   // "/laptop.png",
-   "/logo-white.svg",
-];
+const words = ["/logo-white.svg"];
 
 export const Preloader = () => {
    const [index, setIndex] = useState(0);

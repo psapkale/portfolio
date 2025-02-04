@@ -1,6 +1,5 @@
 import { useRef, useEffect } from "react";
-import { GsapMagnetic } from "./GSAPMagnetic";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { ButtonComponent } from "./ButtonComponent";
 import { useIsDesktop } from "../hooks/useIsDesktop";
 
@@ -35,25 +34,17 @@ export const ContactElement = () => {
       };
    }, []);
 
-   function handleClick() {
-      window.scrollTo({
-         top: 0,
-         behavior: "smooth",
-      });
-   }
-
    return (
       <footer
          ref={container}
          id="contact"
-         // className="border border-white h-[120dvh] lg:h-[160dvh] bg-sky-600 px-0 xs:px-10 text-xl font-[600] text-[#f1f1f1] z-50"
          className="h-[100vh] bg-sky-600 px-0 xs:px-10 text-xl font-[600] text-[#f1f1f1]"
       >
          <div className="w-full h-[90%] flex flex-col items-center justify-center">
             <ContactText progress={scrollYProgress} isDesktop={isDesktop} />
             <div className="h-[12%]" />
             <ButtonComponent
-               href={"mailto:prempravinsapkale@gmail.com"}
+               href={"mailto:prempravinsapkale@gmail.com?subject=Hello there!"}
                text="Drop me an Email!"
                width={!isDesktop ? 300 : 380}
                height={!isDesktop ? 70 : 78}
@@ -71,7 +62,7 @@ const ContactText = ({ isDesktop }) => {
                id="contact-text"
                className="text-[38px] xs:text-[40px] md:text-[58px] text-nowrap lg:text-[100px] text-[#f1f1f1] scale-y-[1.6] lg:scale-y-[1] font-[1000]"
             >
-               Let's have a Coffee
+               Let&apos;s have a Coffee
             </motion.h1>
             <img
                src="/coffee-emoji.gif"

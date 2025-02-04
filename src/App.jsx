@@ -12,35 +12,16 @@ import { Preloader } from "./components/PreLoader";
 import PageTitle from "./components/PageTitle";
 import { MenuOverlay } from "./components/MenuOverlay";
 
-const TransitionedHomeElement = transition(HomeElement);
 const TransitionedProjectsElement = transition(ProjectsElement);
 
 function App() {
    const location = useLocation();
    const appbarRef = useRef(null);
-   const socialRef = useRef(null);
    const projectsRef = useRef(null);
-   const [showCursor, setShowCursor] = useState(true);
    const isDesktop = useIsDesktop(800);
    const [isLoading, setIsLoading] = useState(true);
 
    useEffect(() => {
-      const projectsMiniElement = document.getElementById(
-         "projectsMiniElement"
-      );
-      const waterDropGridElement = document.getElementById("water-drop-grid");
-
-      const observer = new IntersectionObserver(
-         (entry) => {
-            entry.map((ent) => {
-               setShowCursor(!ent.isIntersecting);
-            });
-         },
-         {
-            threshold: 0.5,
-         }
-      );
-
       location.pathname === "/" &&
          setTimeout(() => {
             window.scrollTo(0, 0);
@@ -72,11 +53,7 @@ function App() {
                            {isLoading && <Preloader />}
                         </AnimatePresence>
                         <PageTitle title="Prem Sapkale" />
-                        <HomeElement
-                           ref={(socialRef, projectsRef)}
-                           socialRef={socialRef}
-                           projectsRef={projectsRef}
-                        />
+                        <HomeElement />
                      </>
                   }
                />
@@ -87,8 +64,6 @@ function App() {
                         <PageTitle title="Projects | Prem Sapkale" />
                         <TransitionedProjectsElement
                            id="projectsElement"
-                           ref={(socialRef, projectsRef)}
-                           socialRef={socialRef}
                            projectsRef={projectsRef}
                         />
                      </>

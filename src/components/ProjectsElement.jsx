@@ -4,7 +4,7 @@ import { projects } from "../common/projects";
 import { SliceThrough } from "./SliceThrough";
 import Footer from "./Footer";
 
-const ProjectsElement = ({ id, socialRef, projectsRef }, ref) => {
+const ProjectsElement = ({ id, projectsRef }) => {
    const observer = useRef(null);
 
    useEffect(() => {
@@ -35,8 +35,8 @@ const ProjectsElement = ({ id, socialRef, projectsRef }, ref) => {
                Recent Projects
             </h1>
             <h2 className="text-lg lg:text-xl px-6 lg:px-0 text-slate-800 lg:mt-10">
-               Check out some of the most recent projects I've had the <br />{" "}
-               pleasure of working on.
+               Check out some of the most recent projects I&apos;ve had the{" "}
+               <br /> pleasure of working on.
             </h2>
          </div>
          <ProjectsSection projects={projects} id={id} ref={projectsRef} />

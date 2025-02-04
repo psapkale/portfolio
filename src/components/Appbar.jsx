@@ -2,7 +2,7 @@ import { forwardRef, useRef } from "react";
 import { GsapMagnetic } from "./GSAPMagnetic";
 import logo from "/logo.svg";
 
-export const Appbar = forwardRef((props, ref) => {
+export const Appbar = forwardRef(function Appbar(_props, ref) {
    const appbarRef = useRef(null);
 
    function handleContact() {
@@ -58,7 +58,7 @@ export const Appbar = forwardRef((props, ref) => {
             <GsapMagnetic>
                <div className="text-[14px] md:text-[16px] lg:text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]">
                   <a
-                     href="https://drive.google.com/file/d/1zhfJUCPIhzacavQHfp9tFRJ45b94cRgK/view"
+                     href="https://drive.google.com/file/d/1LoBS9JP2APRjcMZdRdQOLwr0d7lvbky1/view?usp=drive_link"
                      target="_blank"
                      className="custom-cursor uppercase"
                   >

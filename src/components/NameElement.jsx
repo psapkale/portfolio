@@ -7,7 +7,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const NameElement = () => {
    useEffect(() => {
-      const nameText = document.getElementById(`nameText`);
       const tagText = document.getElementById("tagText");
 
       const observer = new IntersectionObserver((entries) => {
@@ -19,12 +18,6 @@ export const NameElement = () => {
             }
          });
       });
-
-      // setTimeout(() => {
-      //    if (nameText) {
-      //       observer.observe(nameText);
-      //    }
-      // }, 400);
 
       setTimeout(() => {
          if (tagText) {

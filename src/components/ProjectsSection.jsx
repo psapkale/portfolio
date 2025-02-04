@@ -1,22 +1,18 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { forwardRef, useEffect, useRef, useState } from "react";
-import styles from "../animations/projects.module.scss";
+import { motion } from "framer-motion";
+import { forwardRef, useRef, useState } from "react";
 import { ProjectCard } from "./ProjectCard";
 import { useIsDesktop } from "../hooks/useIsDesktop";
 import { StyledCursor } from "../common/StyledCursor";
 import { Link } from "lucide-react";
 
-export const ProjectsSection = forwardRef(({ projects, id }, ref) => {
+export const ProjectsSection = forwardRef(function ProjectsSection(
+   { projects, id },
+   ref
+) {
    const [cursorVisible, setCursorVisible] = useState(false);
    const isDesktop = useIsDesktop(800);
 
    const container = useRef(null);
-   const { scrollYProgress } = useScroll({
-      target: container,
-      offset: ["start end", "end start"],
-   });
-
-   const height = useTransform(scrollYProgress, [0, 1], [50, 8]);
 
    const handleMouseEnter = () => {
       setCursorVisible(true);

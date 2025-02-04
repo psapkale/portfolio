@@ -1,17 +1,15 @@
 import { NameElement } from "./NameElement";
 import { AboutSection } from "./AboutSection";
 import { TechStackSection } from "./TechStackSection";
-import { forwardRef, useEffect } from "react";
+import { useEffect } from "react";
 import { ProjectsTag } from "./ProjectsTag";
-import { useIsDesktop } from "../hooks/useIsDesktop";
 import { HeroProjectsSection } from "./HeroProjectsSection";
 import "../animations/styles.css";
 import { SliceThrough } from "./SliceThrough";
 import Footer from "./Footer";
 
-const HomeElement = forwardRef(({ socialRef, projectsRef }, ref) => {
+const HomeElement = () => {
    const id = "projectsElement";
-   const isDesktop = useIsDesktop(800);
 
    useEffect(() => {
       const observer = new IntersectionObserver((entries) => {
@@ -35,19 +33,12 @@ const HomeElement = forwardRef(({ socialRef, projectsRef }, ref) => {
          <NameElement />
          <AboutSection />
          <TechStackSection />
-         {/* <ColorChangeOnScrollGsap /> */}
-         {/* {isDesktop && ( */}
-         <div id="projectsMiniElement">
-            <ProjectsTag />
-            {/* <ProjectsMini id="projectsMiniElement" /> */}
-            {/* <ProjectsTag invert /> */}
-         </div>
-         {/* )} */}
+         <ProjectsTag />
          <HeroProjectsSection />
          <SliceThrough />
          <Footer />
       </div>
    );
-});
+};
 
 export default HomeElement;
