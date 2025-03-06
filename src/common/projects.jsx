@@ -27,6 +27,21 @@ export const projects = [
       tech: ["/react.svg", "/tailwind.svg", "/nodejs.svg"],
    },
    {
+      title: "Project Space",
+      link: "http://prospace01.vercel.app",
+      description:
+         "Project Space reimagines how you organize the internet! Think of it as your personal digital workspace, where you can neatly categorize and store content from different platforms. Whether it's a Twitter post, a YouTube video, or an Instagram reel, ProSpace lets you collect them all in dedicated `spaces—like folders, but way smarter. No more endless scrolling or lost bookmarks—just a beautifully organized hub for everything that matters to you, with more exciting integrations on the way!",
+      heroImg: "/project-space.gif",
+      img: "/project-space.jpg",
+      tech: [
+         "/react.svg",
+         "/typescript.svg",
+         "/nodejs.svg",
+         "/postgresql.jpg",
+         "/prisma.svg",
+      ],
+   },
+   {
       title: "Hunger Bites",
       link: "https://hunger-bites.vercel.app",
       description:

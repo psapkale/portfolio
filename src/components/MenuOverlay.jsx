@@ -78,7 +78,7 @@ export const MenuOverlay = () => {
                   Contact
                </span>
                <a
-                  href="https://drive.google.com/file/d/1LoBS9JP2APRjcMZdRdQOLwr0d7lvbky1/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/10g0POtsHqPH68Z9uq0PqNxOgL82IbtOk/view?usp=sharing"
                   target="_blank"
                   data-fill-text="Resume"
                   className="menuText custom-cursor pl-[6px] lg:pl-[20px]"
