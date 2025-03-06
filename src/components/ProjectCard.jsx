@@ -11,7 +11,7 @@ export const ProjectCard = forwardRef(function ProjectCard(
    }
 
    const leftContent = (
-      <div className="w-[90%] md:w-full lg:w-[40%] h-fit flex flex-col relative">
+      <div className="w-[92%] md:w-full lg:w-[40%] h-fit flex flex-col relative">
          <h1
             className={`text-6xl text-sky-500 font-bold flex items-center ${
                isDesktop
@@ -48,7 +48,7 @@ export const ProjectCard = forwardRef(function ProjectCard(
 
    const rightContent = (
       <div
-         className={`w-full lg:w-[60%] h-fit lg:h-full flex flex-col justify-center px-[12px] lg:px-[100px] ${
+         className={`w-full lg:w-[60%] h-fit lg:h-full flex flex-col justify-center px-0 lg:px-[100px] ${
             isDesktop
                ? isInverted
                   ? "items-start text-left"
@@ -86,7 +86,7 @@ export const ProjectCard = forwardRef(function ProjectCard(
             id={id}
             className={`custom-cursor w-full h-fit lg:h-[90dvh] flex ${
                isDesktop ? "flex-row" : "flex-col"
-            } items-center justify-between p-[10px] sm:p-[80px] group ${
+            } items-center justify-between p-2 sm:p-[80px] group ${
                !isDesktop
                   ? "custom-hidden"
                   : isInverted

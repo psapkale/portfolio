@@ -34,7 +34,7 @@ const ProjectsElement = ({ id, projectsRef }) => {
             <h1 className="font-[1000] scale-y-[2.2] scale-x-[0.48] lg:scale-x-[0.8] uppercase drop-shadow-lg text-nowrap">
                Recent Projects
             </h1>
-            <h2 className="text-lg lg:text-xl px-6 lg:px-0 text-slate-800 lg:mt-10">
+            <h2 className="text-lg lg:text-xl px-4 md:px-6 lg:px-0 text-slate-800 lg:mt-10">
                Check out some of the most recent projects I&apos;ve had the{" "}
                <br /> pleasure of working on.
             </h2>

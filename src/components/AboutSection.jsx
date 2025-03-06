@@ -45,7 +45,7 @@ export const AboutSection = () => {
                </div>
                <p
                   id="aboutText"
-                  className="fade-up text-slate-950 text-center py-2 text-xl md:text-2xl lg:text-4xl px-6 lg:px-0 scale-y-[1.2] lg:scale-y-[1] font-[600] mt-40 w-full about-hidden"
+                  className="fade-up text-slate-950 text-center py-2 text-xl md:text-2xl lg:text-4xl px-2 lg:px-0 scale-y-[1.2] lg:scale-y-[1] font-[600] mt-40 w-full about-hidden"
                >
                   {/* 🙏  */}
                   I&apos;m Prem Sapkale, a{" "}
