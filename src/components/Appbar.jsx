@@ -58,7 +58,7 @@ export const Appbar = forwardRef(function Appbar(_props, ref) {
             <GsapMagnetic>
                <div className="text-[14px] md:text-[16px] lg:text-lg font-[600] py-3 px-6 rounded-full hover:text-[#000]">
                   <a
-                     href="https://drive.google.com/file/d/10g0POtsHqPH68Z9uq0PqNxOgL82IbtOk/view?usp=sharing"
+                     href="https://drive.google.com/file/d/1SlsbQRI6QhTiyEVfciyIRnPPrE9A_G8-/view?usp=sharing"
                      target="_blank"
                      className="custom-cursor uppercase"
                   >
